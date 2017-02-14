@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>面向对象(1) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="原型链继承原理：
+
+使用js原生自带的一个对象，原型对象。
+每一个函数，在创建的时候，就自带 了一个prototype属性，通过prototype就可以访问原型对象
+在对象创建的时候，对象会默认创建一个原型对象，当执行对象方法的时候，对象没有这个东西，就会去在原型上找
+
+
+什么东西应该被加载原型上面，什么东西应该被放在对象中
+
+假设这个方法是公用的（所有的对象都拥有的功能），数据是共享的，那么它">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象(1)">
+<meta property="og:url" content="http://yoursite.com/2016/08/08/面向对象/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="原型链继承原理：
+
+使用js原生自带的一个对象，原型对象。
+每一个函数，在创建的时候，就自带 了一个prototype属性，通过prototype就可以访问原型对象
+在对象创建的时候，对象会默认创建一个原型对象，当执行对象方法的时候，对象没有这个东西，就会去在原型上找
+
+
+什么东西应该被加载原型上面，什么东西应该被放在对象中
+
+假设这个方法是公用的（所有的对象都拥有的功能），数据是共享的，那么它">
+<meta property="og:updated_time" content="2017-02-08T15:20:33.975Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象(1)">
+<meta name="twitter:description" content="原型链继承原理：
+
+使用js原生自带的一个对象，原型对象。
+每一个函数，在创建的时候，就自带 了一个prototype属性，通过prototype就可以访问原型对象
+在对象创建的时候，对象会默认创建一个原型对象，当执行对象方法的时候，对象没有这个东西，就会去在原型上找
+
+
+什么东西应该被加载原型上面，什么东西应该被放在对象中
+
+假设这个方法是公用的（所有的对象都拥有的功能），数据是共享的，那么它">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-面向对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/08/面向对象/" class="article-date">
+  <time datetime="2016-08-08T11:49:17.000Z" itemprop="datePublished">2016-08-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面向对象(1)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>原型链继承原理：</p>
+<ul>
+<li>使用js原生自带的一个对象，原型对象。</li>
+<li>每一个函数，在创建的时候，就自带 了一个prototype属性，通过prototype就可以访问原型对象</li>
+<li>在对象创建的时候，对象会默认创建一个原型对象，当执行对象方法的时候，对象没有这个东西，就会去在原型上找</li>
+</ul>
+</li>
+<li><p>什么东西应该被加载原型上面，什么东西应该被放在对象中</p>
+<ul>
+<li>假设这个方法是公用的（所有的对象都拥有的功能），数据是共享的，那么它就应该被放到原型中，独有的数据，独有的行为应该被放在对象中</li>
+</ul>
+</li>
+<li><p>针对构造函数而言，原型就是构造函数的prototype属性，常常将其称为原型属性，针对实例对象而言，原型就是实例对象的原型对象。</p>
+</li>
+<li><p>一般如何使用原型对象</p>
+<ul>
+<li>简单的说就是将共享的方法放到原型中，而独有的数据与行为放在当前对象里<br>①直接通过动态特性给原型对象添加成员，例如：Person.prototype.eat<br>②直接替换原型对象，让 Person.prototype 指向另一个对象. 直接赋值 如：Person.prototype={constructor:Person,};（注意：手动的添加constructor属性，表示对应的构造函数）</li>
+</ul>
+</li>
+</ol>
+<p>A方法是给系统提供的原型对象添加功能<br>B方式是换了一个对象，不适用系统的对象了</p>
+<ol>
+<li><p><strong>proto</strong></p>
+<ul>
+<li>早期浏览器是不支持<em>proto</em>，火狐率先使用该属性，但是是非标准的</li>
+<li>基本现在的新浏览器都支持该属性（ie8不支持该属性）</li>
+<li>在实际开发中不建议使用，但可以用于调试<br>访问</li>
+<li>使用构造函数，就使用prototype属性访问原型</li>
+<li>使用实例对象，就使用非标准的<em>proto</em>属性访问原型<br>其实他们访问的是一个东西</li>
+</ul>
+</li>
+<li><p>兼容低版本</p>
+<ul>
+<li>使低版本浏览器支持<br>第一步：判断系统是否支持<em>proto</em><br>if({}.<em>proto</em>){cl(‘支持’);}else{cl(‘不支持’);}<br>为了模拟该用法，不适用<em>proto</em> 去访问原型<br>要访问原型最保险的办法就是利用构造函数，只要实例对象，可以访问到constructor就可以了</li>
+</ul>
+</li>
+</ol>
+<p>如果实例对象没有这个东西，会去原型上找<br>p1.constructor.prototype</p>
+<ol>
+<li><p>继承的概念与原型式继承</p>
+<ul>
+<li>什么是继承<br>自己没有，但是别人有，拿过来自己用，就好像是自己的一样</li>
+<li>原型与实例对象<br>在js中，方法定义在原型对象中，而属性定义在实例对象中，调用方法的时候，实例对象本身是没有该成员的，但是依旧可以调用该方法，好像这个方法就是该实例对象的一样，因此，我们称该实例对象继承自原型对象</li>
+<li>任何一个实例，都是继承自其原型对象的，即原型式继承</li>
+</ul>
+</li>
+<li><p>为什么需要继承</p>
+<ul>
+<li>编程的发展<br>复用（重复使用）</li>
+<li>js运行效率<br>共享特性<br>复用<br>组件化  菜单的一套控件</li>
+</ul>
+</li>
+<li><p>传统面向对象语法特征</p>
+</li>
+<li><p>相关概念与说明<br>构造函数：本质上是一个函数，但是我们可以通过new来调用这个函数并且创建一个实例对象<br>实例对象：本质上是一个对象{}，但是我们是通过构造函数来创建的实例对象，通过构造函数的参数我们可以给实例对象添加一些成员<br>实例成员：就是实例对象的属性或者方法<br>静态成员：指的是构造函数的属性或者方法，什么东西会设置成静态的成员呢？比如说工具方法</p>
+</li>
+<li><p>属性搜索原则（成员搜索原则）</p>
+<ul>
+<li>对象在调用方法或者访问属性的时候，首先在当前对象中查询，如果有该成员使用并停止查找</li>
+<li>如果没有该成员，就在其原型对象中查找，如过有该成员即使用并停止查找</li>
+<li>如果还没有找到，就到该对象的原型对象的原型对象中查找</li>
+<li>最后会查到Object.prototype上，如果还没有即返回undefined;</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/08/面向对象/" data-id="ciyx3xova0000qcifn6qsv2w4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/10/面向对象2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          面向对象(2)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/06/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/27/面向对象6/">面向对象(6)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/22/面向对象5/">面向对象(5)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/14/面向对象4/">面向对象(4)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/11/面向对象3/">面向对象(3)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

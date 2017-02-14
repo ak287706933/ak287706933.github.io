@@ -61,10 +61,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-模块化开发" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/01/06/hello-world/" class="article-date">
-  <time datetime="2017-01-06T13:54:04.228Z" itemprop="datePublished">2017-01-06</time>
+    <a href="/2016/05/12/模块化开发/" class="article-date">
+  <time datetime="2016-05-12T13:32:11.000Z" itemprop="datePublished">2016-05-12</time>
 </a>
     
   </div>
@@ -75,7 +75,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/06/hello-world/">Hello World</a>
+      <a class="article-title" href="/2016/05/12/模块化开发/">模块化开发</a>
     </h1>
   
 
@@ -83,20 +83,1442 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h3 id="有哪些模块化方法"><a href="#有哪些模块化方法" class="headerlink" title="有哪些模块化方法"></a>有哪些模块化方法</h3><h4 id="1、全局函数"><a href="#1、全局函数" class="headerlink" title="1、全局函数"></a>1、全局函数</h4><p>以计算器为例子<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//-----------------------计算模块 开始-----------------------</span></div><div class="line"><span class="comment">//加</span></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) + <span class="built_in">parseFloat</span>(b);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//减</span></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">substract</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) - <span class="built_in">parseFloat</span>(b);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//乘</span></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) * <span class="built_in">parseFloat</span>(b);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//除</span></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">divide</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) / <span class="built_in">parseFloat</span>(b);</div><div class="line">        &#125;</div><div class="line"><span class="comment">//-----------------------计算模块 结束-----------------------</span></div></pre></td></tr></table></figure></p>
+<p>缺点:严格来说，这并不是真正的模块化，我们只能人为的通过注释的方式来标明这四个方法是属于一个计算相关的模块。</p>
+<h4 id="2、封装成对象"><a href="#2、封装成对象" class="headerlink" title="2、封装成对象"></a>2、封装成对象</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> calculator = &#123;</div><div class="line">    <span class="attr">add</span>:<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) + <span class="built_in">parseFloat</span>(b);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">substract</span>:<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) - <span class="built_in">parseFloat</span>(b);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">multiply</span>:<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) * <span class="built_in">parseFloat</span>(b);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">divide</span>:<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) / <span class="built_in">parseFloat</span>(b);</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>缺点:暴露了全局对象，还是可能冲突，命名空间越来越长，越写越复杂。</p>
+<h4 id="3、匿名函数自执行形式（沙箱形式）"><a href="#3、匿名函数自执行形式（沙箱形式）" class="headerlink" title="3、匿名函数自执行形式（沙箱形式）"></a>3、匿名函数自执行形式（沙箱形式）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> calculator = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="comment">//这个函数是私有的，只有当calculator的内部使用。</span></div><div class="line">            <span class="function"><span class="keyword">function</span> <span class="title">showLog</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(str + <span class="string">"方法被调用了"</span>);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//公有</span></div><div class="line">            <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">                showLog(<span class="string">"加法"</span>);</div><div class="line">                <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) + <span class="built_in">parseFloat</span>(b);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//公有</span></div><div class="line">            <span class="function"><span class="keyword">function</span> <span class="title">substract</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">                showLog(<span class="string">"减法"</span>);</div><div class="line">                <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) - <span class="built_in">parseFloat</span>(b);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//公有</span></div><div class="line">            <span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">                showLog(<span class="string">"乘法"</span>);</div><div class="line">                <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) * <span class="built_in">parseFloat</span>(b);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//公有</span></div><div class="line">            <span class="function"><span class="keyword">function</span> <span class="title">divide</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">                showLog(<span class="string">"除法"</span>);</div><div class="line">                <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) / <span class="built_in">parseFloat</span>(b);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">return</span> &#123;</div><div class="line">                <span class="attr">add</span>:add,</div><div class="line">                <span class="attr">substract</span>:substract,</div><div class="line">                <span class="attr">multiply</span>:multiply,</div><div class="line">                <span class="attr">divide</span>:divide</div><div class="line">            &#125;</div><div class="line">        &#125;)();</div></pre></td></tr></table></figure>
+<p>缺点:相对于封装成对象，沙箱模式已经很优秀了，但还是暴露了全局对象比如add,substract···这四个方法。</p>
+<h2 id="模块化的规范"><a href="#模块化的规范" class="headerlink" title="模块化的规范"></a>模块化的规范</h2><p>浏览器端规范: sea.js require.js<br>服务器端规范: node.js<br>跨浏览器、服务器的模块规范: CommonJS   ECMAScript2015(ES6)</p>
+<h3 id="sea-js的使用方法"><a href="#sea-js的使用方法" class="headerlink" title="sea.js的使用方法"></a>sea.js的使用方法</h3><p>a)  html文件中引入sea.js库<br>b)  使用seajs.use加载主模块（也叫入口模块），起名一般叫main.js<br>c)  模块的定义方法<br>    在我们的sea.js当中一个模块就是一个文件<br>    调用define函数定义主模块<br>    用require函数加载其他第三方模块<br>    用module.exports或exports来暴露当前模块的东西<br>需要注意的点:<br>    1.define(function(require,exports,module){});这里面的require,exports,module三个参数的名字是固定写法，不能简写，顺序不能错了 记忆方法：rem –&gt; 依赖注入<br>    2.如果define里的参数想省略，只能从后面开始省略，只要写了后面的，前面的必须要写上 –&gt; 推荐写全，不要省<br>    3.如果一个模块既不需要公开成员变量，也不需要依赖第三方模块,那么可以全部省略<br>    4.seajs.use(“入口模块”)可以加回调函数，形式如：seajs.use(“入口模块”,callback);</p>
+<h4 id="seajs的路径问题"><a href="#seajs的路径问题" class="headerlink" title="seajs的路径问题"></a>seajs的路径问题</h4><p>1、在sea.js当中，js/main和./js/main的含义不是一样的<br>a)   js/main代表的是在sea.js所在的文件为基准去找，所以找到的是 –&gt; seajs库所在的父级文件夹/js/main.js 这样的话会找不到的<br>b)  ./js/main代表的是以当前html文件去找<br>c)  seajs.use(),require(“xxx”) –&gt; 其实这里的xxx叫模块标识，不是路径<br>2、config的作用就是为了简化调用模块<br>  a) base 设置路径  默认值是seajs库文件所在的父文件夹<br>  b) alias 设置模块的别名，简化调用</p>
+<h4 id="sea-js之把非cmd模块转换成cmd模块"><a href="#sea-js之把非cmd模块转换成cmd模块" class="headerlink" title="sea.js之把非cmd模块转换成cmd模块"></a>sea.js之把非cmd模块转换成cmd模块</h4><p>以jQuery为例  需要在里面加上这样一段代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> define === <span class="string">'function'</span> &amp;&amp; define.cmd)&#123;</div><div class="line">    define(<span class="function"><span class="keyword">function</span>(<span class="params">require,exports,module</span>)</span>&#123;</div><div class="line">            <span class="built_in">module</span>.exports = jQuery;</div><div class="line">        &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="sea-js之module-exports与exports辨析"><a href="#sea-js之module-exports与exports辨析" class="headerlink" title="sea.js之module.exports与exports辨析"></a>sea.js之module.exports与exports辨析</h4><ul>
+<li>本质上用的还是module.exports这个对象，exports的值是module.exports 的引用地址，通过这种方式，我们可以少写一个”module.”</li>
+<li>module.exports 指向新的对象时，exports 将会断开了与 module.exports 的引用</li>
+</ul>
+<h4 id="sea-js加载流程理解"><a href="#sea-js加载流程理解" class="headerlink" title="sea.js加载流程理解"></a>sea.js加载流程理解</h4><p>seajs是预加载懒执行。<br>预加载就是预先把所有的模块全部加载完，懒执行就是需要执行哪块才执行哪块</p>
+<ul>
+<li>html文件加载主模块</li>
+<li>主模块加载依赖的第三方模块</li>
+<li>第三方模块如果还有其他的第三方模块依赖，则进一步加载其他第三方模块</li>
+</ul>
+<h4 id="以tab栏切换为例子"><a href="#以tab栏切换为例子" class="headerlink" title="以tab栏切换为例子"></a>以tab栏切换为例子</h4><p>index.html<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    seajs.use(<span class="string">'main'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'初始化成功'</span>);</div><div class="line">    &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>tab.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require,exports,module</span>)</span>&#123;</div><div class="line">   <span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'jquery'</span>);</div><div class="line">   <span class="function"><span class="keyword">function</span> <span class="title">Tab</span>(<span class="params">ele</span>)</span>&#123;</div><div class="line">       <span class="keyword">var</span> $ele = $(ele);<span class="comment">//选项卡的最外层元素</span></div><div class="line">       <span class="keyword">this</span>.titleList = $ele.find(<span class="string">'.title input[type="button"]'</span>);</div><div class="line">       <span class="keyword">this</span>.contentList = $ele.find(<span class="string">'.content .item'</span>);</div><div class="line">   &#125;</div><div class="line">   <span class="comment">//给我们的选项卡绑定事件</span></div><div class="line">   Tab.prototype.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">        <span class="keyword">this</span>.titleList.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">var</span> index = $(<span class="keyword">this</span>).index();</div><div class="line">            $(<span class="keyword">this</span>).addClass(<span class="string">'active'</span>).siblings().removeClass(<span class="string">'active'</span>);</div><div class="line">            that.contentList.eq(index).show().siblings().hide();</div><div class="line">        &#125;);</div><div class="line">   &#125;</div><div class="line">   <span class="comment">//调用我们的run方法</span></div><div class="line">   Tab.prototype.init = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="keyword">this</span>.run();</div><div class="line">       <span class="keyword">this</span>.titleList.eq(<span class="number">1</span>).triggerHandler(<span class="string">'click'</span>);<span class="comment">//用js来点击元素</span></div><div class="line">   &#125;</div><div class="line">   <span class="built_in">module</span>.exports = Tab;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require,exports,module</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> Tab = <span class="built_in">require</span>(<span class="string">'./tab'</span>);</div><div class="line">    <span class="keyword">var</span> myTab = <span class="keyword">new</span> Tab(<span class="string">'#tab'</span>);</div><div class="line">    myTab.init();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/06/hello-world/" data-id="ciyvl50bo0000zkifwaq03fdi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/模块化开发/" data-id="ciz538hbi0000d8ifxszaje2h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css3高级" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/15/css3高级/" class="article-date">
+  <time datetime="2015-12-15T12:24:21.000Z" itemprop="datePublished">2015-12-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/15/css3高级/">css3动画与3D转换</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="3D转换"><a href="#3D转换" class="headerlink" title="3D转换"></a>3D转换</h2><h3 id="1、3D坐标轴"><a href="#1、3D坐标轴" class="headerlink" title="1、3D坐标轴"></a>1、3D坐标轴</h3><p>用X、Y、Z分别表示空间的3个维度，三条轴互相垂直。如图<br><img src="./3d.png" alt="3D坐标轴"></p>
+<h3 id="2、透视（perspective）"><a href="#2、透视（perspective）" class="headerlink" title="2、透视（perspective）"></a>2、透视（perspective）</h3><p>电脑显示屏是一个2D平面，图像之所以具有立体感（3D效果），其实只是一种视觉呈现 ，通过透视可以实现此目的。<br>透视可以将一个2D平面，在转换的过程当中，呈现3D效果。（没有perspective，便“没有”Z轴）<br>并非任何情况下需要透视效果</p>
+<h3 id="3、perspective有两种写法"><a href="#3、perspective有两种写法" class="headerlink" title="3、perspective有两种写法"></a>3、perspective有两种写法</h3><p>a) 作为一个属性，设置给父元素，作用于所有3D转换的子元素<br>b) 作为transform属性的一个值，做用于元素自身 ，并且必须要写在最前面</p>
+<h3 id="4、3D呈现（transform-style）"><a href="#4、3D呈现（transform-style）" class="headerlink" title="4、3D呈现（transform-style）"></a>4、3D呈现（transform-style）</h3><p>设置内嵌的元素在 3D 空间如何呈现，这些子元素必须为变形原素。<br>flat：所有子元素在 2D 平面呈现<br>preserve-3d：保留3D空间<br>所有的子元素必须要应用3D转换才可以</p>
+<h3 id="5、backface-visibility属性"><a href="#5、backface-visibility属性" class="headerlink" title="5、backface-visibility属性"></a>5、backface-visibility属性</h3><p>设置元素背面是否可见</p>
+<p>需要详细分析透视原理的可以去看张鑫旭的博客</p>
+<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><p>简介:动画是CSS3中具有颠覆性的特征之一，可通过设置多个节点来精确控制一个或一组动画，常用来实现复杂的动画效果。</p>
+<h4 id="1、必要元素："><a href="#1、必要元素：" class="headerlink" title="1、必要元素："></a>1、必要元素：</h4><p>a、通过@keyframes指定动画序列；<br>b、通过百分比将动画序列分割成多个节点；<br>c、在各节点中分别定义各属性<br>d、通过animation将动画应用于相应元素；</p>
+<h4 id="2、关键属性"><a href="#2、关键属性" class="headerlink" title="2、关键属性"></a>2、关键属性</h4><p>@keyframes  规定动画。<br>animation   所有动画属性的简写属性，除了 animation-play-state 属性。</p>
+<h5 id="animation-name"><a href="#animation-name" class="headerlink" title="animation-name"></a>animation-name</h5><p>规定 @keyframes 动画的名称。    </p>
+<h5 id="animation-duration"><a href="#animation-duration" class="headerlink" title="animation-duration"></a>animation-duration</h5><p>规定动画完成一个周期所花费的秒或毫秒。默认是 0。  </p>
+<h5 id="animation-timing-function"><a href="#animation-timing-function" class="headerlink" title="animation-timing-function"></a>animation-timing-function</h5><p>linear  动画从头到尾的速度是相同的。<br>ease    默认。动画以低速开始，然后加快，在结束前变慢。<br>ease-in     动画以低速开始。<br>ease-out    动画以低速结束。<br>ease-in-out     动画以低速开始和结束。<br>cubic-bezier(n,n,n,n)  在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1的数 </p>
+<h5 id="animation-delay"><a href="#animation-delay" class="headerlink" title="animation-delay"></a>animation-delay</h5><p>规定动画何时开始。默认是 0。  </p>
+<h5 id="animation-iteration-count"><a href="#animation-iteration-count" class="headerlink" title="animation-iteration-count"></a>animation-iteration-count</h5><p>规定动画被播放的次数。默认是 1。  </p>
+<h5 id="animation-direction"><a href="#animation-direction" class="headerlink" title="animation-direction"></a>animation-direction</h5><p>规定动画是否在下一周期逆向地播放。<br>normal  默认值。动画应该正常播放。<br>alternate   动画应该轮流反向播放。  </p>
+<h5 id="animation-play-state"><a href="#animation-play-state" class="headerlink" title="animation-play-state"></a>animation-play-state</h5><p>规定动画是否正在运行或暂停。<br>paused  规定动画已暂停。<br>running    默认 规定动画正在播放。   </p>
+<h5 id="animation-fill-mode"><a href="#animation-fill-mode" class="headerlink" title="animation-fill-mode"></a>animation-fill-mode</h5><p>规定对象动画时间之外的状态。</p>
+<h4 id="参数值的顺序："><a href="#参数值的顺序：" class="headerlink" title="参数值的顺序："></a>参数值的顺序：</h4><p>关于几个值，除了名字，动画时间，延时有严格顺序要求其它随意</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">            <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">            <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">            <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">            <span class="attribute">background-color</span>: green;</div><div class="line">            <span class="attribute">animation</span>: change <span class="number">10s</span> linear forwards;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">/*动画序列*/</span></div><div class="line">        @<span class="keyword">keyframes</span> change &#123;</div><div class="line">            <span class="comment">/*百分比是相对于动画的执行时间*/</span></div><div class="line">            0% &#123;</div><div class="line">                </div><div class="line">            &#125;</div><div class="line"></div><div class="line">            20% &#123;</div><div class="line">                <span class="attribute">width</span>: <span class="number">400px</span>;</div><div class="line">                <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            40% &#123;</div><div class="line">                <span class="attribute">width</span>: <span class="number">400px</span>;</div><div class="line">                <span class="attribute">height</span>: <span class="number">400px</span>;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            80% &#123;</div><div class="line">                <span class="attribute">width</span>: <span class="number">400px</span>;</div><div class="line">                <span class="attribute">height</span>: <span class="number">400px</span>;</div><div class="line">                <span class="attribute">background-color</span>: yellow;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            100% &#123;</div><div class="line">                <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">                <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">                <span class="attribute">background-color</span>: green;</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/12/15/css3高级/" data-id="ciz538hby0001d8ifeaclnq4m" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css3进阶" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/12/css3进阶/" class="article-date">
+  <time datetime="2015-12-12T13:04:14.000Z" itemprop="datePublished">2015-12-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/12/css3进阶/">css3下</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="css3进阶"><a href="#css3进阶" class="headerlink" title="css3进阶"></a>css3进阶</h2><h3 id="过度"><a href="#过度" class="headerlink" title="过度"></a>过度</h3><p>过渡是CSS3中具有颠覆性的特征之一，可以实现元素不同状态间的平滑过渡（补间动画），经常用来制作动画效果。<br>帧动画：通过一帧一帧的画面按照固定顺序和速度播放。如电影胶片。<br>补间动画：自动完成从起始状态到终止状态的的过渡。<br>关于补间动画的特点：当前元素只要有“属性”发生变化时，可以平滑的进行过渡，并不仅仅局限于hover状态。</p>
+<h4 id="transition-property设置过渡属性"><a href="#transition-property设置过渡属性" class="headerlink" title="transition-property设置过渡属性"></a>transition-property设置过渡属性</h4><p>none    没有属性会获得过渡效果。<br>all 所有属性都将获得过渡效果。<br>property    定义应用过渡效果的 CSS 属性名称列表，列表以逗号分隔</p>
+<h4 id="transition-duration设置过渡时间"><a href="#transition-duration设置过渡时间" class="headerlink" title="transition-duration设置过渡时间"></a>transition-duration设置过渡时间</h4><p>以秒做单位</p>
+<h4 id="transition-delay设置过渡延时"><a href="#transition-delay设置过渡延时" class="headerlink" title="transition-delay设置过渡延时"></a>transition-delay设置过渡延时</h4><p>以秒做单位</p>
+<h4 id="transition-timing-function设置过渡速度"><a href="#transition-timing-function设置过渡速度" class="headerlink" title="transition-timing-function设置过渡速度"></a>transition-timing-function设置过渡速度</h4><ul>
+<li>linear  规定以相同速度开始至结束的过渡效果（等于 cubic-bezier(0,0,1,1)）。</li>
+<li>ease    规定慢速开始，然后变快，然后慢速结束的过渡效果（cubic-bezier(0.25,0.1,0.25,1)）。</li>
+<li>ease-in 规定以慢速开始的过渡效果（等于 cubic-bezier(0.42,0,1,1)）。</li>
+<li>ease-out    规定以慢速结束的过渡效果（等于 cubic-bezier(0,0,0.58,1)）。</li>
+<li>ease-in-out 规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）。</li>
+<li>cubic-bezier(n,n,n,n) 在 cubic-bezier 函数中定义自己的值。可能的值是 0 至 1 之间的数值。</li>
+<li></li>
+</ul>
+<p>让我们来体验一下让一个正方形盒子变大的例子<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.transition</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">50px</span> auto;</div><div class="line">    <span class="attribute">background-color</span>: green;</div><div class="line">    <span class="attribute">transition</span>: all <span class="number">1s</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.transition</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">400px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">400px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>再看一个综合运用的例子<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.transition</span> &#123;</div><div class="line">            <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">            <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">            <span class="attribute">background-color</span>: green;</div><div class="line"></div><div class="line">            <span class="attribute">position</span>: absolute;</div><div class="line"></div><div class="line">            <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line"></div><div class="line">            <span class="comment">/*transition: all 1s;*/</span></div><div class="line">            </div><div class="line">            <span class="comment">/*设置需要过渡的属性*/</span></div><div class="line">            <span class="comment">/*transition-property: background-color, left;*/</span></div><div class="line">            </div><div class="line">            <span class="comment">/*设置过渡时间*/</span></div><div class="line">            <span class="comment">/*transition-duration: 2s;*/</span></div><div class="line">            </div><div class="line">            <span class="comment">/*设置过渡的延时*/</span></div><div class="line">            <span class="comment">/*transition-delay: 2s;*/</span></div><div class="line">            </div><div class="line">            <span class="comment">/*过渡执行的速度*/</span></div><div class="line">            <span class="comment">/*transition-timing-function: ease-in-out;*/</span></div><div class="line"></div><div class="line">            <span class="comment">/*第一个时间是执行时间，第二个是延时间*/</span></div><div class="line">            <span class="comment">/*参数间除时间外没有顺序要求*/</span></div><div class="line">            <span class="attribute">transition</span>:   linear  all  <span class="number">2s</span> <span class="number">1s</span>;</div><div class="line"></div><div class="line">            <span class="comment">/*transition: 属性 时间 延时 速度*/</span></div><div class="line"></div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="selector-class">.transition</span><span class="selector-pseudo">:hover</span>  &#123;</div><div class="line">            <span class="attribute">left</span>: <span class="number">1000px</span>;</div><div class="line">            <span class="attribute">background-color</span>: yellow;</div><div class="line">        &#125;</div></pre></td></tr></table></figure></p>
+<p><img src="./transition.png" alt="过度属性表"></p>
+<h3 id="2D转换"><a href="#2D转换" class="headerlink" title="2D转换"></a>2D转换</h3><ul>
+<li>转换是CSS3中具有颠覆性的特征之一，可以实现元素的位移、旋转、变形、缩放，甚至支持矩阵方式，配合即将学习的过渡和动画知识，可以取代大量之前只能靠Flash才可以实现的效果。</li>
+</ul>
+<h4 id="1、移动-translate-x-y-可以改变元素的位置，x、y可为负值；"><a href="#1、移动-translate-x-y-可以改变元素的位置，x、y可为负值；" class="headerlink" title="1、移动 translate(x, y) 可以改变元素的位置，x、y可为负值；"></a>1、移动 translate(x, y) 可以改变元素的位置，x、y可为负值；</h4><p>  a) 移动位置相当于自身原来位置<br>  一个参数时：表示水平方向的移动距离；<br> 两个参数时：第一个参数表示水平方向的移动距离，第二个参数表示垂直方向的移动距离<br>  b)  y轴正方向朝下<br>  c) 除了可以像素值，也可以是百分比，相对于自身的宽度或高度</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box2</span>&#123;</div><div class="line">              <span class="attribute">position</span>: relative;</div><div class="line">              <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">              <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">              <span class="attribute">background</span>: red;</div><div class="line">              <span class="attribute">transition</span>:all <span class="number">1s</span> ease-in;</div><div class="line">          &#125;</div><div class="line">          <span class="selector-class">.box2</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">              <span class="attribute">transform</span>: <span class="built_in">translate</span>(200px,200px);</div><div class="line">          &#125;</div></pre></td></tr></table></figure>
+<h4 id="2、缩放-scale-x-y-可对元素进行水平和垂直方向的缩放，x、y的取值可为小数；"><a href="#2、缩放-scale-x-y-可对元素进行水平和垂直方向的缩放，x、y的取值可为小数；" class="headerlink" title="2、缩放 scale(x, y)可对元素进行水平和垂直方向的缩放，x、y的取值可为小数；"></a>2、缩放 scale(x, y)可对元素进行水平和垂直方向的缩放，x、y的取值可为小数；</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">50px</span>;</div><div class="line">    <span class="attribute">background</span>: orange;</div><div class="line">    <span class="attribute">transition</span>:  all  <span class="number">1s</span>; </div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(0.5);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="3、旋转-rotate-deg-可以对元素进行旋转，正值为顺时针，负值为逆时针；"><a href="#3、旋转-rotate-deg-可以对元素进行旋转，正值为顺时针，负值为逆时针；" class="headerlink" title="3、旋转 rotate(deg) 可以对元素进行旋转，正值为顺时针，负值为逆时针；"></a>3、旋转 rotate(deg) 可以对元素进行旋转，正值为顺时针，负值为逆时针；</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box3</span>&#123;</div><div class="line">                <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">                <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">                <span class="attribute">background</span>: blue;</div><div class="line">                <span class="attribute">transition</span>:all <span class="number">0.5s</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="selector-class">.box3</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">                <span class="attribute">transform</span>: <span class="built_in">rotate</span>(360deg);</div><div class="line">            &#125;</div></pre></td></tr></table></figure>
+<h4 id="4、倾斜-skew-deg-deg"><a href="#4、倾斜-skew-deg-deg" class="headerlink" title="4、倾斜 skew(deg, deg)"></a>4、倾斜 skew(deg, deg)</h4><p> 一个参数时：表示水平方向的倾斜角度；<br> 两个参数时：第一个参数表示水平方向的倾斜角度，第二个参数表示垂直方向的倾斜角度</p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box4</span>&#123;</div><div class="line">    <span class="attribute">margin-top</span>: <span class="number">50px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">background</span>: <span class="number">#CCCCCC</span>;</div><div class="line">    <span class="attribute">transform</span>: all <span class="number">2s</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box4</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">    <span class="attribute">transform</span>:<span class="built_in">skew</span>(45deg,10deg);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="5基准点-transform-origin"><a href="#5基准点-transform-origin" class="headerlink" title="5基准点 transform-origin"></a>5基准点 transform-origin</h4><p>在使用transform方法进行文字或图像的变形时，是以元素的中心点为基准点进行的。使用transform-origin属性，可以改变变形的基准点。</p>
+<p>用法：transform-origin: 10px 10px;</p>
+<p>共两个参数，表示相对左上角原点的距离，单位px，第一个参数表示相对左上角原点水平方向的距离，第二个参数表示相对左上角原点垂直方向的距离；</p>
+<p>两个参数除了可以设置为具体的像素值，其中第一个参数可以指定为left、center、right，第二个参数可以指定为top、center、bottom。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box5</span>&#123;</div><div class="line">                <span class="attribute">margin-top</span>: <span class="number">50px</span>;</div><div class="line">                <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">                <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">                <span class="attribute">border-radius</span>: <span class="number">50px</span>;</div><div class="line">                <span class="attribute">background</span>: lightgreen;</div><div class="line">                <span class="attribute">transition</span>: all <span class="number">1s</span>;</div><div class="line">                <span class="attribute">transform-origin</span>: <span class="number">10px</span> <span class="number">10px</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="selector-class">.box5</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">                <span class="attribute">transform</span>: <span class="built_in">rotate</span>(360deg);</div><div class="line">            &#125;</div></pre></td></tr></table></figure>
+<h4 id="6、矩阵matrix-把所有的2D转换组合到一起，需要6个参数。"><a href="#6、矩阵matrix-把所有的2D转换组合到一起，需要6个参数。" class="headerlink" title="6、矩阵matrix() 把所有的2D转换组合到一起，需要6个参数。"></a>6、矩阵matrix() 把所有的2D转换组合到一起，需要6个参数。</h4><p>我们可以同时使用多个转换，其格式为：transform: translate() rotate() scale() …等，其顺序会影转换的效果。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box6</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">    <span class="attribute">background</span>: pink;</div><div class="line">    <span class="attribute">transition</span>: all <span class="number">1.5s</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box6</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">    <span class="attribute">transform</span>:<span class="built_in">scale</span>(0.5) <span class="built_in">skew</span>(45deg) <span class="built_in">translateX</span>(100px) <span class="built_in">rotate</span>(360deg);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/12/12/css3进阶/" data-id="ciz2e2odp0000z8ifg16mor5o" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css3基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/09/css3基础/" class="article-date">
+  <time datetime="2015-12-09T13:24:54.000Z" itemprop="datePublished">2015-12-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/09/css3基础/">css3上</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="css3基础"><a href="#css3基础" class="headerlink" title="css3基础"></a>css3基础</h2><h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p>CSS3新增了许多灵活查找元素的方法，极大的提高了查找元素的效率和精准度。CSS3选择器与jQuery中所提供的绝大部分选择器兼容。</p>
+<h4 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h4><p>1、E[attr] 表示存在attr属性即可；</p>
+<p>2、E[attr=val] 表示属性值完全等于val</p>
+<p>3、E[attr~=val] 表示的一个单独的属性值 这个属性值是以空格分隔的</p>
+<p>4、E[attr|=val] 表示的要么一个单独的属性值 要么这个属性值是以“-”分隔的</p>
+<p>5、E[attr*=val] 表示的属性值里包含val字符并且在“任意”位置</p>
+<p>6、E[attr^=val] 表示的属性值里包含val字符并且在“开始”位置</p>
+<p>7、E[attr$=val] 表示的属性值里包含val字符并且在“结束”位置</p>
+<h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h4><p>E:nth-child(n) 第n个子元素，计算方法是E元素的全部兄弟元素</p>
+<p>E:nth-of-type(n) 第n个子元素，计算方法只是E元素，会忽略其子元素的</p>
+<p>存在</p>
+<p>E:nth-last-child(n) 同E:nth-child(n) 计算顺序相反。</p>
+<p>E:nth-last-of-type(n) 同E:nth-of-type(n) 计算顺序相反。</p>
+<p>n遵循线性变化，其取值1、2、3、4、…</p>
+<p>关于n的取值范围：</p>
+<p>1、当n做为一个独立值时，n取值为n&gt;=1，例如nth-child(n)</p>
+<p>2、当n做一个系数时，n取值为n&gt;=0者n&lt;0，例如nth-child(2n+1)、nth-child(-n+5) 此处需要理解2n+1或者-n+5做为一个整体不能小于1；</p>
+<p>E:only-child 表示当前以E确定的父元素，除E之外并无其它子元素（独生子）；</p>
+<p>E:only-of-type表示当前以E确定的父元素， 除E之外不能包含其它和E同类型的子元素；</p>
+<p>E:target 结合锚点进行使用，处于当前锚点的元素会被选中；</p>
+<p>E:empty 选中没有任何子节点的E元素；</p>
+<h4 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h4><p>E::selection 可改变选中文本的样式</p>
+<p>E::placeholder 可改变placeholder默认样式，这个存在明显的兼容问题，比如::-webkit-input-placeholder，具体参考手册进行对比。</p>
+<p>E:after、E:before 在旧版本里是伪类，在新版本里是伪元素，新版本下E:after、E:before会被自动识别为E::after、E::before，按伪元素来对待。</p>
+<p>“:”与 “::” 区别在于区分伪类和伪元素</p>
+<h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><p>新增了RGBA、HSLA模式，其中的A 表示透明度通道，即可以设置颜色值的透明度，相较opacity，不具有继承性，即不会影响子元素的透明度。</p>
+<p>Red、Green、Blue、Alpha即RGBA</p>
+<p>Hue、Saturation、Lightness、Alpha即HSLA</p>
+<p>R、G、B 取值范围0~255</p>
+<p>H 取值范围0~360，0/360表示黑色、120表示绿色、240表示蓝色</p>
+<p>S 取值范围0%~100%</p>
+<p>L 取值范围0%~100%</p>
+<p>A 取值范围0~1</p>
+<p>关于透明度：</p>
+<p>1、opacity子元素会继承父元素的透明度，在实际开发中会带来干扰；</p>
+<p>2 、transparent 设置透明度时完全类似于“玻璃”一样的透明；</p>
+<h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><p>文字阴影与边框阴影相似，可分别设置偏移量、模糊度、颜色（可设透明度）。</p>
+<p>单行文本溢出，需要配合overflow:hidden; white-space: nowrap;</p>
+<p>难理解的点：</p>
+<p>自已要多试着理解一下关于white-space的各个属性值之间的差异；</p>
+<p>上述方法只能解决单行文本的溢出问题，多行文本溢出处理可参照下面的方法，但是有比较严重的兼容性，需要慎重选择，比较完备的多行溢出需要JS辅助完成，可自行尝试。</p>
+<p>多行文本文字溢出处理，非标准属性，可应用于移动端</p>
+<p>了解常握white-space 使用</p>
+<h3 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h3><h4 id="边框圆角"><a href="#边框圆角" class="headerlink" title="边框圆角"></a>边框圆角</h4><p>圆角处理时，脑中要形成圆、圆心、长半径、短半径的概念,正圆是椭圆的一种特殊情况.<br>可分别设置长、短半径，以“”进行分隔，遵循“1，2，3，4”规则，参考手册练习熟悉各种简写方式。</p>
+<p>表格运用圆角需要要 border-collapse: separate;</p>
+<p>当圆角半径小于或等于边框宽度时，元素内角是直角</p>
+<p>如何在PS中查看圆角半径(需要PS知识)</p>
+<h4 id="边框图片"><a href="#边框图片" class="headerlink" title="边框图片"></a>边框图片</h4><p>设置的图片将会被“切割”成九宫格形式，然后进行设置。</p>
+<p>“切割”完成后生成虚拟的9块图形，然后按对应位置设置背景，</p>
+<p>其中四个角位置、形状保持不变，中心位置水平垂直两个方向平铺。如下图</p>
+<p>round 会自动调整尺寸，完整显示边框图片。</p>
+<p>此图贴图</p>
+<p>repeat 单纯平铺多余部分，会被“裁切”而不显示。</p>
+<h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>背景在CSS3中也得到很大程度的增强，比如背景图片尺寸、背景裁切区域、背景定位参照点、多重背景等。</p>
+<p>cover 会使“最大”边，进行缩放，另一边同比缩放，铺满容器，超出部分会溢出。</p>
+<p>contain 会使“最小”边，进行缩放，另一边同比缩放，不一定铺满容器，会完整显示图片。</p>
+<p>background-size会以background-clip设定的盒模型计算</p>
+<p>背景图片尺寸在实际开发中应用十分广泛。</p>
+<h4 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h4><p>渐变是CSS3当中比较丰富多彩的一个特性，通过渐变我们可以实现许多炫丽的效果，有效的减少图片的使用数量，并且具有很强的适应性和可扩展性。</p>
+<p>可分为线性渐变、径向渐变、重复渐变。</p>
+<h4 id="线性渐变指沿着某条直线朝一个方向产生渐变效果。"><a href="#线性渐变指沿着某条直线朝一个方向产生渐变效果。" class="headerlink" title="线性渐变指沿着某条直线朝一个方向产生渐变效果。"></a>线性渐变指沿着某条直线朝一个方向产生渐变效果。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.line&#123;</div><div class="line">    height: 50px;</div><div class="line">    width: 300px;</div><div class="line">    background-image: linear-gradient(to right,red , green);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其中 第一个参数为渐变类型，括号里面为(渐变反向，起始颜色，结束颜色)<br><img src="./line.png" alt="线性渐变"></p>
+<p>还可以自定义线性渐变区间与颜色<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">background-image: linear-gradient(</div><div class="line">            90deg,/*渐变反向*/</div><div class="line">            yellow 25%,/*渐变区间*/</div><div class="line">            green 25%,</div><div class="line">            green 50%,</div><div class="line">            blue 50%,</div><div class="line">            blue 75%,</div><div class="line">            pink 75%,</div><div class="line">            pink 100%</div><div class="line">        );</div></pre></td></tr></table></figure></p>
+<p><img src="./line2.png" alt="线性渐变2"></p>
+<h4 id="径向渐变指从一个中心点开始沿着四周产生渐变效果"><a href="#径向渐变指从一个中心点开始沿着四周产生渐变效果" class="headerlink" title="径向渐变指从一个中心点开始沿着四周产生渐变效果"></a>径向渐变指从一个中心点开始沿着四周产生渐变效果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.radial &#123;</div><div class="line">    width: 300px;</div><div class="line">    height: 300px;</div><div class="line">    margin: 100px auto;</div><div class="line">    /*background-image: radial-gradient(150px at center, yellow, green);*/</div><div class="line">    /*中心点的位置是以盒子自身为参照*/</div><div class="line">    /*background-image: radial-gradient(300px at left center, yellow, green);*/</div><div class="line">    /*盒子左上角为圆心点，还可通过坐标来设置中心位置*/</div><div class="line">    background-image: radial-gradient(150px at 80px 80px, yellow, green);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="./radial.png" alt="径向渐变"></p>
+<p>关于圆的知识同边框圆角章节的介绍</p>
+<h4 id="伸缩布局-在移动端布局中有详细介绍"><a href="#伸缩布局-在移动端布局中有详细介绍" class="headerlink" title="伸缩布局(在移动端布局中有详细介绍)"></a>伸缩布局(在移动端布局中有详细介绍)</h4><p>主轴：Flex容器的主轴主要用来配置Flex项目。</p>
+<p>侧轴：与主轴垂直的轴称作侧轴，是侧轴方向的延伸。</p>
+<p>主轴和侧轴并不是固定不变的，通过flex-direction可以调整。</p>
+<h4 id="多列"><a href="#多列" class="headerlink" title="多列"></a>多列</h4><p>column-count 属性指定了需要分割的列数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">div &#123;</div><div class="line">    -webkit-column-count: 3; /* Chrome, Safari, Opera */</div><div class="line">    -moz-column-count: 3; /* Firefox */</div><div class="line">    column-count: 3;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>定义了一个3列布局容器<br>column-fill 指定如何填充列<br>column-gap  指定列与列之间的间隙<br>column-rule 所有 column-rule-* 属性的简写<br>column-rule-color   指定两列间边框的颜色<br>column-rule-style   指定两列间边框的样式<br>column-rule-width   指定两列间边框的厚度<br>column-span 指定元素要跨越多少列<br>column-width    指定列的宽度<br>columns 设置 column-width 和 column-count 的简写</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/12/09/css3基础/" data-id="ciz2e2odu0001z8iftvhveld1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-H5下" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/15/H5下/" class="article-date">
+  <time datetime="2015-11-15T12:42:51.000Z" itemprop="datePublished">2015-11-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/15/H5下/">h5下</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="基础API提升"><a href="#基础API提升" class="headerlink" title="基础API提升"></a>基础API提升</h4><ul>
+<li><p>document.getElement……appendChild……都属于基础API</p>
+</li>
+<li><p>新选择器</p>
+<ul>
+<li>document.querySelector(selector)——返回第一个满足选择器条件的元素，返回一个dom对象<ul>
+<li>快捷键 qs=querySelector</li>
+<li>ae=addEventListenter</li>
+</ul>
+</li>
+<li>docuemnt.querySelectorAll(“.item”)——返回所有满足该条件的元素，返回元素类型为dom对象的数组</li>
+<li>$（”.item”）——返回一个jQuery对象（dom元素的数组）</li>
+<li>本质上jQuery的方式和querySelector的方式都是获取DOM数组，只不过jQuery会多一些其它成员</li>
+<li>DOM数组的每一个成员注册事件不能像jQuery一样直接注册，必须分别给每个元素添加</li>
+<li>h5就是将我们经常需要的操作又包装一层，原生API</li>
+</ul>
+</li>
+<li><p>Element.classList</p>
+<ul>
+<li><p>新H5中DOM对象多了一个classList属性，是一个数组</p>
+</li>
+<li><p>a标签有个默认跳转</p>
+</li>
+<li><p>this.classList.add()——添加一个新的类名</p>
+</li>
+<li><p>this.classList.remove()——删除一个类名</p>
+</li>
+<li><p>this.classList.contains()——判断是否包含一个指定的类名</p>
+</li>
+<li><p>this.classList.toggle()——切换一个class</p>
+<ul>
+<li>toggle函数的第二个参数true为添加，false删除</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//判断当前classList中有没有active</div><div class="line">var link=document.querySelector(&quot;.bar&quot;);</div><div class="line">link.addEventListener(&quot;click&quot;,function(e)&#123;</div><div class="line">  //toggle函数的第二个参数是true为添加，false为删除</div><div class="line">  var exist =this.classList.contains(&quot;active&quot;);</div><div class="line">  this.classList.toggle(&quot;active&quot;,!exist);</div><div class="line">  e.preventDefault();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>访问历史API</p>
+<ul>
+<li><p>界面上的所有JS操作不会被浏览器记住，就无法回到之前的状态</p>
+</li>
+<li><p>go函数可以传入一个地址，不传默认刷新</p>
+</li>
+<li><p>window.history.forward()</p>
+</li>
+<li><p>auto file name(插件plugin名字)</p>
+</li>
+<li><p>不建议用*号把默认样式去掉，效率低</p>
+</li>
+<li><p>默认样式有必要，只不过为了统一设置</p>
+</li>
+<li><p>当我们在伪造的访问历史中前进或后退时会执行一个popstate事件。</p>
+</li>
+<li><p>通过JS可以加入一个访问状态</p>
+</li>
+<li><p>history.pushState(放入历史中的状态数据，设置title（现在浏览器不支持）)</p>
+</li>
+<li><p>window.location可以拿到当前网页中跟地址相关的信息（location是个对象）  hash是锚点值</p>
+</li>
+<li><p>decodeURI作用就是从URL编码转换到之前的状态</p>
+</li>
+<li><p>encode反作用</p>
+</li>
+<li><p>new Date()  获取的是一个时间对象</p>
+</li>
+<li><p>toLocalTimeString 转换成我们能认识的时间字符串</p>
+</li>
+<li><p>toDateTimeString 转换成我们能认识的日期字符串</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var title=window.location.search.split(&quot;=&quot;)[1];</div><div class="line">if(title)&#123;</div><div class="line">  //有值</div><div class="line"> //如果地址栏中的地址有中文，会以URL编码方式呈现 </div><div class="line">  content.innerHTML=data[decodeURI(data)];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>class</p>
+<ul>
+<li>之前</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var h1=document.getElementsByTagName(&quot;h1&quot;)[0];</div><div class="line">var list =h1.className.split(&quot; &quot;);</div><div class="line">list.push(&quot;class4&quot;);</div><div class="line">h1.className=list.join(&quot; &quot;);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>通过dom对象的classList，className是字符串的形式，classList是数组的形式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var h1=document.getElementsByTagName(&quot;h1&quot;)[0];</div><div class="line">var list=h1.classList</div></pre></td></tr></table></figure>
+<ul>
+<li>通过classList封装了一些针对增加、删除、切换的方法——add(“newclass”)； remove(“oldclass”)； toggle(“cl”)  存在则删除，不存在添加；contains()是否包含</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>控制台clear（）</p>
+<h4 id="全屏API"><a href="#全屏API" class="headerlink" title="全屏API"></a>全屏API</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var elem = 需要全屏的元素；</div><div class="line">if(&#123;elem.webkitRequestFullScreen)&#123;</div><div class="line">  elem.webkitRequestFullScreen();</div><div class="line">&#125;else if(elem.mozRequestFullScreen)&#123;</div><div class="line">  elem.webkitRequestFullScreen();</div><div class="line">&#125;else if(elem.requestFullScreen)&#123;</div><div class="line">  elem.requestFullScreen();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>需要操作用户的界面的时候，都需要得到用户的允许</p>
+</li>
+<li><p>if()return  不写{}，只能在单句代码的时候才可以这样操作</p>
+</li>
+<li><p>在全屏后，背景颜色会不起作用，得单独设置</p>
+</li>
+<li><p>给元素全屏或者document.body全屏</p>
+</li>
+</ul>
+<h4 id="网页存储"><a href="#网页存储" class="headerlink" title="网页存储"></a>网页存储</h4><ul>
+<li><p>application cache——可以让网页离线访问</p>
+</li>
+<li><p>google开发工具有个功能可以断开网络——network》》no throttling 》可以模拟网络</p>
+</li>
+<li><p>tab键不起作用时，可以用Ctrl+E</p>
+</li>
+<li><p>：：before是元素一开始的时候，在元素内部</p>
+</li>
+<li><p><code>&lt;html lang=&quot;en&quot; manifest=&quot;cache.mainfest&quot;&gt;</code>——manifest属性对应指向一个文件，这个文件称之为H5的缓存清单。这个路径是相对路径</p>
+<ul>
+<li><p>应用程序缓存 正常开发</p>
+</li>
+<li><p>给html添加一个manifest属性指向一个文件</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>CACHA MANIFEST
+# version 1.0.0
+
+CACHA://代表缓存下可以访问的文件，哪些文件可以缓存下来
+    index.html//这里需要缩进
+    script.js
+    style.css
+
+NETWORK://哪些文件在有网络的情况下可以访问
+</code></pre><ul>
+<li>markdown编辑器，可以离线访问，得之前访问过，有过缓存才可以</li>
+</ul>
+<h4 id="Web-Storage"><a href="#Web-Storage" class="headerlink" title="Web Storage"></a>Web Storage</h4><ul>
+<li><p>localStorage(生命周期是永久的) &amp; sessionStorage（浏览器结束的时候就没有了，用法是一样的）</p>
+</li>
+<li><p>getItem方式获取一个不存在的键，返回空字符串，而[]返回undefined</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var btnSet = document.querySelector(&quot;#btn_set&quot;);</div><div class="line">var btnGet = document.querySelector(&quot;#btn_get&quot;);</div><div class="line">var txtValue = document.querySelector(&quot;#txt_value&quot;);</div><div class="line">btnGet.addEventListener(&quot;click&quot;,function()&#123;</div><div class="line">  //txtValue.value=localStorage.getItem(&quot;key1&quot;);</div><div class="line">  if(window.localStorage)</div><div class="line">  txtValue.value=localStorage(&quot;key1&quot;);</div><div class="line">&#125;);</div><div class="line">btnSet.addEventListener(&quot;click&quot;,function()&#123;</div><div class="line">  //localStorage.setItem(&quot;key1&quot;,txtValue.value);</div><div class="line">  localStorage[&quot;key1&quot;]=txtValue.value;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>命名规范id以下划线，class以中划线</li>
+</ul>
+<h4 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h4><ul>
+<li>提供客户端本地操作文件的可能</li>
+<li>file API</li>
+<li>文件域 <input type="file" id="" multiple></li>
+<li>对于表单里的input来说：可以直接通过表单的name属性找到它</li>
+<li>document.form[0].input_file</li>
+<li>multiple是让文件域可以多选</li>
+<li>可以通过在控制台输入document.form[0].input_file.files 可以查看已经上传的文件，以数组的形式呈现</li>
+<li>lastModified——表示最近修改时间</li>
+<li>lastModifiedDate——date对象</li>
+<li>?:happy: v3.bootcss.com</li>
+<li>js里面常用单引号</li>
+</ul>
+<h4 id="拖拽"><a href="#拖拽" class="headerlink" title="拖拽"></a>拖拽</h4><ul>
+<li>支持网页内的拖放</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/11/15/H5下/" data-id="ciyyjtsge0000skif61vs3nq1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-H5上" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/12/H5上/" class="article-date">
+  <time datetime="2015-11-12T13:18:11.000Z" itemprop="datePublished">2015-11-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/12/H5上/">h5上</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="H5进阶（上）"><a href="#H5进阶（上）" class="headerlink" title="H5进阶（上）"></a>H5进阶（上）</h1><h4 id="HTML5的应用场景"><a href="#HTML5的应用场景" class="headerlink" title="HTML5的应用场景"></a>HTML5的应用场景</h4><ul>
+<li>极具表现力的网页</li>
+<li>网页应用程序<ul>
+<li>PC端：iCloud、百度脑图、Office365（在线office）……</li>
+<li>APP端：淘宝、京东、美团……</li>
+<li>WeChat端：淘宝、京东、美团……</li>
+</ul>
+</li>
+<li>混合式本地应用<ul>
+<li>PC端：网易云音乐、有道词典……</li>
+<li>APP端：淘宝、京东、美团……</li>
+</ul>
+</li>
+<li>简单的游戏</li>
+</ul>
+<h4 id="HTML5多了啥"><a href="#HTML5多了啥" class="headerlink" title="HTML5多了啥"></a>HTML5多了啥</h4><ul>
+<li>三类<ul>
+<li>HTML</li>
+<li>JS</li>
+<li>CSS</li>
+</ul>
+</li>
+<li>标签<ul>
+<li>更语义化标签</li>
+<li>应用程序标签</li>
+</ul>
+</li>
+<li>属性<ul>
+<li>链接关系描述</li>
+<li>结构数据标记</li>
+<li>ARIA</li>
+<li>自定义属性</li>
+</ul>
+</li>
+<li>智能表单<ul>
+<li>新的表单类型</li>
+<li>虚拟键盘适配</li>
+</ul>
+</li>
+<li>网页多媒体<ul>
+<li>音频</li>
+<li>视频</li>
+<li>字幕</li>
+</ul>
+</li>
+<li>canvas，可以屏蔽一些兼容性问题<ul>
+<li>2D</li>
+<li>3D(WebGL)</li>
+</ul>
+</li>
+<li>SVG（矢量）</li>
+</ul>
+<h4 id="Javascript-API"><a href="#Javascript-API" class="headerlink" title="Javascript  API"></a>Javascript  API</h4><ul>
+<li>核心平台提升<ul>
+<li>新的选择器</li>
+<li>Element.classList</li>
+<li>访问历史API</li>
+<li>全屏API</li>
+</ul>
+</li>
+<li>网页存储<ul>
+<li>Application</li>
+<li>localStorage</li>
+<li>sessionStorage</li>
+<li>WebSQL</li>
+<li>IndexedDB</li>
+</ul>
+</li>
+<li>设备信息访问<ul>
+<li>网络状态</li>
+<li>硬件访问</li>
+<li>设备方向</li>
+<li>地理围栏</li>
+</ul>
+</li>
+<li>拖放操作<ul>
+<li>网页内拖放</li>
+<li>桌面拖入</li>
+<li>桌面拖出</li>
+</ul>
+</li>
+<li>文件<ul>
+<li>文件系统API</li>
+<li>FileReader（文件预览）</li>
+</ul>
+</li>
+<li>网络访问<ul>
+<li>XMLHttpRequest</li>
+<li>fetch</li>
+<li>WebSocket</li>
+</ul>
+</li>
+<li>多线程</li>
+<li>桌面通知（网页版QQ）</li>
+</ul>
+<h4 id="语义化标签"><a href="#语义化标签" class="headerlink" title="语义化标签"></a>语义化标签</h4><ul>
+<li>在页面少加一些文本，避免影响文本的权重</li>
+<li>footer用Js加“|”</li>
+<li>作用：<ul>
+<li>能够便于开发者阅读和写出更优雅的代码，代码如诗</li>
+<li>让浏览器或是网络爬虫可以更好的解析，从而更更好的分析其中的内容，更好的搜索引擎优化</li>
+</ul>
+</li>
+<li>HTML的职责是描述一块内容是什么（或者意义）</li>
+</ul>
+<h3 id="新标签的兼容问题"><a href="#新标签的兼容问题" class="headerlink" title="新标签的兼容问题"></a>新标签的兼容问题</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">header</span>&#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">background-color</span>: hotpink;</div><div class="line">    <span class="comment">/* 低版本的ie 中如果 想要看到 必须添加display block */</span></div><div class="line">    <span class="attribute">display</span>: block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lt IE 9]&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    alert(&quot;我执行了&quot;);</div><div class="line">    window.onload = function()&#123;</div><div class="line">        var createHeader = document.createElement(&quot;header&quot;);</div><div class="line">        document.body.appendChild(createHeader);</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<h4 id="应用程序标签——具有交互作用的标签"><a href="#应用程序标签——具有交互作用的标签" class="headerlink" title="应用程序标签——具有交互作用的标签"></a>应用程序标签——具有交互作用的标签</h4><ul>
+<li><p>DataList（数据列表）</p>
+<ul>
+<li><p>文件不建议以文件路径打开，sublime server的插件，让文件以HTTP服务的形式打开，默认使用800端口》》以localhost开头打开（不要点stop，直接退出）</p>
+</li>
+<li><p>数据列表想要呈现出来需要一个载体（input），可以有自动匹配，不能修改样式，不可以自定义的不建议使用，jQuery的体验更好</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;text&quot; list=&quot;input-list&quot;&gt;</div><div class="line">&lt;datalist id=&quot;input-list&quot;&gt;</div><div class="line">  &lt;option value=&quot;laoma&quot;&gt;&lt;/option&gt;</div><div class="line">      &lt;option value=&quot;lisi&quot;&gt;&lt;/option&gt;</div><div class="line">&lt;/datalist&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Progress（进度条）</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">状态指示器，不显示明确进度</div><div class="line">&lt;progress&gt;&lt;/progress&gt;</div><div class="line">默认最大值是1，可以通过max设置</div><div class="line">&lt;progress value=&quot;0.5&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>setting-element-show user agent shadow DOM 勾选</p>
+</li>
+<li><p>控件有自己的默认样式，input/下拉框 等内置控件内部由一个虚拟的DOM铺垫</p>
+</li>
+<li><p>-webkit-appearance：none；就可以设置宽高等</p>
+</li>
+<li><p>伪对象 例如a:：after</p>
+</li>
+<li><p>.progress::-webkit-progress-bar</p>
+</li>
+</ul>
+</li>
+<li><p>Meter（数据显示器）</p>
+<ul>
+<li><code>&lt;meta min=&quot;0&quot; max=&quot;100&quot; low=&quot;40&quot; high=&quot;90&quot; optimum=&quot;100&quot; value=&quot;91&quot;&gt;&lt;/meter&gt;</code>兼容性不好</li>
+</ul>
+</li>
+<li><p>Menu、Details（不兼容，不做深入了解）</p>
+</li>
+<li><p>zh-CN 简体中文  zh-TW 繁体中文</p>
+</li>
+</ul>
+<h4 id="新属性"><a href="#新属性" class="headerlink" title="新属性"></a>新属性</h4><ul>
+<li><p>不兼容的浏览器对于不认识的标签当成是div解析，极个别会报错</p>
+</li>
+<li><p>解析标题之前，在header写入或者script写在body最下面，不要影响页面渲染</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  //告诉浏览器这是一个标签 html5shiv.js的组件，把所有的html5新标签</div><div class="line">  //lt: less than</div><div class="line">  document.createElement("header");</div><div class="line">  document.createElement("nav");</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>结构数据标记</p>
+<ul>
+<li>很高级，只有google支持</li>
+</ul>
+</li>
+<li><p>ARIA属性</p>
+<ul>
+<li><p>Accessible Rich Internet Application（无障碍富互联网应用程序）</p>
+</li>
+<li><p>主要针对于屏幕阅读设备（eg.NVDA)，更好更快地理解网页</p>
+</li>
+<li><p>label给input做标注</p>
+</li>
+<li><p>WAI-ARIA无障碍网页应用属性完全展示</p>
+</li>
+<li><p>通过设置role属性设置 role=”navigation” role=”option”</p>
+</li>
+<li><p>通过设置aria属性设置关系</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"list"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-age</span>=<span class="string">"18"</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"info"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    var data=&#123;01:&#123;name:"张三1",age:18&#125;,02:&#123;name:"张三2",age:19&#125;,03:&#123;name:"张三3",age:18&#125;&#125;;</div><div class="line">  var list=document.getElementById("list");</div><div class="line">  for(var id in data) &#123;</div><div class="line">    var item=data[id];</div><div class="line">    var liElement=document.createElement('li');</div><div class="line">    liElement.innerHTML=item.name;//第一种方式</div><div class="line">    liElement.appendChild(document.createTextNode(item.name));//第二种方式</div><div class="line">    liElement.setAttribute("data-age",item.age);</div><div class="line">    liElement.setAttribute("data-id",item.id)</div><div class="line">    list.appendChild(liElement);//变量本地化，在jQuery操作中一定要做变量本地化，效果更明显</div><div class="line">    //此处才将元素加到界面上</div><div class="line">    //给li注册事件，赋值操作只能操作一个监听事件，变量被重复赋值，后赋值的那个才生效，this是当前点击的元素 </div><div class="line">    liElement.addEventListener("click",function()&#123;console.log(this.dataset[age])&#125;);</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>自定义属性 data-</p>
+<ul>
+<li>对页面没有侵入，不影响功能</li>
+<li>通过DOM存储与DOM对象强相关的数据</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>innerText方法不兼容，不建议使用</p>
+</li>
+<li><p>建议不给没有交互功能的标签添加事件</p>
+</li>
+</ul>
+<h4 id="H5全屏属性"><a href="#H5全屏属性" class="headerlink" title="H5全屏属性"></a>H5全屏属性</h4><p>document.webkitIsFullScreen,检测是否全屏返回一个布尔值</p>
+<p>任意盒子全屏<br>box.webkitRequestFullScreen();</p>
+<p>只能通过document才能调用关闭方法<br>document.webkitCancelFullScreen();</p>
+<h4 id="链接关系"><a href="#链接关系" class="headerlink" title="链接关系"></a>链接关系</h4><ul>
+<li><p>通过链接关系属性声明连入的链接和当前文档之间的关系，便于机器理解文档</p>
+</li>
+<li><p><code>&lt;a href=&quot;01-application-tags.html&quot; rel=&quot;prev&quot;&gt;上一页&lt;/a&gt;</code></p>
+</li>
+<li><p><code>&lt;a href=&quot;02-XXX.html&quot;&gt;下一页&lt;/a&gt;</code></p>
+</li>
+<li><p>链接关系表 </p>
+<ul>
+<li>alternate 文档的可选版本（例如打印页、翻译页或镜像）</li>
+<li>friend 友情链接</li>
+<li>nofollow  用于指定google搜索引擎不要跟踪链接</li>
+</ul>
+</li>
+</ul>
+<h4 id="智能表单"><a href="#智能表单" class="headerlink" title="智能表单"></a>智能表单</h4><ul>
+<li>新的表单类型，不建议在网页中使用</li>
+<li>可以针对需求使用特定的只能表单类型<ul>
+<li><code>&lt;form action=&quot;#&quot; method=&quot;&quot;&gt;&lt;/form&gt;</code></li>
+<li>之间学过的表单标签：file text password radio checkbox image button submit button reset select</li>
+<li>button元素和type=“button”</li>
+<li><code>&lt;input type=&quot;datetime&quot;&gt;</code>兼容性不佳，可以用<code>&lt;input type=&quot;date&quot;&gt;</code>不能在PC上用，样式无法自定义</li>
+<li><code>&lt;input type=&quot;color&quot;&gt;</code>在移动端不支持</li>
+<li><code>&lt;input type=&quot;range&quot; min=&quot;1&quot; max=&quot;10&quot; step=&quot;5&quot; value=&quot;5&quot;&gt;</code> 定义带有 slider 控件的数字字段。value：默认 step：单步选择</li>
+<li><code>&lt;input type=&quot;email&quot; value=&quot;some@qq.com&quot; pattern=&quot;正则表达式&quot;&gt;</code>本身具备校验</li>
+<li><code>&lt;input type=&quot;text&quot; required&gt;</code>必填选项，常用于移动端，无法设置样式</li>
+<li><code>&lt;input type=&quot;tel&quot; placeholder=&quot;(555)555-5555&quot; pattern=&quot;&quot;&gt;</code>本身不具备校验</li>
+<li>input：range  +  tab 快捷键</li>
+</ul>
+</li>
+</ul>
+<h4 id="虚拟键盘适配"><a href="#虚拟键盘适配" class="headerlink" title="虚拟键盘适配"></a>虚拟键盘适配</h4><ul>
+<li>IOS模拟器  simulator 默认不弹出键盘  在IOS上  Ctrl+K</li>
+</ul>
+<h4 id="网络多媒体"><a href="#网络多媒体" class="headerlink" title="网络多媒体"></a>网络多媒体</h4><ul>
+<li><p><code>&lt;audio src=&quot;路径&quot; controls=&quot;controls&quot;&gt;&lt;/audio&gt;</code> 默认不显示播放控件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"audio"</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>播放<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn-pause"</span>&gt;</span>暂停<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  var btn=document.getElementById("btn");</div><div class="line">  var btn-pause=document.getElementById("btn-pause");</div><div class="line">      var audio=document.getElementById("audio");</div><div class="line">      建议用这种方式，可以重复加监听事件</div><div class="line">      btn.addEventListener("click",function()&#123;</div><div class="line">      audio.play();</div><div class="line">      &#125;);</div><div class="line">      btn-pause.addEventListener("click",function()&#123;</div><div class="line">      audio.pause();</div><div class="line">      &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>cd+d  ctrl+K</p>
+</li>
+<li><p>jquery注册时间都用onclick</p>
+</li>
+<li><p>zepto用于移动端，要求轻，压缩后文件很小</p>
+</li>
+<li><p>陌生的API在console.log 输入audio</p>
+</li>
+<li><p>dash  可以下载文档，检索速度非常快</p>
+</li>
+<li><p>视频</p>
+<ul>
+<li><code>&lt;video src=&quot;&quot; controls=&quot;controls&quot;&gt;&lt;/video&gt;</code></li>
+<li>每一种视频格式是有版权的，不同浏览器支持的文件的格式不一样</li>
+<li>通过source的标签定义视频源</li>
+<li><code>&lt;video controls=&quot;controls&quot; poster=&quot;top.png&quot; autoplay=&quot;autoplay&quot;&gt;&lt;source src=&quot;&quot; type=&quot;video.ogg&quot;&gt;&lt;source src=&quot;&quot; type=&quot;video.mp4&quot;&gt;支持video元素文字可以显示，如果不支持会显示文字&lt;/video&gt;</code></li>
+<li>如果不支持用flash</li>
+<li>poster: 视频的海报图，常用视频的第一帧</li>
+<li>autoplay：autoplay 自动播放</li>
+<li>muted: muted 是否静音</li>
+<li>loop: loop 是否循环</li>
+<li>preload 是否预加载</li>
+</ul>
+</li>
+<li><p>兼容模式：<a href="https://html5media.info/" target="_blank" rel="external">https://html5media.info/</a>   组件</p>
+</li>
+<li><p>字幕兼容性不好</p>
+</li>
+<li><p><code>&lt;track lable=&quot;&quot; kind=&quot;&quot; src=&quot;&quot;&gt;</code></p>
+</li>
+</ul>
+<h4 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h4><ul>
+<li><p>Scalable Vector Graphics：可缩放矢量图形</p>
+</li>
+<li><p>位图就是由一堆像素点组成，由有颜色的像素</p>
+</li>
+<li><p>矢量图记录的是线，路径，填充色，任意缩放，图片不会失真，基于可扩展标记语言</p>
+</li>
+<li><p>文档标题<code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;……&gt;</code>  为xml文档</p>
+</li>
+<li><p>优点：体积小（数据量少），质量高（放大无锯齿），效果好，可控程度高</p>
+</li>
+<li><p><defs>定义  线性渐变  stop  circle 定义了一个圆  定义了url(#id名)</defs></p>
+</li>
+<li><p>可以用CSS填充颜色</p>
+</li>
+<li><p>图标字体</p>
+</li>
+<li><p>以文件的方式使用 <code>&lt;iframe src=&quot;demo.svg&quot; frameholder=&quot;0&quot;&gt;&lt;/iframe&gt;</code>  推荐使用，不能通过CSS控制样式</p>
+</li>
+<li><p><code>&lt;object data=&quot;demo.svg&quot; type=&quot;&quot;&gt;&lt;/object&gt;</code> 在标准中有定义</p>
+</li>
+<li><p><code>&lt;embed src=&quot;demo.svg&quot; type=&quot;&quot;&gt;</code> 在标准中未定义，但浏览器都支持</p>
+</li>
+<li><p><code>&lt;svg data-src=&quot;demo.src&quot;&gt;&lt;/svg&gt;</code> 浏览器不支持，学了异步之后</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    window.addEventListener(&quot;load&quot;,function()&#123;</div><div class="line">      var svgs=document.getElementsByTagName(&quot;svg&quot;);</div><div class="line">      for(var i=0;i&lt;svgs.length;i++)&#123;</div><div class="line">        var srd=svgs[i].dataset[&quot;src&quot;];</div><div class="line">       //向服务器发送请求得到svg文件</div><div class="line">        $.get(src.function(data))&#123;</div><div class="line">          var el=data.documentElement;</div><div class="line">          $(document.body).append($(el))</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>引入SVG文件后用CSS控制颜色</p>
+</li>
+<li><p>用于高清的logo图，图标</p>
+</li>
+<li><p>可以在网页中使用别人做好的SVG；可以对SVG文件做出基本调整；会用样式修饰SVG</p>
+</li>
+<li><p>iframe .svg本身是个文档，可以通过iframe载入进来，无法改别人的样式</p>
+</li>
+</ul>
+<h4 id="svg文件的基本使用"><a href="#svg文件的基本使用" class="headerlink" title="svg文件的基本使用"></a>svg文件的基本使用</h4><ul>
+<li>https的默认端口是443</li>
+<li>http的默认端口是800</li>
+<li>ajax直接可以修改样式</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/11/12/H5上/" data-id="ciyyj5wwf0000wsif8qysabsb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Ajax（3）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/20/Ajax（3）/" class="article-date">
+  <time datetime="2015-09-20T05:33:11.000Z" itemprop="datePublished">2015-09-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/20/Ajax（3）/">Ajax（3）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h3><ul>
+<li>XML是一种标记语言，很类似HTML，其宗旨是用来传输数据，具有自我描述性（固定的格式的数据）。</li>
+<li>HTML是来展现网页的</li>
+<li>XML是把数据给用户来用（存储数据的）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;?xml versio = &quot;1.0&quot; encoding = &quot;UTF-8&quot;?&gt;</div><div class="line">&lt;html&gt;</div><div class="line">        &lt;body&gt;</div><div class="line">                &lt;div&gt;学习xml&lt;/div&gt;</div><div class="line">                &lt;name&gt;itcast&lt;/name&gt;</div><div class="line">                &lt;age&gt;18&lt;/age&gt;</div><div class="line">        &lt;/body&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h3 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h3><ul>
+<li>1、必须有一个根元素。</li>
+<li>2、可以自定义标签名。</li>
+<li>3、不可有空格、不可以数字或 .开头、大小写敏感</li>
+<li>4、不可交叉嵌套</li>
+<li>5、属性双引号</li>
+<li>6、特殊符号要使用实体</li>
+<li>7、注释和HTML一样</li>
+</ul>
+<p>虽然可以描述和传输复杂数据，但是其解析过于复杂并且体积较大，所以现在开发已经很少使用了。</p>
+<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><blockquote>
+<p>即javaScript Object Notation 另一种轻量级的文本数据交换格式，独立与语言。</p>
+</blockquote>
+<ul>
+<li><p>语法规则</p>
+<ul>
+<li>1、数据在名称/值对中</li>
+<li>2、数据由逗号分隔（最后一个健/值对不能带逗号）</li>
+<li>3、花括号保存对象方括号保存数组</li>
+<li>4、使用双引号</li>
+</ul>
+</li>
+</ul>
+<h3 id="JSON解析"><a href="#JSON解析" class="headerlink" title="JSON解析"></a>JSON解析</h3><ul>
+<li><p>JSON数据在不同语言进行传输时，类型为字符串，不同的语言各自也都对应有解析方法，需要解析完成后才能读取。</p>
+</li>
+<li><p>1、Javascript解析方法</p>
+<blockquote>
+<p>eavl()、JSON对象、JSON.parse()、JSON.stringify();</p>
+</blockquote>
+</li>
+<li>2、PHP解析方法<blockquote>
+<p>json_encode()、json_decode()</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var json = JOSN.stringify(obj)  //对象转json</div><div class="line">var object = JOSN.parse(josn) //json转对象</div></pre></td></tr></table></figure>
+<ul>
+<li>eaval 可以将字符串解析成JS可以识别的语法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var str = &apos;sleret(1)&apos;;</div><div class="line">eval(&apos;(&apos;+str+&apos;)&apos;);</div><div class="line">结果 为 1</div><div class="line">``` </div><div class="line"></div><div class="line">* JSON一转换变成Obj</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>var json = ‘{“mane”:”itcast”,”age”:10 }’;<br>var obj = eval(‘(‘+ ‘{“mane”:”itcast”,”age”:10 }’+’)’);<br>console.log(obj);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;cc:ie6+快捷键  把js兼容放在里面</div><div class="line"></div><div class="line">* 在PHP中解析JOSN</div></pre></td></tr></table></figure></p>
+<p>//数据是存在数据库里，从数据里取后往往是一个数组或对象<br>需要转换成JOSN<br>$arr = array(<br> ‘name’=&gt;’itcast’,<br>‘age’=&gt;10<br>) ;</p>
+<p>echo json_encode($arr);//转换成josn</p>
+<p>$obj = json_decode($json);//转换成对象</p>
+<p>echo $obj-&gt;name;//访问对象属性</p>
+<p>$result=file_get_content(‘stars.json’);//获取文件<br>echo $result;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### Ajax工具函数封装</div></pre></td></tr></table></figure></p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html lang="en"></html></p>
+<p><head><br>    <meta charset="UTF-8"><br>    <title>Ajax工具函数</title><br></head></p>
+<p><body><br>    <script><br>        // 定义一个命名空间<br>        var $ = {<br>            params: function (args) { // 专门处理我们的数据<br>                var o = ‘’;<br>                for(var k in args) {<br>                    o += k + ‘=’ + args[k] + ‘&amp;’;<br>                }</p>
+<pre><code>            o = o.slice(0, -1);
+
+            return o;
+            // console.log(o);
+        },
+        ajax: function (options) {
+            // 初始化参数
+            var type = options.type || &apos;get&apos;;
+            var url = options.url || location.pathname;
+
+            // get 方式 url?key=val&amp;key1=val1
+            // post 方式 xhr.send(key=val&amp;key1=val1)
+            var data = this.params(options.data || {});
+
+            // var success = options.success || function () {console.log(&apos;回调函数不能为空&apos;)}
+
+            var success = options.success;
+
+            var xhr = new XMLHttpRequest;
+
+            if(type == &apos;get&apos;) { // 当请求方式为get，参数放到url上
+                url = url + &apos;?&apos; + data;
+                data = null;
+            }
+
+            // 设置请求方式
+            xhr.open(type, url);
+
+            if(type == &apos;post&apos;) { // 当请求方式为post，需要设置Content-Type
+                xhr.setRequestHeader(&apos;Content-Type&apos;, &apos;application/x-www-form-urlencoded&apos;);
+            }
+
+            // 发送请求主体
+            xhr.send(data);
+
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState == 4 &amp;&amp; xhr.status == 200) {
+                    // 调用回调函数并传参
+                    var result = JSON.parse(xhr.responseText);
+
+                    success(result);
+                }
+            }
+        }
+    }
+
+    // 调用函数
+    $.ajax({
+        type: &apos;post&apos;,
+        url: &apos;demo.php&apos;,
+        data: {name: &apos;itcast&apos;, age: 10},
+        success: function (data) {
+            console.log(data);
+        }
+    });
+
+
+    function fn(arg1) {
+        // alert(arg1);
+
+        // arg1();
+    }
+
+    // fn(1);
+
+    // fn([1,2]);
+
+    // fn({name: &apos;itcast&apos;});
+
+    var callback = function () {
+        alert(1);
+    }
+
+    fn(callback);
+
+    // for(var key in location) {
+    //  console.log(key + &apos;~~~~&apos; + location[key]);
+    // }
+&lt;/script&gt;
+</code></pre><p></body><br></html><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* PHP文件</div></pre></td></tr></table></figure></p>
+<p>&lt;?php<br>    // 接收数据<br>    //  以JSON方式返回<br>    echo json_encode($_GET);<br>?&gt;<br>```</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><blockquote>
+<p>get数据 传在url 后面<br>Conten-type 是设置send里面的类型<br>有get 就不要Content-type</p>
+</blockquote>
+</script></body></p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/09/20/Ajax（3）/" data-id="ciz56n0xt0004h4ifwl7cl453" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Ajax（2）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/19/Ajax（2）/" class="article-date">
+  <time datetime="2015-09-19T01:00:35.000Z" itemprop="datePublished">2015-09-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/19/Ajax（2）/">Ajax(2)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="表单处理（get-方式）"><a href="#表单处理（get-方式）" class="headerlink" title="表单处理（get 方式）"></a>表单处理（get 方式）</h3><ul>
+<li>举例（如图，建立一个表单页面）</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-81fcb39215183446.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"></p>
+<ul>
+<li>提取输入的账号和密码</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-7f8ea84e39b53d8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png"></p>
+<ul>
+<li>从服务器打开是这样的</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-ec12d0abbb9394ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.png"></p>
+<ul>
+<li>提交后的结果是这样的</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-4af5bfc796475347.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4.png"></p>
+<ul>
+<li>默认method是GET的方法</li>
+</ul>
+<h3 id="表单处理（post-方式）"><a href="#表单处理（post-方式）" class="headerlink" title="表单处理（post 方式）"></a>表单处理（post 方式）</h3><blockquote>
+<p><form action="8.php" method="post" ;=""><br>  method = ‘post’; </form></p>
+</blockquote>
+<ul>
+<li>$_POST是一个数组并且包含了表单提交上来的数据,是PHP内置好的专门用来接数据的一个全局数组</li>
+</ul>
+<ul>
+<li><p>区别（get和post）</p>
+<ul>
+<li><ol>
+<li>get会暴露在地址栏上<br>post不会暴露在地址栏上</li>
+</ol>
+</li>
+<li><p>2.get的的理论提交数据1024个字节<br>post没有理论上没有限制</p>
+</li>
+<li><p>3.get是从服务器上获取数据<br>post是向服务器传送数据</p>
+</li>
+<li><p>4.get安全性非常低<br>post安全性较高</p>
+</li>
+<li><p>5.get提交参数会在URL上显示，不安全<br>post不会，更安全</p>
+</li>
+<li><p>6.get数据使用$_GET<br>post的数据使用$_POST</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="上传文件（files）"><a href="#上传文件（files）" class="headerlink" title="上传文件（files）"></a>上传文件（files）</h3><ul>
+<li>必须三个条件<blockquote>
+<ol>
+<li>method = ‘post’;<br>2.input type = ‘files’ name = ‘img’<br>3.<enctype =="" 'multipart="" form-data'=""></enctype></li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>files是PHP内置提供好专门用来接收上传文件的一个全局变量</li>
+<li>当文件上传是需要 <enctype =="" 'multipart="" form-data'=""></enctype></li>
+<li>文件默认放在临时目录下，然后转移指定目录</li>
+<li><p>如果不转移走文件，文件自动删除<br>move_uploaded_file(filename,destination);<br>参数1要移动的文件，参数2移动的目标路径</p>
+</li>
+<li><p>举例</p>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-590501cbf82336ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="5.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-ca36bf9abf7dfe4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="6.png"></p>
+<ul>
+<li>结果（上传成功）</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-64d32b30a98cc609.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="7.png"></p>
+<h3 id="登陆验证"><a href="#登陆验证" class="headerlink" title="登陆验证"></a>登陆验证</h3><ul>
+<li>举例</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-5056e494903fcb2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="8.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-8c72d92ee9b371e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="9.png"></p>
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><ul>
+<li>include和require的区别</li>
+<li><p>文件后缀大部分时间没有任何作用，index.php和index.pel 是一样的</p>
+</li>
+<li><p>在PHP变成中，include()与require()的功能相同，include（include_once） 与 require（require_once）都是把把包含的文件代码读入到指定位置来，但是二者再用法上有区别：（include()是有条件包含函数，而require()则是无条件包含函数）</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/09/19/Ajax（2）/" data-id="ciz56n0xq0002h4ifuyzdohxi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Ajax(1)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/18/Ajax(1)/" class="article-date">
+  <time datetime="2015-09-18T11:00:35.000Z" itemprop="datePublished">2015-09-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/18/Ajax(1)/">Ajax(1)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、服务器"><a href="#一、服务器" class="headerlink" title="一、服务器"></a>一、服务器</h1><p>1.能够提供某种服务的机器（计算机）称为服务器。<br>2.服务器类型</p>
+<ul>
+<li>服务类型：文件服务器（eg歌、电影）、数据库服务器、邮件服务器、Web服务器等</li>
+<li>操作系统：Linux服务器、Windows服务器、Unix系统等</li>
+<li>应用软件：Apache服务器、Nginx服务器、IIS服务器、Tomcat服务器、Node服务器等</li>
+</ul>
+<p>3.服务器软件</p>
+<ul>
+<li>使计算机具备提供某种服务能力的应用软件，称为服务器软件。</li>
+<li>通过安装相应的服务软件，然后进行配置后才能使计算机具有了提供相应服务的能力</li>
+<li>服务器软件<ul>
+<li>文件服务器：Server-U、FileZilla、VsFTP等</li>
+<li>数据库服务器：Oracle、MySQL、PostgreSQL、MSSQL、DB2</li>
+<li>邮件服务器：Postfix、Sendmail</li>
+<li>HTTP服务器：Apache、Nginx、IIS（微软操作系统自带）、Tomcat、NodeJS等</li>
+</ul>
+</li>
+<li>面试时<ul>
+<li>用的是Linux（比较安全，80%使用这个）或者Apache</li>
+<li>用的是Apache服务器软件（60%使用的是这个）</li>
+<li>数据库一般用的是MySQL（比较小，轻量，免费开源，性能不差，淘宝也是用的MySQL，淘宝自己加工了使用）</li>
+</ul>
+</li>
+</ul>
+<h4 id="二、客户端"><a href="#二、客户端" class="headerlink" title="二、客户端"></a>二、客户端</h4><ul>
+<li>具有向服务器索取服务能力的终端，如手机、电脑等<ul>
+<li>常见客户端软件：QQ、迅雷、浏览器、Foxmail等</li>
+</ul>
+</li>
+<li>以浏览器为宿主环境，结合HTML、CSS、Javascript等技术，而进行的一系列开发，通常称之为前端开发</li>
+<li>前台和后台是针对网站的性质来划分的，前端和后端是针对职位技术来划分的</li>
+</ul>
+<h3 id="三、HTTP服务器"><a href="#三、HTTP服务器" class="headerlink" title="三、HTTP服务器"></a>三、HTTP服务器</h3><ul>
+<li>即网站服务器，主要提供文档（文本、图片、视频、音频）浏览服务</li>
+<li>HTTP服务器可以结合某一编程语言处理业务逻辑，由此进行的开发，通常称之为服务器开发</li>
+<li>常见的服务端编程语言包括PHP、Jsp、Asp、Python、Ruby、Perl</li>
+</ul>
+<h3 id="四、网络基础"><a href="#四、网络基础" class="headerlink" title="四、网络基础"></a>四、网络基础</h3><ul>
+<li>IP地址<ul>
+<li>由路由器分配</li>
+<li>Ping、ipconfig（windows的命令）、ifconfig（Linux的命令）</li>
+<li>如果输入IP地址，网页提示501，原因是服务器做了限制，无法通过IP地址访问该网站</li>
+</ul>
+</li>
+<li>域名<ul>
+<li>查看域名对应的iP地址ping、tracert</li>
+</ul>
+</li>
+<li>DNS服务<ul>
+<li>Domain Name System</li>
+<li>DNS记录了IP地址和域名的映射（对应）关系</li>
+<li>查找优先级 本机 hosts文件、DNS服务器</li>
+</ul>
+</li>
+<li>端口<ul>
+<li>端口号是计算机与外界的通讯交流的出口，每个端口对应不同的服务</li>
+<li>查看端口占用情况netstat-an</li>
+<li>虚拟端口，不同的端口处理不同的服务</li>
+</ul>
+</li>
+<li>步骤<ul>
+<li>服务端<ul>
+<li>安装操作系统 Linux Windows</li>
+<li>安装服务器软件</li>
+<li>后端开发语言</li>
+<li>当这台电脑作为HTTP服务器的时候，需要安装Apache，并且会监听80端口，当这台电脑作为数据库服务器，需要安装MySQL并且它监听3306</li>
+</ul>
+</li>
+<li>客户端<ul>
+<li>有可能需要安装操作系统，一般是windows</li>
+<li>安装一些具备索取服务能力的软件比如QQ、浏览器</li>
+</ul>
+</li>
+<li>DNS服务器</li>
+</ul>
+</li>
+</ul>
+<h3 id="五、C-S-amp-B-S"><a href="#五、C-S-amp-B-S" class="headerlink" title="五、C/S&amp;B/S"></a>五、C/S&amp;B/S</h3><ul>
+<li>C/S  client、server<ul>
+<li>在C/S结构的情况下，不同的服务需要安装不同的客户端软件</li>
+</ul>
+</li>
+<li>B/S browser server（是一个特殊的C/S）<ul>
+<li>所有的服务都可以通过浏览器来完成（因为基本所有的浏览都安装了浏览器）</li>
+<li>缺点：操作稳定性、流畅度方面相对较弱</li>
+</ul>
+</li>
+</ul>
+<h3 id="六、搭建HTTP服务"><a href="#六、搭建HTTP服务" class="headerlink" title="六、搭建HTTP服务"></a>六、搭建HTTP服务</h3><ul>
+<li>配置虚拟主机</li>
+<li>注意<ul>
+<li>检查网络是不是通的 ping对方iP</li>
+<li>检查防火墙是否开启，如果开启不能正常被访问</li>
+<li>检查访问权限Allow from all</li>
+<li>理解默认索引（index.html）</li>
+<li>确保端口没有被其它程序占用</li>
+<li>“#”表示注释</li>
+<li>修改配置要格外小心，禁止无意修改其它内容</li>
+</ul>
+</li>
+<li>配置根目录<ul>
+<li>Localhost默认代替的是路径，根目录</li>
+<li>为何要配置？<ul>
+<li>安装完成后会默认给我们设置一个根目录，和实际放置的目录不在一起</li>
+<li>修改httpd.conf中的documentRoot 和205 中的directory中的路径</li>
+<li>Ctrl+F5强制刷新</li>
+</ul>
+</li>
+<li>实现以域名的形式来访问</li>
+<li>236 196 allow from all</li>
+<li>查找vhosts（467行），去掉“#”号（注释），开启虚拟主机配置</li>
+<li>Wamp-bin-apache-Apache2.2.21-conf-extra-http-vhosts.conf<ul>
+<li>提供了两个配置文档，虚拟主机，复制第一个VirtralHost</li>
+</ul>
+</li>
+<li>在httpd.conf DirectoryIndex  优先级  如果文件名都没有，就展示列表</li>
+</ul>
+</li>
+</ul>
+<h3 id="七、PHP基础"><a href="#七、PHP基础" class="headerlink" title="七、PHP基础"></a>七、PHP基础</h3><ul>
+<li>入门<ul>
+<li>文件以.php后缀结尾，所有程序包含在&lt;?php/<strong>这里是代码</strong>/?&gt;</li>
+<li>禁止使用中文目录和中文文件名</li>
+</ul>
+</li>
+<li>变量<ul>
+<li>变量以$开头 字母、数字、下划线  不能以数字开头</li>
+<li>大小写敏感（区分大小写）</li>
+<li>SS+对应对的语言，快速设置sublime语言</li>
+<li>指定编码集  header(‘Content-type:text/html;charset=utf-8’)</li>
+<li>echo是用来输出简单类型的变量</li>
+<li>数组<ul>
+<li>$arr=array(1,2,3); 定义数组方式称为索引数组</li>
+<li>关联数组</li>
+</ul>
+</li>
+<li>print_r</li>
+</ul>
+</li>
+<li>小注意<ul>
+<li>header()要放在最前面，放后面可能回出现一些错误</li>
+<li>不要使用中文（中国字、中文字符）——禁用输入法的中文字符</li>
+<li>不要使用sublime或者webstorm来运行php文件</li>
+<li>Php中不能省略分号</li>
+<li>文件名不能用中文</li>
+</ul>
+</li>
+<li>内容输出（隐式转换）<ul>
+<li>echo 输出简单数据类型，如字符串、数值<ul>
+<li>echo false相当于输出一个空字符串</li>
+<li>echo true   输出1</li>
+<li>echo null 不会输出任何东西</li>
+</ul>
+</li>
+<li>print_r（） 输出复杂数据类型，如数组</li>
+<li>var_dump（） 输出详细信息，如对象、数组<ul>
+<li>int整型</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>连接符</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">    //PHP中，+加号不能用作连接符</div><div class="line">$num=&apos;10&apos;;</div><div class="line">$num2=5;</div><div class="line">echo $num+$num2;</div><div class="line">//PHP连接符用 .</div><div class="line">$hello=&apos;hello&apos;;</div><div class="line">$world=&apos; world&apos;;</div><div class="line">echo $hello.$world;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>函数</p>
+<ul>
+<li>函数名对大小写不敏感</li>
+<li>没有传参数会报错<ul>
+<li>解决：PHP可以指定一个默认参数<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">function sayHello1($name=&apos;itcast&apos;)&#123;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>分支、循环语句</p>
+<ul>
+<li><p>循环语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$arr  =array(&apos;我&apos;,&apos;是&apos;,&apos;男&apos;,&apos;的&apos;);</div><div class="line">//count 用来计算数组长度</div><div class="line">$len = count($arr);</div><div class="line">for($i=0; $i&lt;$len;$i++)&#123;</div><div class="line">    echo $arr[$i];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>if语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$num =18;</div><div class="line">if($num &lt;= 16) &#123;</div><div class="line">    echo &apos;年纪太小&apos;;</div><div class="line">&#125;else &#123;</div><div class="line">    echo &apos;来干活吧！&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Count用来计算数组长度</p>
+</li>
+<li><p>关联数组通过foreach()来遍历</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$arr = array(&apos;name&apos;=&gt;&apos;itcast&apos;,&apos;age&apos;=&gt;10);</div><div class="line"> foreach($arr as $key=&gt;$value)&#123;</div><div class="line">         echo $arr[$key];</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Foreach既可以遍历索引数组也可以遍历关联数组</li>
+<li>echo $val;也可以遍历数组</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="八、-PHP和HTML混合输出"><a href="#八、-PHP和HTML混合输出" class="headerlink" title="八、  PHP和HTML混合输出"></a>八、  PHP和HTML混合输出</h3><ul>
+<li>Echo的内容就是浏览器得到的内容<ul>
+<li>一次性给了浏览器，拼接成HTML</li>
+<li>理解混合使用PHP和 HTML<ul>
+<li>访问过程中apache把php文件交给php解析程序（bin——php）</li>
+<li>Php解析程序将读取里面的内容，按照php的语法解析并输出，遇到结束标签完成，没有php文件了，php标签的html标签就按照原样输出</li>
+<li>搜索：xss反攻击</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="九、动态网站"><a href="#九、动态网站" class="headerlink" title="九、动态网站"></a>九、动态网站</h3><ul>
+<li>数据是从数据库中取出的</li>
+<li>将数据转换成一个数组或对象</li>
+<li>通过遍历数组，将数据显示到页面</li>
+<li>服务器执行php，php执行完毕的结果发送给浏览器</li>
+<li>浏览器访问</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/09/18/Ajax(1)/" data-id="ciz56n0xn0001h4if81yw4qz9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-AJAX编程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/16/AJAX编程/" class="article-date">
+  <time datetime="2015-09-16T08:12:35.000Z" itemprop="datePublished">2015-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/16/AJAX编程/">Ajax编程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>即 Asynchronous Javascript And XML，AJAX 不是一门的新的语言，而是对现有持术的综合利用。本质是在HTTP协议的基础上以异步的方式与服务器进行通信。</p>
+<h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><ul>
+<li>指某段程序执行时不会阻塞其它程序执行，其表现形式为程序的执行顺序不依赖程序本身的书写顺序，相反则为同步。</li>
+<li>其优势在于不阻塞程序的执行，从而提升整体执行效率。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-0d7c7e3c17f45076.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="7.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-130844270b70b0fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="8.png"></p>
+<blockquote>
+<p>现实生活中的一个例子<br>打电话是同步 发消息是异步<br>XMLHttpRequest可以以异步方式的处理程序。</p>
+</blockquote>
+<h3 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h3><p>浏览器内建对象，用于在后台与服务器通信(交换数据) ，由此我们便可实现对网页的部分更新，而不是刷新整个页面。</p>
+<ul>
+<li>1、下面是一个简单的例子</li>
+</ul>
+<p>见代码示例8-1.html和8-1.php</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-99ffb6f1d456efd1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="9.png"></p>
+<ul>
+<li>2、同步<br>见代码示例8-2.html 和 8-2.php</li>
+</ul>
+<p>![Upload 11.png failed. Please try again.]</p>
+<p>由于XMLHttpRequest本质基于HTTP协议实现通信，所以结合HTTP协议和上面的例子我们分析得出如下结果</p>
+<h3 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h3><ul>
+<li><p>1、请求行<br>a) 需要有一个请求方式<br>b) 一个请求地址url</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.open(&apos;get&apos;,&apos;index.php&apos;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>2、请求头<br>  a)  设置请求头<br>  b)  post方式请求时，必须设置</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.setRequestHeader(&apos;Conten-Type&apos;,&apos;application/x-www-form-urlencoded&apos;);</div></pre></td></tr></table></figure>
+<p>get方式请求可以不设置</p>
+<ul>
+<li><p>3、请求主体</p>
+<p>  a) 实际上是客户端请求的数据<br>  b) 当以post方式请求时，需要xhr.send(‘key=val&amp;key1=val2’)的形式<br>  c) 当以get方式请求时，参数是放在请求url上的，所以一般写成xhr.send()或xhr.send(null);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.send(null);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h3><ul>
+<li>HTTP响应是由服务端发出的，作为客户端更应关心的是响应的结果。</li>
+<li>HTTP响应3个组成部分与XMLHttpRequest方法或属性的对应关系。</li>
+<li>由于服务器做出响应需要时间（比如网速慢等原因），所以我们需要监听服务器响应的状态，然后才能进行处理。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-7b4557ace20da9ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="12.png"><br>上图中的onreadystatechange是Javascript的事件的一种，其意义在于监听XMLHttpRequest的状态</p>
+<ul>
+<li>1、获取状态行（包括状态码&amp;状态信息）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xhr.status   // 状态码</div><div class="line">xhr.statusText  //状态信息</div></pre></td></tr></table></figure>
+<ul>
+<li>2、获取响应头</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//获取指定头信息</div><div class="line">xhr.getResponseHesder(&apos;Content-Type);</div><div class="line">//获取所有响应头信息</div><div class="line">xhr.getAllResponseHeaders();</div></pre></td></tr></table></figure>
+<ul>
+<li>3、响应主体</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xhr.responseText;</div><div class="line">xhr.responseXML;</div></pre></td></tr></table></figure>
+<h3 id="API详解"><a href="#API详解" class="headerlink" title="API详解"></a>API详解</h3><blockquote>
+<p>xhr.open() 发起请求，可以是get、post方式<br>xhr.setRequestHeader() 设置请求头<br>xhr.send() 发送请求主体get方式使用xhr.send(null)<br>xhr.onreadystatechange = function () {} 监听响应状态<br>xhr.readyState = 0时，UNSENT open尚未调用<br>xhr.readyState = 1时，OPENED open已调用<br>xhr.readyState = 2时，HEADERS_RECEIVED 接收到头信息<br>xhr.readyState = 3时，LOADING 接收到响应主体<br>xhr.readyState = 4时，DONE 响应完成<br>不用记忆状态，只需要了解有状态变化这个概念<br>xhr.status表示响应码，如200<br>xhr.statusText表示响应信息，如OK<br>xhr.getAllResponseHeaders() 获取全部响应头信息<br>xhr.getResponseHeader(‘key’) 获取指定头信息<br>xhr.responseText、xhr.responseXML都表示响应主体</p>
+</blockquote>
+<ul>
+<li><p>注：GET和POST请求方式的差异（面试题）</p>
+<ul>
+<li>1、GET没有请求主体，使用xhr.send(null)</li>
+<li>2、GET可以通过在请求URL上添加请求参数</li>
+<li>3、POST可以通过xhr.send(‘name=itcast&amp;age=10’)</li>
+<li><p>4、POST需要设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.setRequestHeader(&apos;Content-Type&apos;,&apos;application/x-www-form-urlencoded&apos;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>5、GET效率更好（应用多）</p>
+</li>
+<li>6、GET大小限制约4K，POST则没有限制</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/09/16/AJAX编程/" data-id="ciz56n0xi0000h4ifsnsuj1s4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -107,6 +1529,10 @@
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -123,7 +1549,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
     </div>
   </div>
 
@@ -136,7 +1562,23 @@
       <ul>
         
           <li>
-            <a href="/2017/01/06/hello-world/">Hello World</a>
+            <a href="/2016/05/12/模块化开发/">模块化开发</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/15/css3高级/">css3动画与3D转换</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/12/css3进阶/">css3下</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/css3基础/">css3上</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/15/H5下/">h5下</a>
           </li>
         
       </ul>

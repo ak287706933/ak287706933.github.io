@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>面向对象(3) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、总结下上次的东西
+混入——可以将一个对象的成员 混入 到另一个对象当中
+混合式继承
+给原型对象添加一个混入的方法
+使用混入的方法为原型对象添加成员
+此时通过构造函数创建的对象就会继承原型当中的成员
+
+
+Object.create:以一个对象作为原型创建一个新的对象。优点——可以快速的创建一个相类似的对象
+原型链结构：
+实例对象–》构造函数.原型–》Object.prototype–》null">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象(3)">
+<meta property="og:url" content="http://yoursite.com/2015/08/11/面向对象3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、总结下上次的东西
+混入——可以将一个对象的成员 混入 到另一个对象当中
+混合式继承
+给原型对象添加一个混入的方法
+使用混入的方法为原型对象添加成员
+此时通过构造函数创建的对象就会继承原型当中的成员
+
+
+Object.create:以一个对象作为原型创建一个新的对象。优点——可以快速的创建一个相类似的对象
+原型链结构：
+实例对象–》构造函数.原型–》Object.prototype–》null">
+<meta property="og:updated_time" content="2017-02-14T07:00:03.676Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象(3)">
+<meta name="twitter:description" content="一、总结下上次的东西
+混入——可以将一个对象的成员 混入 到另一个对象当中
+混合式继承
+给原型对象添加一个混入的方法
+使用混入的方法为原型对象添加成员
+此时通过构造函数创建的对象就会继承原型当中的成员
+
+
+Object.create:以一个对象作为原型创建一个新的对象。优点——可以快速的创建一个相类似的对象
+原型链结构：
+实例对象–》构造函数.原型–》Object.prototype–》null">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-面向对象3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/11/面向对象3/" class="article-date">
+  <time datetime="2015-08-11T12:32:17.000Z" itemprop="datePublished">2015-08-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面向对象(3)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、总结下上次的东西"><a href="#一、总结下上次的东西" class="headerlink" title="一、总结下上次的东西"></a>一、总结下上次的东西</h4><ol>
+<li>混入——可以将一个对象的成员 混入 到另一个对象当中</li>
+<li>混合式继承<ul>
+<li>给原型对象添加一个混入的方法</li>
+<li>使用混入的方法为原型对象添加成员</li>
+<li>此时通过构造函数创建的对象就会继承原型当中的成员</li>
+</ul>
+</li>
+<li>Object.create:以一个对象作为原型创建一个新的对象。优点——可以快速的创建一个相类似的对象</li>
+<li>原型链结构：<ul>
+<li>实例对象–》构造函数.原型–》Object.prototype–》null</li>
+<li>内置对象–》内置对象构造函数.原型–》Object.prototype–》null</li>
+<li>Object对象–》Object.prototype–》null</li>
+</ul>
+</li>
+<li>动态函数：Function<ul>
+<li>函数是一个对象，它应该也是由构造函数创建的，也应该有原型对象。Function就是函数（实例对象）的构造函数</li>
+</ul>
+</li>
+<li>arguments对象<ul>
+<li>对象中包含了传入的所有参数，他的length属性可以显示参数的个数</li>
+</ul>
+</li>
+<li>函数.length——函数定义的时候参数的个数<br>函数.name——函数名</li>
+<li>callee和caller<ul>
+<li>callee：代表被调用的函数的引用</li>
+<li>caller：代表调用函数的函数（调用者）</li>
+</ul>
+</li>
+</ol>
+<h4 id="二、eval函数"><a href="#二、eval函数" class="headerlink" title="二、eval函数"></a>二、eval函数</h4><ol>
+<li>eval函数与Function功能类似，eval可以直接将字符串作为代码来执行<ul>
+<li>语法：eval（语句字符串）</li>
+<li>注意：它好像与当前代码处于同一个作用域</li>
+<li>可以直接调用eval函数，来实现字符串代码</li>
+</ul>
+</li>
+<li>eval函数和Function的比较<ul>
+<li>A 语法特点<ul>
+<li>eval简洁，直接调用即执行</li>
+<li>Function是用来生成函数中的，所以如果要执行，需要调用</li>
+<li>立即执行函数（自调用函数）</li>
+</ul>
+</li>
+<li>B 作用域<ul>
+<li>eval就在执行函数的当前作用域  </li>
+<li>在eval函数中，使用字符串声明的变量，在eval函数外面可以立即使用，即eval函数的执行作用域与当前环境作用域一致</li>
+<li>Function是创建了一个新的函数，那么所有的东西，都只在函数内部起作用，除非：<ul>
+<li>变量没有声明，直接使用</li>
+<li>return</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>eval函数转json格式的字符串为对象</p>
+<ul>
+<li>json格式（更加严格的，国际通用数据表示协议）</li>
+<li>在js中使用的json对象，相对较松散</li>
+<li>json格式有两种结构<ul>
+<li>{}对象的结构</li>
+<li>[]数组的结构</li>
+<li>注意：json格式中，键名也必须使用双引号括起来，在js中就没有这个要求了，较松散</li>
+</ul>
+</li>
+<li>将字符串变成对象，有三种做法<ul>
+<li>eval做法 </li>
+<li>Function做法</li>
+<li>使用ES5中引入的标准处理JSON的语法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//eval做法</div><div class="line">var o1=eval(data)   //注意一个习惯，就是数据两端加上圆括号为好</div><div class="line">//Function做法</div><div class="line">var o2 =(new Function(&apos;return&apos;+data))();</div><div class="line">//ES5</div><div class="line">处理JSON的做法</div><div class="line">JSON.parse() //注意：字符串必须是严格的json格式，双引号</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>为何转换json格式字符串需要圆括号</p>
+<ul>
+<li>eval函数本质是执行js代码的</li>
+<li>eval是用来执行字符串表示的js代码的，所以隐含的数据里面{}实际上是代码块的含义<br>标签语法，即使将字符串写成json格式的形式也不行</li>
+</ul>
+</li>
+</ol>
+<h4 id="三、函数是Function的实例"><a href="#三、函数是Function的实例" class="headerlink" title="三、函数是Function的实例"></a>三、函数是Function的实例</h4><ul>
+<li>function（对象角度）是Function（构造函数）的实例</li>
+<li>在该角度去看，函数就是对象，Function就是构造函数</li>
+<li>函数对象（构造函数，系统函数，自定义函数）都是由Function创建出来的实例对象，即所有函数都是Function构造出来的实例</li>
+<li>Function也是一个函数对象，它是由自己构造出来的，即Function是由Function构造出来的实例</li>
+</ul>
+<h4 id="四、instanceof-运算符"><a href="#四、instanceof-运算符" class="headerlink" title="四、instanceof 运算符"></a>四、instanceof 运算符</h4><ul>
+<li>语法——返回的是boolean值 </li>
+<li>对象 instanceof 构造函数</li>
+<li>判断构造函数的原型属性，是否在对象的原型链上</li>
+<li>A instanceof B——判断B的原型是否在A对象的原型链上</li>
+</ul>
+<h4 id="五、不要过多依赖原型链"><a href="#五、不要过多依赖原型链" class="headerlink" title="五、不要过多依赖原型链"></a>五、不要过多依赖原型链</h4><ul>
+<li>js的继承：就是利用对象的动态特性添加成员，或直接替换对象的方式修改原型链结构，使得当前对象的原型链上的对象具有某些成员，那么我的当前对象就可以使用这些成员了</li>
+<li>过多的依赖原型链继承，会损耗性能</li>
+<li>如果必须使用原型链继承，最好提供一些快速访问的方法</li>
+</ul>
+<h4 id="六、代码预解析"><a href="#六、代码预解析" class="headerlink" title="六、代码预解析"></a>六、代码预解析</h4><ul>
+<li>编译性语言：C，C++，C#，Java 就是需要一个‘翻译’程序，将源代码翻译成计算机可以读懂的二进制数据（指令）。然后存储成可执行文件。<br>提前翻译好，运行时直接执行的结果<ul>
+<li>解释型（脚本型）：javascript，SQL，……<br>代码在执行的时候，有一个翻译程序，读一句代码执行一句代码，再读一句代码，再执行一句代码</li>
+<li>代码在执行之前，需要快速的‘预览’一遍，那么可以尽可能提高执行效率</li>
+<li>在js中预解析的特点<ul>
+<li>代码是如何执行的：读取js文件，预解析，一句一句执行</li>
+<li>js在预解析的过程中完成了声明部分的标记与变量作用域的设定</li>
+</ul>
+</li>
+<li>什么是js中的声明<ul>
+<li>简单的说就是让js执行引擎知道有什么东西（标识符）</li>
+<li>即代码在执行之前的预解析，首先让js的执行引擎在当前运行环境中，有什么东西（名字、标识符）是可以被使用的</li>
+<li>console.log（num）</li>
+</ul>
+</li>
+<li>在js中有哪些声明<br>标识符的声明（变量的声明）<br>函数的声明</li>
+<li>变量的声明<ul>
+<li>语法 ： var 变量名</li>
+<li>目的：告诉解释器，有一个名字是一个变量，在当前环境中可以被使用</li>
+</ul>
+</li>
+<li>语句：就是可以执行的东西，在代码执行的时候才会区运行<ul>
+<li>var a = 123;凡是要去执行的东西都是一个语句，在使用var 声明变量，同时完成赋值的时候，实际上，预解析将其做了一定处理：</li>
+<li>凡是读取到var的时候，就检查var紧跟的名字是否已经标记了</li>
+<li>如果没有标记，就表明这个名字是一个标识符，需要被标记</li>
+<li>如果已经被标记了，那么这个var被忽略</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>结论：<br>  var a;<br>  var a=10;<br>等价于  var a; a=10;</p>
+<h4 id="七、预解析的特点——变量名提升"><a href="#七、预解析的特点——变量名提升" class="headerlink" title="七、预解析的特点——变量名提升"></a>七、预解析的特点——变量名提升</h4><ul>
+<li>注意：‘字符串’ in 对象——该字符串描述的名字，是否在对象中存在一个属性，与之同名<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if( &apos;a&apos; in window )&#123;</div><div class="line">  var a=123;</div><div class="line">&#125;</div><div class="line">console.log(a); //123;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="八、函数的声明"><a href="#八、函数的声明" class="headerlink" title="八、函数的声明"></a>八、函数的声明</h4><ul>
+<li>函数的各种定义形式<ul>
+<li>声明式：function func(){}</li>
+<li>表达式式（匿名函数，字面量函数，lambda函数）<br>var func=function(){};<ul>
+<li>特点：</li>
+</ul>
+</li>
+<li>函数的声明是独立于语句的，不需要加分号结束，也不能嵌入到代码表达式中</li>
+<li>表达式式，本质上是使用函数表达式（字面量）给变量赋值，因此它是语句<ul>
+<li>表达式：</li>
+</ul>
+</li>
+<li>将运算符与操作数连接起来的式子</li>
+<li>就是一个有结果的代码单元</li>
+<li>字面量，有值，是表达式，是常量表达式</li>
+</ul>
+</li>
+</ul>
+<h4 id="九、函数各种定义形式的异同"><a href="#九、函数各种定义形式的异同" class="headerlink" title="九、函数各种定义形式的异同"></a>九、函数各种定义形式的异同</h4><ul>
+<li>声明式（重点是语法）<ul>
+<li>function func（）{}</li>
+<li>函数声明是独立于代码执行的，代码在执行的时候，声明部分已在预解析阶段处理完毕，因此在代码调试阶段，无法给函数声明添加断点，而且由于预解析在执行之前完成，可以先调用，后声明函数，有时在开发的时候，将函数全部声明在后面，前面为了保证代码的紧凑，而直接调用。</li>
+</ul>
+</li>
+</ul>
+<h4 id="十、预解析的特点——各种函数定义形式的异同"><a href="#十、预解析的特点——各种函数定义形式的异同" class="headerlink" title="十、预解析的特点——各种函数定义形式的异同"></a>十、预解析的特点——各种函数定义形式的异同</h4><ul>
+<li>函数表达式<ul>
+<li>使用这个方式定义函数，实际上是利用函数是js中的 一个数据类型的特点</li>
+<li>利用赋值，使用变量存储函数的引用，此时没有函数的声明，但是有变量的声明</li>
+<li>读取代码，发现 var func，存储func这个名字</li>
+<li>开始执行代码，第一句是赋值语句，将函数赋值给func<br>执行</li>
+<li>如果将调用放到赋值之前，就会报错<ul>
+<li>函数表达式的名字问题</li>
+</ul>
+</li>
+<li>函数.name可以用来获取函数的名字，表达式没有名字<br>我们的函数表达式也是可以带有函数名</li>
+<li>var 函数名1=function 函数名2（）{}</li>
+<li>当函数声明语法嵌入表达式环境中，会自动进行转换，将转换成函数表达式</li>
+<li>引用函数的规则还是使用变量赋值，所以外部可以使用该名字调用函数</li>
+<li>函数表达式带有名，该名字只允许在函数内部使用，属于局部作用域</li>
+<li>带有名字的函数表达式，函数的name属性即为该名字</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/11/面向对象3/" data-id="ciyygtr560004csifs7qeedua" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/14/面向对象4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          面向对象(4)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/10/面向对象2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">面向对象(2)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/12/模块化开发/">模块化开发</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/15/css3高级/">css3动画与3D转换</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/12/css3进阶/">css3下</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/css3基础/">css3上</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/15/H5下/">h5下</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

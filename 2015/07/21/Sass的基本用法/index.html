@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Sass的基本用法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CSS的预处理
+CSS预处理器用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。为CSS增加一些编程的特性，无需考虑浏览器的兼容性问题，例如你可以在CSS中使用变量、简单的逻辑程序、函数等等在编程语言中的一些基本特性，可以让你的CSS更加简洁、适应性更强、可读性更佳，更易于代码的维护等诸多好处。
+
+
+Sass是世界上最成熟、最稳定、最强大的专业级CSS扩展语">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sass的基本用法">
+<meta property="og:url" content="http://yoursite.com/2015/07/21/Sass的基本用法/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CSS的预处理
+CSS预处理器用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。为CSS增加一些编程的特性，无需考虑浏览器的兼容性问题，例如你可以在CSS中使用变量、简单的逻辑程序、函数等等在编程语言中的一些基本特性，可以让你的CSS更加简洁、适应性更强、可读性更佳，更易于代码的维护等诸多好处。
+
+
+Sass是世界上最成熟、最稳定、最强大的专业级CSS扩展语">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3617300-e6ea4192060b3a9a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3617300-a639d0adad5a2b90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3617300-dd9ee413abc4de68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3617300-9e273390a67c601c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3617300-ffc621d499420645.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3617300-0946c338454c0b1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-02-14T06:59:22.869Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sass的基本用法">
+<meta name="twitter:description" content="CSS的预处理
+CSS预处理器用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。为CSS增加一些编程的特性，无需考虑浏览器的兼容性问题，例如你可以在CSS中使用变量、简单的逻辑程序、函数等等在编程语言中的一些基本特性，可以让你的CSS更加简洁、适应性更强、可读性更佳，更易于代码的维护等诸多好处。
+
+
+Sass是世界上最成熟、最稳定、最强大的专业级CSS扩展语">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3617300-e6ea4192060b3a9a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Sass的基本用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/21/Sass的基本用法/" class="article-date">
+  <time datetime="2015-07-21T03:21:35.000Z" itemprop="datePublished">2015-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Sass的基本用法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="CSS的预处理"><a href="#CSS的预处理" class="headerlink" title="CSS的预处理"></a>CSS的预处理</h3><blockquote>
+<p>CSS预处理器用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。为CSS增加一些编程的特性，无需考虑浏览器的兼容性问题，例如你可以在CSS中使用变量、简单的逻辑程序、函数等等在编程语言中的一些基本特性，可以让你的CSS更加简洁、适应性更强、可读性更佳，更易于代码的维护等诸多好处。</p>
+</blockquote>
+<ul>
+<li>Sass是世界上最成熟、最稳定、最强大的专业级CSS扩展语言！</li>
+<li>Sass (Syntactically Awesome StyleSheets)</li>
+<li>Sass可以让你的CSS更加简洁、适应性更强、可读性更佳，更易于代码的维护</li>
+</ul>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><ul>
+<li>变量声明</li>
+<li>默认变量</li>
+<li>全局变量与局部变量（使用 $ 定义变量，： 后面是变量值）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//最外层定义的是全局变量</div><div class="line">$color:orange;</div><div class="line">$color:blue !default;  //默认变量</div><div class="line">.block &#123;</div><div class="line">        color:$color;  //调用全局变量</div><div class="line">&#125;</div><div class="line">em &#123;</div><div class="line">      $color:red;   //定义局部变量</div><div class="line">      a  &#123;</div><div class="line">           color:$color;   //调用局部变量</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>数字 number：<pre><code>如，1、 .2、 13%、 10px
+</code></pre></li>
+<li>字符串 string：<pre><code>有引号字符串或无引号字符串，如，&quot;foo&quot;、 &apos;bar&apos;、 baz
+</code></pre></li>
+<li>颜色 color：<pre><code>如，blue、 #04a3f9、rgb(255,0,0)、 rgba(255,0,0,0.5)
+</code></pre></li>
+<li>布尔型 bool：<pre><code>如，true、 false
+</code></pre></li>
+<li>空值 null：<pre><code>如，null
+</code></pre></li>
+<li>值列表 list：<pre><code>用空格或者逗号分开，如，1.5em 1em、 Helvetica, Arial
+</code></pre></li>
+</ul>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><blockquote>
+<p>//，不会输出到结果<br>/<em>…</em>/，输出到未压缩的结果<br>/<em>!…</em>/,输出到任意结果</p>
+</blockquote>
+<h3 id="嵌套-Nesting"><a href="#嵌套-Nesting" class="headerlink" title="嵌套 (Nesting)"></a>嵌套 (Nesting)</h3><ul>
+<li>选择器嵌套</li>
+<li>属性嵌套</li>
+<li>伪类嵌套</li>
+<li>引用父级选择器   &amp;</li>
+<li>直接子元素嵌套   &gt;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">.wrap &#123;</div><div class="line">      border:  &#123;   //属性嵌套</div><div class="line">          top:1px solid red;</div><div class="line">          bottom: 1px solid green;     </div><div class="line">      &#125;;</div><div class="line">      a &#123;   //选择器嵌套</div><div class="line">             //伪类嵌套</div><div class="line">             &amp;：hover &#123;   //&amp;表示父组选择器</div><div class="line">                    background-color: #f00;</div><div class="line">              &#125;</div><div class="line">      &#125;  </div><div class="line">      &gt;.box &#123;     //直接子元素嵌套</div><div class="line">          color:#286090;</div><div class="line">      &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="继承-Inheritance-与扩展-Extend"><a href="#继承-Inheritance-与扩展-Extend" class="headerlink" title="继承(Inheritance)与扩展(Extend)"></a>继承(Inheritance)与扩展(Extend)</h3><ul>
+<li>btn-primary继承自.btn类，使用@extend来继承已存在的类样式块<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.btn &#123;</div><div class="line">        border:1px solid #ccc;</div><div class="line">        padding:6px 10px;</div><div class="line">        font-size:14px;</div><div class="line">&#125;</div><div class="line">.btn-primary &#123;</div><div class="line">        background-color:#f36;</div><div class="line">        color:#fff;</div><div class="line">        @extend .btn;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="占位符-placeholder"><a href="#占位符-placeholder" class="headerlink" title="占位符(placeholder)"></a>占位符(placeholder)</h3><ul>
+<li>定义占位符：%占位符名（只有通过@extend调用占位符时才会产生代码）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">%mt5 &#123;</div><div class="line">        margin-top:5px;</div><div class="line">&#125;</div><div class="line">%pt5 &#123;</div><div class="line">         padding-top:5px;</div><div class="line">&#125;</div><div class="line">.btn &#123;</div><div class="line">          @extend  %mt5;</div><div class="line">          @extend  %pt5;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="混合宏-Mixin"><a href="#混合宏-Mixin" class="headerlink" title="混合宏(Mixin)"></a>混合宏(Mixin)</h3><ul>
+<li>声明混合宏 @mixin 混合宏名([参数])</li>
+<li>调用混合宏 @include 混合宏名([参数])</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//定义一个带参数的混合宏</div><div class="line">@mixin border-radius($radius:5px)&#123;</div><div class="line">    -webkit-border-radius:$radius;</div><div class="line">    border-radius:$radius;</div><div class="line">&#125;</div><div class="line">button &#123;</div><div class="line">    @include border-radius;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="混合宏、继承、占位符区别"><a href="#混合宏、继承、占位符区别" class="headerlink" title="混合宏、继承、占位符区别"></a>混合宏、继承、占位符区别</h3><p><img src="http://upload-images.jianshu.io/upload_images/3617300-e6ea4192060b3a9a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"></p>
+<h3 id="插值-Interpolation"><a href="#插值-Interpolation" class="headerlink" title="插值(Interpolation)"></a>插值(Interpolation)</h3><ul>
+<li>语法：#{$变量名}，生成css时，插值会被变量值代替</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-a639d0adad5a2b90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png"></p>
+<ul>
+<li>不可在@include 混合宏时使用插值</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-dd9ee413abc4de68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.png"></p>
+<ul>
+<li>可在@extend时使用插值</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-9e273390a67c601c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4.png"></p>
+<h3 id="导入-Import"><a href="#导入-Import" class="headerlink" title="导入(Import)"></a>导入(Import)</h3><ul>
+<li>这些情况与css中的@import一样</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-ffc621d499420645.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="5.png"></p>
+<h3 id="操作符-Operators"><a href="#操作符-Operators" class="headerlink" title="操作符(Operators)"></a>操作符(Operators)</h3><blockquote>
+<p>加法 +<br>减法 -<br>乘法 *<br>除法 /<br>取余 %</p>
+</blockquote>
+<h3 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h3><ul>
+<li>Introspection函数<blockquote>
+<p>type-of($value)：返回一个值的类型<br>unit($number)：返回一个值的单位<br>unitless($number)：判断一个值是否不带单位<br>comparable($number-1, $number-2)：判断两个值是否可以做加、减和合并</p>
+</blockquote>
+</li>
+<li>Miscellaneous函数(三元函数)<blockquote>
+<p>if($condition,$if-true,$if-false)</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="数字函数"><a href="#数字函数" class="headerlink" title="数字函数"></a>数字函数</h3><ul>
+<li>percentage($value)：将一个不带单位的数转换成百分比值；</li>
+<li>round($value)：将数值四舍五入，转换成一个最接近的整数；</li>
+<li>ceil($value)：将大于自己的小数转换成下一位整数；</li>
+<li>floor($value)：将一个数去除他的小数部分；</li>
+<li>abs($value)：返回一个数的绝对值；</li>
+<li>min($numbers…)：找出几个数值之间的最小值；</li>
+<li>max($numbers…)：找出几个数值之间的最大值；</li>
+<li>random(): 获取随机数</li>
+</ul>
+<h3 id="列表函数"><a href="#列表函数" class="headerlink" title="列表函数"></a>列表函数</h3><ul>
+<li>length($list)：返回一个列表的长度值；</li>
+<li>nth($list, $n)：返回一个列表中指定的某个标签值</li>
+<li>join($list1, $list2, [$separator])：将两个列给连接在一起，变成一个列表；</li>
+<li>append($list1, $val, [$separator])：将某个值放在列表的最后；</li>
+<li>zip($lists…)：将几个列表结合成一个多维的列表；</li>
+<li>index($list, $value)：返回一个值在列表中的位置值。</li>
+</ul>
+<h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><blockquote>
+<p>@media<br>@if<br>@at-root</p>
+</blockquote>
+<h3 id="媒体查询-Mediaqueries"><a href="#媒体查询-Mediaqueries" class="headerlink" title="媒体查询(Mediaqueries)"></a>媒体查询(Mediaqueries)</h3><p><img src="http://upload-images.jianshu.io/upload_images/3617300-0946c338454c0b1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="6.png"></p>
+<h3 id="颜色函数-RGB颜色函数"><a href="#颜色函数-RGB颜色函数" class="headerlink" title="颜色函数-RGB颜色函数"></a>颜色函数-RGB颜色函数</h3><ul>
+<li>rgb($red,$green,$blue)：根据红、绿、蓝三个值创建一个颜色；</li>
+<li>rgba($red,$green,$blue,$alpha)：根据红、绿、蓝和透明度值创建一个颜色；</li>
+<li>red($color)：从一个颜色中获取其中红色值；</li>
+<li>green($color)：从一个颜色中获取其中绿色值；</li>
+<li>blue($color)：从一个颜色中获取其中蓝色值；</li>
+<li>mix($color-1,$color-2,[$weight])：把两种颜色混合在一起。</li>
+</ul>
+<h3 id="颜色函数-HSL颜色函数"><a href="#颜色函数-HSL颜色函数" class="headerlink" title="颜色函数-HSL颜色函数"></a>颜色函数-HSL颜色函数</h3><ul>
+<li>hsl($hue,$saturation,$lightness)：通过色相（hue）、饱和度(saturation)和亮度（lightness）的值创建一个颜色；</li>
+<li>hsla($hue,$saturation,$lightness,$alpha)：通过色相（hue）、饱和度(saturation)、亮度（lightness）和透明（alpha）的值创建一个颜色；</li>
+<li>hue($color)：从一个颜色中获取色相（hue）值；</li>
+<li>saturation($color)：从一个颜色中获取饱和度（saturation）值；</li>
+<li>lightness($color)：从一个颜色中获取亮度（lightness）值；</li>
+</ul>
+<h3 id="Maps的函数"><a href="#Maps的函数" class="headerlink" title="Maps的函数"></a>Maps的函数</h3><ul>
+<li>map-get($map,$key)：根据给定的 key 值，返回 map 中相关的值。</li>
+<li>map-merge($map1,$map2)：将两个 map 合并成一个新的 map。</li>
+<li>map-remove($map,$key)：从 map 中删除一个 key，返回一个新 map。</li>
+<li>map-keys($map)：返回 map 中所有的 key。</li>
+<li>map-values($map)：返回 map 中所有的 value。</li>
+<li>map-has-key($map,$key)：根据给定的 key 值判断 map 是否有对应的 value 值，如果有返回 true，否则返回 false。</li>
+<li>keywords($args)：返回一个函数的参数，这个参数可以动态的设置 key 和 value。</li>
+</ul>
+<h3 id="指令-Directives"><a href="#指令-Directives" class="headerlink" title="指令(Directives)"></a>指令(Directives)</h3><blockquote>
+<p>@for<br>@each<br>@while<br>@function<br>@debug<br>@warn<br>@error</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/07/21/Sass的基本用法/" data-id="ciz56n0xs0003h4if55xke5s8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/01/响应式开发上/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          响应式开发(上)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/12/模块化开发/">模块化开发</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/15/css3高级/">css3动画与3D转换</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/12/css3进阶/">css3下</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/css3基础/">css3上</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/15/H5下/">h5下</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>css3动画与3D转换 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="3D转换1、3D坐标轴用X、Y、Z分别表示空间的3个维度，三条轴互相垂直。如图
+2、透视（perspective）电脑显示屏是一个2D平面，图像之所以具有立体感（3D效果），其实只是一种视觉呈现 ，通过透视可以实现此目的。透视可以将一个2D平面，在转换的过程当中，呈现3D效果。（没有perspective，便“没有”Z轴）并非任何情况下需要透视效果
+3、perspective有两种写法a) 作为一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3动画与3D转换">
+<meta property="og:url" content="http://yoursite.com/2015/12/15/css3高级/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="3D转换1、3D坐标轴用X、Y、Z分别表示空间的3个维度，三条轴互相垂直。如图
+2、透视（perspective）电脑显示屏是一个2D平面，图像之所以具有立体感（3D效果），其实只是一种视觉呈现 ，通过透视可以实现此目的。透视可以将一个2D平面，在转换的过程当中，呈现3D效果。（没有perspective，便“没有”Z轴）并非任何情况下需要透视效果
+3、perspective有两种写法a) 作为一">
+<meta property="og:image" content="http://yoursite.com/./3d.png">
+<meta property="og:updated_time" content="2017-02-14T06:55:41.084Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3动画与3D转换">
+<meta name="twitter:description" content="3D转换1、3D坐标轴用X、Y、Z分别表示空间的3个维度，三条轴互相垂直。如图
+2、透视（perspective）电脑显示屏是一个2D平面，图像之所以具有立体感（3D效果），其实只是一种视觉呈现 ，通过透视可以实现此目的。透视可以将一个2D平面，在转换的过程当中，呈现3D效果。（没有perspective，便“没有”Z轴）并非任何情况下需要透视效果
+3、perspective有两种写法a) 作为一">
+<meta name="twitter:image" content="http://yoursite.com/./3d.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-css3高级" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/15/css3高级/" class="article-date">
+  <time datetime="2015-12-15T12:24:21.000Z" itemprop="datePublished">2015-12-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css3动画与3D转换
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="3D转换"><a href="#3D转换" class="headerlink" title="3D转换"></a>3D转换</h2><h3 id="1、3D坐标轴"><a href="#1、3D坐标轴" class="headerlink" title="1、3D坐标轴"></a>1、3D坐标轴</h3><p>用X、Y、Z分别表示空间的3个维度，三条轴互相垂直。如图<br><img src="./3d.png" alt="3D坐标轴"></p>
+<h3 id="2、透视（perspective）"><a href="#2、透视（perspective）" class="headerlink" title="2、透视（perspective）"></a>2、透视（perspective）</h3><p>电脑显示屏是一个2D平面，图像之所以具有立体感（3D效果），其实只是一种视觉呈现 ，通过透视可以实现此目的。<br>透视可以将一个2D平面，在转换的过程当中，呈现3D效果。（没有perspective，便“没有”Z轴）<br>并非任何情况下需要透视效果</p>
+<h3 id="3、perspective有两种写法"><a href="#3、perspective有两种写法" class="headerlink" title="3、perspective有两种写法"></a>3、perspective有两种写法</h3><p>a) 作为一个属性，设置给父元素，作用于所有3D转换的子元素<br>b) 作为transform属性的一个值，做用于元素自身 ，并且必须要写在最前面</p>
+<h3 id="4、3D呈现（transform-style）"><a href="#4、3D呈现（transform-style）" class="headerlink" title="4、3D呈现（transform-style）"></a>4、3D呈现（transform-style）</h3><p>设置内嵌的元素在 3D 空间如何呈现，这些子元素必须为变形原素。<br>flat：所有子元素在 2D 平面呈现<br>preserve-3d：保留3D空间<br>所有的子元素必须要应用3D转换才可以</p>
+<h3 id="5、backface-visibility属性"><a href="#5、backface-visibility属性" class="headerlink" title="5、backface-visibility属性"></a>5、backface-visibility属性</h3><p>设置元素背面是否可见</p>
+<p>需要详细分析透视原理的可以去看张鑫旭的博客</p>
+<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><p>简介:动画是CSS3中具有颠覆性的特征之一，可通过设置多个节点来精确控制一个或一组动画，常用来实现复杂的动画效果。</p>
+<h4 id="1、必要元素："><a href="#1、必要元素：" class="headerlink" title="1、必要元素："></a>1、必要元素：</h4><p>a、通过@keyframes指定动画序列；<br>b、通过百分比将动画序列分割成多个节点；<br>c、在各节点中分别定义各属性<br>d、通过animation将动画应用于相应元素；</p>
+<h4 id="2、关键属性"><a href="#2、关键属性" class="headerlink" title="2、关键属性"></a>2、关键属性</h4><p>@keyframes  规定动画。<br>animation   所有动画属性的简写属性，除了 animation-play-state 属性。</p>
+<h5 id="animation-name"><a href="#animation-name" class="headerlink" title="animation-name"></a>animation-name</h5><p>规定 @keyframes 动画的名称。    </p>
+<h5 id="animation-duration"><a href="#animation-duration" class="headerlink" title="animation-duration"></a>animation-duration</h5><p>规定动画完成一个周期所花费的秒或毫秒。默认是 0。  </p>
+<h5 id="animation-timing-function"><a href="#animation-timing-function" class="headerlink" title="animation-timing-function"></a>animation-timing-function</h5><p>linear  动画从头到尾的速度是相同的。<br>ease    默认。动画以低速开始，然后加快，在结束前变慢。<br>ease-in     动画以低速开始。<br>ease-out    动画以低速结束。<br>ease-in-out     动画以低速开始和结束。<br>cubic-bezier(n,n,n,n)  在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1的数 </p>
+<h5 id="animation-delay"><a href="#animation-delay" class="headerlink" title="animation-delay"></a>animation-delay</h5><p>规定动画何时开始。默认是 0。  </p>
+<h5 id="animation-iteration-count"><a href="#animation-iteration-count" class="headerlink" title="animation-iteration-count"></a>animation-iteration-count</h5><p>规定动画被播放的次数。默认是 1。  </p>
+<h5 id="animation-direction"><a href="#animation-direction" class="headerlink" title="animation-direction"></a>animation-direction</h5><p>规定动画是否在下一周期逆向地播放。<br>normal  默认值。动画应该正常播放。<br>alternate   动画应该轮流反向播放。  </p>
+<h5 id="animation-play-state"><a href="#animation-play-state" class="headerlink" title="animation-play-state"></a>animation-play-state</h5><p>规定动画是否正在运行或暂停。<br>paused  规定动画已暂停。<br>running    默认 规定动画正在播放。   </p>
+<h5 id="animation-fill-mode"><a href="#animation-fill-mode" class="headerlink" title="animation-fill-mode"></a>animation-fill-mode</h5><p>规定对象动画时间之外的状态。</p>
+<h4 id="参数值的顺序："><a href="#参数值的顺序：" class="headerlink" title="参数值的顺序："></a>参数值的顺序：</h4><p>关于几个值，除了名字，动画时间，延时有严格顺序要求其它随意</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">            <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">            <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">            <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">            <span class="attribute">background-color</span>: green;</div><div class="line">            <span class="attribute">animation</span>: change <span class="number">10s</span> linear forwards;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">/*动画序列*/</span></div><div class="line">        @<span class="keyword">keyframes</span> change &#123;</div><div class="line">            <span class="comment">/*百分比是相对于动画的执行时间*/</span></div><div class="line">            0% &#123;</div><div class="line">                </div><div class="line">            &#125;</div><div class="line"></div><div class="line">            20% &#123;</div><div class="line">                <span class="attribute">width</span>: <span class="number">400px</span>;</div><div class="line">                <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            40% &#123;</div><div class="line">                <span class="attribute">width</span>: <span class="number">400px</span>;</div><div class="line">                <span class="attribute">height</span>: <span class="number">400px</span>;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            80% &#123;</div><div class="line">                <span class="attribute">width</span>: <span class="number">400px</span>;</div><div class="line">                <span class="attribute">height</span>: <span class="number">400px</span>;</div><div class="line">                <span class="attribute">background-color</span>: yellow;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            100% &#123;</div><div class="line">                <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">                <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">                <span class="attribute">background-color</span>: green;</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/12/15/css3高级/" data-id="ciz538hby0001d8ifeaclnq4m" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/12/模块化开发/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          模块化开发
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/12/css3进阶/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">css3下</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/12/模块化开发/">模块化开发</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/15/css3高级/">css3动画与3D转换</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/12/css3进阶/">css3下</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/css3基础/">css3上</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/15/H5下/">h5下</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

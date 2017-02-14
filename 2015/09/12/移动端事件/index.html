@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动端布局_中 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="###移动端事件Touch事件
+
+touchstart：当手指触碰屏幕时候触发。
+绑定事件的方法：
+‘dom.addEventListener(‘touchstart’,function(e){});’
+事件返回的e对象包含那些移动端特有的属性：
+targetTouches 目标元素的所有当前触摸 
+changedTouches 页面上最新更改的所有触摸 
+touches 页面上的所有触摸
+
+to">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端布局_中">
+<meta property="og:url" content="http://yoursite.com/2015/09/12/移动端事件/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="###移动端事件Touch事件
+
+touchstart：当手指触碰屏幕时候触发。
+绑定事件的方法：
+‘dom.addEventListener(‘touchstart’,function(e){});’
+事件返回的e对象包含那些移动端特有的属性：
+targetTouches 目标元素的所有当前触摸 
+changedTouches 页面上最新更改的所有触摸 
+touches 页面上的所有触摸
+
+to">
+<meta property="og:updated_time" content="2017-02-11T04:26:23.561Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端布局_中">
+<meta name="twitter:description" content="###移动端事件Touch事件
+
+touchstart：当手指触碰屏幕时候触发。
+绑定事件的方法：
+‘dom.addEventListener(‘touchstart’,function(e){});’
+事件返回的e对象包含那些移动端特有的属性：
+targetTouches 目标元素的所有当前触摸 
+changedTouches 页面上最新更改的所有触摸 
+touches 页面上的所有触摸
+
+to">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-移动端事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/12/移动端事件/" class="article-date">
+  <time datetime="2015-09-12T14:12:11.000Z" itemprop="datePublished">2015-09-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动端布局_中
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###移动端事件Touch事件</p>
+<ul>
+<li>touchstart：当手指触碰屏幕时候触发。</li>
+<li>绑定事件的方法：</li>
+<li>‘dom.addEventListener(‘touchstart’,function(e){});’</li>
+<li>事件返回的e对象包含那些移动端特有的属性：</li>
+<li>targetTouches 目标元素的所有当前触摸 </li>
+<li>changedTouches 页面上最新更改的所有触摸 </li>
+<li><p>touches 页面上的所有触摸</p>
+</li>
+<li><p>touchmove：当手指在屏幕上滑动时连续触发。</p>
+</li>
+<li>绑定事件的方法：</li>
+<li>‘dom.addEventListener(‘touchmove’,function(e){});’</li>
+<li>事件返回的e对象包含那些移动端特有的属性：</li>
+<li>originalEvent  是jquery 封装的事件。</li>
+<li>targetTouches 目标元素的所有当前触摸 </li>
+<li>changedTouches 页面上最新更改的所有触摸 </li>
+<li>touches 页面上的所有触摸</li>
+</ul>
+<ul>
+<li>touchend：当手指离开屏幕时触发。</li>
+<li>绑定事件的方法：</li>
+<li>‘dom.addEventListener(‘touchend’,function(e){});’</li>
+<li>事件返回的e对象包含那些移动端特有的属性：</li>
+<li>changedTouches 页面上最新更改的所有触摸 </li>
+</ul>
+<ul>
+<li>touchcancel：系统停止跟踪触摸时候会触发。</li>
+</ul>
+<h3 id="在touchend事件的时候event只会记录changedtouches"><a href="#在touchend事件的时候event只会记录changedtouches" class="headerlink" title="在touchend事件的时候event只会记录changedtouches"></a>在touchend事件的时候event只会记录changedtouches</h3><ul>
+<li>clientX:触摸目标在视口中的X坐标。</li>
+<li>clientY:触摸目标在视口中的Y坐标。</li>
+<li>pageX：触摸目标在页面中的x坐标。</li>
+<li>pageY：触摸目标在页面中的y坐标。</li>
+<li>screenX:触摸目标在屏幕中的x坐标。</li>
+<li>screenY:触摸目标在屏幕中的y坐标</li>
+</ul>
+<h3 id="过渡和动画结束事件"><a href="#过渡和动画结束事件" class="headerlink" title="过渡和动画结束事件"></a>过渡和动画结束事件</h3><ul>
+<li><p>transitionEnd   过渡结束后触发。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dom.addEventListener(&apos;webkitTransitionEnd&apos;,function(e)&#123; &#125;);</div><div class="line">dom.addEventListener(&apos;transitionEnd&apos;,function(e)&#123; &#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>animationEnd   动画结束后触发。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dom.addEventListener(&apos;webkitAnimationEnd&apos;,function(e)&#123; &#125;);</div><div class="line">dom.addEventListener(&apos;animationEnd&apos;,function(e)&#123; &#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Gesture-事件"><a href="#Gesture-事件" class="headerlink" title="Gesture 事件"></a>Gesture 事件</h4><ul>
+<li>gesturestart<br>当一个手指触摸屏幕之后，第二个手指再触摸屏幕时触发。</li>
+<li>gesturechange<br>当上面的事件触发后立即触发。</li>
+<li><p>gestureend<br>第二根手指离开屏幕时触发，之后将不会再次触发gesturechange。</p>
+</li>
+<li><p>在event当中会返回另外两个参数<br>scale 根据两个手指的滑动距离计算的缩放比例 初始1<br>rotation根据两个手指的滑动距离计算的旋转角度 初始 0</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/09/12/移动端事件/" data-id="ciz0xs60m0001swifye19j5km" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/16/AJAX编程/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Ajax编程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/05/移动端进阶/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">移动端之事件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/12/模块化开发/">模块化开发</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/15/css3高级/">css3动画与3D转换</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/12/css3进阶/">css3下</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/css3基础/">css3上</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/15/H5下/">h5下</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

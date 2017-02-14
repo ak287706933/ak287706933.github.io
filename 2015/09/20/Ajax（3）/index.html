@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ajax（3） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="XML
+XML是一种标记语言，很类似HTML，其宗旨是用来传输数据，具有自我描述性（固定的格式的数据）。
+HTML是来展现网页的
+XML是把数据给用户来用（存储数据的）
+
+12345678&amp;lt;?xml versio = &amp;quot;1.0&amp;quot; encoding = &amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;html&amp;gt;        &amp;lt;body&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax（3）">
+<meta property="og:url" content="http://yoursite.com/2015/09/20/Ajax（3）/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="XML
+XML是一种标记语言，很类似HTML，其宗旨是用来传输数据，具有自我描述性（固定的格式的数据）。
+HTML是来展现网页的
+XML是把数据给用户来用（存储数据的）
+
+12345678&amp;lt;?xml versio = &amp;quot;1.0&amp;quot; encoding = &amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;html&amp;gt;        &amp;lt;body&amp;gt;">
+<meta property="og:updated_time" content="2017-02-14T06:58:45.901Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ajax（3）">
+<meta name="twitter:description" content="XML
+XML是一种标记语言，很类似HTML，其宗旨是用来传输数据，具有自我描述性（固定的格式的数据）。
+HTML是来展现网页的
+XML是把数据给用户来用（存储数据的）
+
+12345678&amp;lt;?xml versio = &amp;quot;1.0&amp;quot; encoding = &amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;html&amp;gt;        &amp;lt;body&amp;gt;">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Ajax（3）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/20/Ajax（3）/" class="article-date">
+  <time datetime="2015-09-20T05:33:11.000Z" itemprop="datePublished">2015-09-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ajax（3）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h3><ul>
+<li>XML是一种标记语言，很类似HTML，其宗旨是用来传输数据，具有自我描述性（固定的格式的数据）。</li>
+<li>HTML是来展现网页的</li>
+<li>XML是把数据给用户来用（存储数据的）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;?xml versio = &quot;1.0&quot; encoding = &quot;UTF-8&quot;?&gt;</div><div class="line">&lt;html&gt;</div><div class="line">        &lt;body&gt;</div><div class="line">                &lt;div&gt;学习xml&lt;/div&gt;</div><div class="line">                &lt;name&gt;itcast&lt;/name&gt;</div><div class="line">                &lt;age&gt;18&lt;/age&gt;</div><div class="line">        &lt;/body&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h3 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h3><ul>
+<li>1、必须有一个根元素。</li>
+<li>2、可以自定义标签名。</li>
+<li>3、不可有空格、不可以数字或 .开头、大小写敏感</li>
+<li>4、不可交叉嵌套</li>
+<li>5、属性双引号</li>
+<li>6、特殊符号要使用实体</li>
+<li>7、注释和HTML一样</li>
+</ul>
+<p>虽然可以描述和传输复杂数据，但是其解析过于复杂并且体积较大，所以现在开发已经很少使用了。</p>
+<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><blockquote>
+<p>即javaScript Object Notation 另一种轻量级的文本数据交换格式，独立与语言。</p>
+</blockquote>
+<ul>
+<li><p>语法规则</p>
+<ul>
+<li>1、数据在名称/值对中</li>
+<li>2、数据由逗号分隔（最后一个健/值对不能带逗号）</li>
+<li>3、花括号保存对象方括号保存数组</li>
+<li>4、使用双引号</li>
+</ul>
+</li>
+</ul>
+<h3 id="JSON解析"><a href="#JSON解析" class="headerlink" title="JSON解析"></a>JSON解析</h3><ul>
+<li><p>JSON数据在不同语言进行传输时，类型为字符串，不同的语言各自也都对应有解析方法，需要解析完成后才能读取。</p>
+</li>
+<li><p>1、Javascript解析方法</p>
+<blockquote>
+<p>eavl()、JSON对象、JSON.parse()、JSON.stringify();</p>
+</blockquote>
+</li>
+<li>2、PHP解析方法<blockquote>
+<p>json_encode()、json_decode()</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var json = JOSN.stringify(obj)  //对象转json</div><div class="line">var object = JOSN.parse(josn) //json转对象</div></pre></td></tr></table></figure>
+<ul>
+<li>eaval 可以将字符串解析成JS可以识别的语法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var str = &apos;sleret(1)&apos;;</div><div class="line">eval(&apos;(&apos;+str+&apos;)&apos;);</div><div class="line">结果 为 1</div><div class="line">``` </div><div class="line"></div><div class="line">* JSON一转换变成Obj</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>var json = ‘{“mane”:”itcast”,”age”:10 }’;<br>var obj = eval(‘(‘+ ‘{“mane”:”itcast”,”age”:10 }’+’)’);<br>console.log(obj);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;cc:ie6+快捷键  把js兼容放在里面</div><div class="line"></div><div class="line">* 在PHP中解析JOSN</div></pre></td></tr></table></figure></p>
+<p>//数据是存在数据库里，从数据里取后往往是一个数组或对象<br>需要转换成JOSN<br>$arr = array(<br> ‘name’=&gt;’itcast’,<br>‘age’=&gt;10<br>) ;</p>
+<p>echo json_encode($arr);//转换成josn</p>
+<p>$obj = json_decode($json);//转换成对象</p>
+<p>echo $obj-&gt;name;//访问对象属性</p>
+<p>$result=file_get_content(‘stars.json’);//获取文件<br>echo $result;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### Ajax工具函数封装</div></pre></td></tr></table></figure></p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html lang="en"></html></p>
+<p><head><br>    <meta charset="UTF-8"><br>    <title>Ajax工具函数</title><br></head></p>
+<p><body><br>    <script><br>        // 定义一个命名空间<br>        var $ = {<br>            params: function (args) { // 专门处理我们的数据<br>                var o = ‘’;<br>                for(var k in args) {<br>                    o += k + ‘=’ + args[k] + ‘&amp;’;<br>                }</p>
+<pre><code>            o = o.slice(0, -1);
+
+            return o;
+            // console.log(o);
+        },
+        ajax: function (options) {
+            // 初始化参数
+            var type = options.type || &apos;get&apos;;
+            var url = options.url || location.pathname;
+
+            // get 方式 url?key=val&amp;key1=val1
+            // post 方式 xhr.send(key=val&amp;key1=val1)
+            var data = this.params(options.data || {});
+
+            // var success = options.success || function () {console.log(&apos;回调函数不能为空&apos;)}
+
+            var success = options.success;
+
+            var xhr = new XMLHttpRequest;
+
+            if(type == &apos;get&apos;) { // 当请求方式为get，参数放到url上
+                url = url + &apos;?&apos; + data;
+                data = null;
+            }
+
+            // 设置请求方式
+            xhr.open(type, url);
+
+            if(type == &apos;post&apos;) { // 当请求方式为post，需要设置Content-Type
+                xhr.setRequestHeader(&apos;Content-Type&apos;, &apos;application/x-www-form-urlencoded&apos;);
+            }
+
+            // 发送请求主体
+            xhr.send(data);
+
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState == 4 &amp;&amp; xhr.status == 200) {
+                    // 调用回调函数并传参
+                    var result = JSON.parse(xhr.responseText);
+
+                    success(result);
+                }
+            }
+        }
+    }
+
+    // 调用函数
+    $.ajax({
+        type: &apos;post&apos;,
+        url: &apos;demo.php&apos;,
+        data: {name: &apos;itcast&apos;, age: 10},
+        success: function (data) {
+            console.log(data);
+        }
+    });
+
+
+    function fn(arg1) {
+        // alert(arg1);
+
+        // arg1();
+    }
+
+    // fn(1);
+
+    // fn([1,2]);
+
+    // fn({name: &apos;itcast&apos;});
+
+    var callback = function () {
+        alert(1);
+    }
+
+    fn(callback);
+
+    // for(var key in location) {
+    //  console.log(key + &apos;~~~~&apos; + location[key]);
+    // }
+&lt;/script&gt;
+</code></pre><p></body><br></html><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* PHP文件</div></pre></td></tr></table></figure></p>
+<p>&lt;?php<br>    // 接收数据<br>    //  以JSON方式返回<br>    echo json_encode($_GET);<br>?&gt;<br>```</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><blockquote>
+<p>get数据 传在url 后面<br>Conten-type 是设置send里面的类型<br>有get 就不要Content-type</p>
+</blockquote>
+</script></body></p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/09/20/Ajax（3）/" data-id="ciz56n0xt0004h4ifwl7cl453" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/12/H5上/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          h5上
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/19/Ajax（2）/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Ajax(2)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/12/模块化开发/">模块化开发</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/15/css3高级/">css3动画与3D转换</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/12/css3进阶/">css3下</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/css3基础/">css3上</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/15/H5下/">h5下</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

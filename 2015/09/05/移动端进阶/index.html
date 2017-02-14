@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动端之事件 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="移动端的滑动效果
+touchstart：当手指触碰屏幕时候触发。
+绑定事件的方法：
+‘dom.addEventListener(‘touchstart’,function(e){});’
+事件返回的e对象包含那些移动端特有的属性：
+targetTouches 目标元素的所有当前触摸 
+changedTouches 页面上最新更改的所有触摸 
+touches 页面上的所有触摸
+
+touchmove：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端之事件">
+<meta property="og:url" content="http://yoursite.com/2015/09/05/移动端进阶/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="移动端的滑动效果
+touchstart：当手指触碰屏幕时候触发。
+绑定事件的方法：
+‘dom.addEventListener(‘touchstart’,function(e){});’
+事件返回的e对象包含那些移动端特有的属性：
+targetTouches 目标元素的所有当前触摸 
+changedTouches 页面上最新更改的所有触摸 
+touches 页面上的所有触摸
+
+touchmove：">
+<meta property="og:updated_time" content="2017-02-14T07:02:46.004Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端之事件">
+<meta name="twitter:description" content="移动端的滑动效果
+touchstart：当手指触碰屏幕时候触发。
+绑定事件的方法：
+‘dom.addEventListener(‘touchstart’,function(e){});’
+事件返回的e对象包含那些移动端特有的属性：
+targetTouches 目标元素的所有当前触摸 
+changedTouches 页面上最新更改的所有触摸 
+touches 页面上的所有触摸
+
+touchmove：">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-移动端进阶" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/05/移动端进阶/" class="article-date">
+  <time datetime="2015-09-05T12:12:11.000Z" itemprop="datePublished">2015-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动端之事件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="移动端的滑动效果"><a href="#移动端的滑动效果" class="headerlink" title="移动端的滑动效果"></a>移动端的滑动效果</h3><ul>
+<li>touchstart：当手指触碰屏幕时候触发。</li>
+<li>绑定事件的方法：</li>
+<li>‘dom.addEventListener(‘touchstart’,function(e){});’</li>
+<li>事件返回的e对象包含那些移动端特有的属性：</li>
+<li>targetTouches 目标元素的所有当前触摸 </li>
+<li>changedTouches 页面上最新更改的所有触摸 </li>
+<li><p>touches 页面上的所有触摸</p>
+</li>
+<li><p>touchmove：当手指在屏幕上滑动时连续触发。</p>
+</li>
+<li>绑定事件的方法：</li>
+<li>‘dom.addEventListener(‘touchmove’,function(e){});’</li>
+<li>事件返回的e对象包含那些移动端特有的属性：</li>
+<li>originalEvent  是jquery 封装的事件。</li>
+<li>targetTouches 目标元素的所有当前触摸 </li>
+<li>changedTouches 页面上最新更改的所有触摸 </li>
+<li>touches 页面上的所有触摸</li>
+</ul>
+<ul>
+<li>touchend：当手指离开屏幕时触发。</li>
+<li>绑定事件的方法：</li>
+<li>‘dom.addEventListener(‘touchend’,function(e){});’</li>
+<li>事件返回的e对象包含那些移动端特有的属性：</li>
+<li>changedTouches 页面上最新更改的所有触摸 </li>
+</ul>
+<ul>
+<li>touchcancel：系统停止跟踪触摸时候会触发。</li>
+<li>需要注意的是：在移动端是利用transform来做定位。<br>滑动的时候改变距离的方向问题。</li>
+</ul>
+<h4 id="过渡结束事件"><a href="#过渡结束事件" class="headerlink" title="过渡结束事件"></a>过渡结束事件</h4><p>‘dom.addEventListener(‘webkitTransitionEnd’,function(e){ });’<br>‘dom.addEventListener(‘transitionEnd’,function(e){ });’<br>在这里要注意的是：为了兼容浏览器在绑定事件的时候需要同时绑定一个带webkit前缀的事件和不带的这样达到兼容主流浏览器。<br>还有：给目标元素绑定事件后，每一次过渡结束都会触发transitionEnd事件。</p>
+<h4 id="使用过渡和改变注意问题"><a href="#使用过渡和改变注意问题" class="headerlink" title="使用过渡和改变注意问题"></a>使用过渡和改变注意问题</h4><p>在移动端为了兼容老版本的一些webkit浏览时在css中或者js中一定要做兼容处理。<br>Css中的处理方法是加上-webkit-前缀和一个不加的。<br>Js中处理方法是style设置的时候需要设置一个webkit前缀的属性和一个不加的。</p>
+<h3 id="两栏其中一栏宽度自适应"><a href="#两栏其中一栏宽度自适应" class="headerlink" title="两栏其中一栏宽度自适应"></a>两栏其中一栏宽度自适应</h3><ul>
+<li>那么当文本在另一个容器当中，容器是overflow：hidden的时候。那么这个时候这个盒子就变成了一个绝缘的盒子，不去影响任何外部的元素并且内容使用剩余的宽度。<br>这样也可是做一个自适应的两栏布局方式。</li>
+<li>如下图所示</li>
+<li></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/09/05/移动端进阶/" data-id="ciz0xs60q0002swifxyny61z8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/12/移动端事件/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          移动端布局_中
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/01/移动端布局基础1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">移动端之布局</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/12/模块化开发/">模块化开发</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/15/css3高级/">css3动画与3D转换</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/12/css3进阶/">css3下</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/css3基础/">css3上</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/15/H5下/">h5下</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

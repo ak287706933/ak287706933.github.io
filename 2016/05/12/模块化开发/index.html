@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>模块化开发 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="有哪些模块化方法1、全局函数以计算器为例子123456789101112131415161718192021//-----------------------计算模块 开始-----------------------//加        function add(a,b)&amp;#123;            return parseFloat(a) + parseFloat(b);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模块化开发">
+<meta property="og:url" content="http://yoursite.com/2016/05/12/模块化开发/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="有哪些模块化方法1、全局函数以计算器为例子123456789101112131415161718192021//-----------------------计算模块 开始-----------------------//加        function add(a,b)&amp;#123;            return parseFloat(a) + parseFloat(b);">
+<meta property="og:updated_time" content="2017-02-14T06:10:13.868Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模块化开发">
+<meta name="twitter:description" content="有哪些模块化方法1、全局函数以计算器为例子123456789101112131415161718192021//-----------------------计算模块 开始-----------------------//加        function add(a,b)&amp;#123;            return parseFloat(a) + parseFloat(b);">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-模块化开发" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/12/模块化开发/" class="article-date">
+  <time datetime="2016-05-12T13:32:11.000Z" itemprop="datePublished">2016-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      模块化开发
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="有哪些模块化方法"><a href="#有哪些模块化方法" class="headerlink" title="有哪些模块化方法"></a>有哪些模块化方法</h3><h4 id="1、全局函数"><a href="#1、全局函数" class="headerlink" title="1、全局函数"></a>1、全局函数</h4><p>以计算器为例子<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//-----------------------计算模块 开始-----------------------</span></div><div class="line"><span class="comment">//加</span></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) + <span class="built_in">parseFloat</span>(b);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//减</span></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">substract</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) - <span class="built_in">parseFloat</span>(b);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//乘</span></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) * <span class="built_in">parseFloat</span>(b);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//除</span></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">divide</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) / <span class="built_in">parseFloat</span>(b);</div><div class="line">        &#125;</div><div class="line"><span class="comment">//-----------------------计算模块 结束-----------------------</span></div></pre></td></tr></table></figure></p>
+<p>缺点:严格来说，这并不是真正的模块化，我们只能人为的通过注释的方式来标明这四个方法是属于一个计算相关的模块。</p>
+<h4 id="2、封装成对象"><a href="#2、封装成对象" class="headerlink" title="2、封装成对象"></a>2、封装成对象</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> calculator = &#123;</div><div class="line">    <span class="attr">add</span>:<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) + <span class="built_in">parseFloat</span>(b);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">substract</span>:<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) - <span class="built_in">parseFloat</span>(b);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">multiply</span>:<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) * <span class="built_in">parseFloat</span>(b);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">divide</span>:<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) / <span class="built_in">parseFloat</span>(b);</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>缺点:暴露了全局对象，还是可能冲突，命名空间越来越长，越写越复杂。</p>
+<h4 id="3、匿名函数自执行形式（沙箱形式）"><a href="#3、匿名函数自执行形式（沙箱形式）" class="headerlink" title="3、匿名函数自执行形式（沙箱形式）"></a>3、匿名函数自执行形式（沙箱形式）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> calculator = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="comment">//这个函数是私有的，只有当calculator的内部使用。</span></div><div class="line">            <span class="function"><span class="keyword">function</span> <span class="title">showLog</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(str + <span class="string">"方法被调用了"</span>);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//公有</span></div><div class="line">            <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">                showLog(<span class="string">"加法"</span>);</div><div class="line">                <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) + <span class="built_in">parseFloat</span>(b);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//公有</span></div><div class="line">            <span class="function"><span class="keyword">function</span> <span class="title">substract</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">                showLog(<span class="string">"减法"</span>);</div><div class="line">                <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) - <span class="built_in">parseFloat</span>(b);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//公有</span></div><div class="line">            <span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">                showLog(<span class="string">"乘法"</span>);</div><div class="line">                <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) * <span class="built_in">parseFloat</span>(b);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//公有</span></div><div class="line">            <span class="function"><span class="keyword">function</span> <span class="title">divide</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">                showLog(<span class="string">"除法"</span>);</div><div class="line">                <span class="keyword">return</span> <span class="built_in">parseFloat</span>(a) / <span class="built_in">parseFloat</span>(b);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">return</span> &#123;</div><div class="line">                <span class="attr">add</span>:add,</div><div class="line">                <span class="attr">substract</span>:substract,</div><div class="line">                <span class="attr">multiply</span>:multiply,</div><div class="line">                <span class="attr">divide</span>:divide</div><div class="line">            &#125;</div><div class="line">        &#125;)();</div></pre></td></tr></table></figure>
+<p>缺点:相对于封装成对象，沙箱模式已经很优秀了，但还是暴露了全局对象比如add,substract···这四个方法。</p>
+<h2 id="模块化的规范"><a href="#模块化的规范" class="headerlink" title="模块化的规范"></a>模块化的规范</h2><p>浏览器端规范: sea.js require.js<br>服务器端规范: node.js<br>跨浏览器、服务器的模块规范: CommonJS   ECMAScript2015(ES6)</p>
+<h3 id="sea-js的使用方法"><a href="#sea-js的使用方法" class="headerlink" title="sea.js的使用方法"></a>sea.js的使用方法</h3><p>a)  html文件中引入sea.js库<br>b)  使用seajs.use加载主模块（也叫入口模块），起名一般叫main.js<br>c)  模块的定义方法<br>    在我们的sea.js当中一个模块就是一个文件<br>    调用define函数定义主模块<br>    用require函数加载其他第三方模块<br>    用module.exports或exports来暴露当前模块的东西<br>需要注意的点:<br>    1.define(function(require,exports,module){});这里面的require,exports,module三个参数的名字是固定写法，不能简写，顺序不能错了 记忆方法：rem –&gt; 依赖注入<br>    2.如果define里的参数想省略，只能从后面开始省略，只要写了后面的，前面的必须要写上 –&gt; 推荐写全，不要省<br>    3.如果一个模块既不需要公开成员变量，也不需要依赖第三方模块,那么可以全部省略<br>    4.seajs.use(“入口模块”)可以加回调函数，形式如：seajs.use(“入口模块”,callback);</p>
+<h4 id="seajs的路径问题"><a href="#seajs的路径问题" class="headerlink" title="seajs的路径问题"></a>seajs的路径问题</h4><p>1、在sea.js当中，js/main和./js/main的含义不是一样的<br>a)   js/main代表的是在sea.js所在的文件为基准去找，所以找到的是 –&gt; seajs库所在的父级文件夹/js/main.js 这样的话会找不到的<br>b)  ./js/main代表的是以当前html文件去找<br>c)  seajs.use(),require(“xxx”) –&gt; 其实这里的xxx叫模块标识，不是路径<br>2、config的作用就是为了简化调用模块<br>  a) base 设置路径  默认值是seajs库文件所在的父文件夹<br>  b) alias 设置模块的别名，简化调用</p>
+<h4 id="sea-js之把非cmd模块转换成cmd模块"><a href="#sea-js之把非cmd模块转换成cmd模块" class="headerlink" title="sea.js之把非cmd模块转换成cmd模块"></a>sea.js之把非cmd模块转换成cmd模块</h4><p>以jQuery为例  需要在里面加上这样一段代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> define === <span class="string">'function'</span> &amp;&amp; define.cmd)&#123;</div><div class="line">    define(<span class="function"><span class="keyword">function</span>(<span class="params">require,exports,module</span>)</span>&#123;</div><div class="line">            <span class="built_in">module</span>.exports = jQuery;</div><div class="line">        &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="sea-js之module-exports与exports辨析"><a href="#sea-js之module-exports与exports辨析" class="headerlink" title="sea.js之module.exports与exports辨析"></a>sea.js之module.exports与exports辨析</h4><ul>
+<li>本质上用的还是module.exports这个对象，exports的值是module.exports 的引用地址，通过这种方式，我们可以少写一个”module.”</li>
+<li>module.exports 指向新的对象时，exports 将会断开了与 module.exports 的引用</li>
+</ul>
+<h4 id="sea-js加载流程理解"><a href="#sea-js加载流程理解" class="headerlink" title="sea.js加载流程理解"></a>sea.js加载流程理解</h4><p>seajs是预加载懒执行。<br>预加载就是预先把所有的模块全部加载完，懒执行就是需要执行哪块才执行哪块</p>
+<ul>
+<li>html文件加载主模块</li>
+<li>主模块加载依赖的第三方模块</li>
+<li>第三方模块如果还有其他的第三方模块依赖，则进一步加载其他第三方模块</li>
+</ul>
+<h4 id="以tab栏切换为例子"><a href="#以tab栏切换为例子" class="headerlink" title="以tab栏切换为例子"></a>以tab栏切换为例子</h4><p>index.html<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    seajs.use(<span class="string">'main'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'初始化成功'</span>);</div><div class="line">    &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>tab.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require,exports,module</span>)</span>&#123;</div><div class="line">   <span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'jquery'</span>);</div><div class="line">   <span class="function"><span class="keyword">function</span> <span class="title">Tab</span>(<span class="params">ele</span>)</span>&#123;</div><div class="line">       <span class="keyword">var</span> $ele = $(ele);<span class="comment">//选项卡的最外层元素</span></div><div class="line">       <span class="keyword">this</span>.titleList = $ele.find(<span class="string">'.title input[type="button"]'</span>);</div><div class="line">       <span class="keyword">this</span>.contentList = $ele.find(<span class="string">'.content .item'</span>);</div><div class="line">   &#125;</div><div class="line">   <span class="comment">//给我们的选项卡绑定事件</span></div><div class="line">   Tab.prototype.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">        <span class="keyword">this</span>.titleList.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">var</span> index = $(<span class="keyword">this</span>).index();</div><div class="line">            $(<span class="keyword">this</span>).addClass(<span class="string">'active'</span>).siblings().removeClass(<span class="string">'active'</span>);</div><div class="line">            that.contentList.eq(index).show().siblings().hide();</div><div class="line">        &#125;);</div><div class="line">   &#125;</div><div class="line">   <span class="comment">//调用我们的run方法</span></div><div class="line">   Tab.prototype.init = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="keyword">this</span>.run();</div><div class="line">       <span class="keyword">this</span>.titleList.eq(<span class="number">1</span>).triggerHandler(<span class="string">'click'</span>);<span class="comment">//用js来点击元素</span></div><div class="line">   &#125;</div><div class="line">   <span class="built_in">module</span>.exports = Tab;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require,exports,module</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> Tab = <span class="built_in">require</span>(<span class="string">'./tab'</span>);</div><div class="line">    <span class="keyword">var</span> myTab = <span class="keyword">new</span> Tab(<span class="string">'#tab'</span>);</div><div class="line">    myTab.init();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/12/模块化开发/" data-id="ciz538hbi0000d8ifxszaje2h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/12/15/css3高级/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">css3动画与3D转换</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/12/模块化开发/">模块化开发</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/15/css3高级/">css3动画与3D转换</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/12/css3进阶/">css3下</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/css3基础/">css3上</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/15/H5下/">h5下</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

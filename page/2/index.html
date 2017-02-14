@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-移动端事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/12/移动端事件/" class="article-date">
+  <time datetime="2015-09-12T14:12:11.000Z" itemprop="datePublished">2015-09-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/12/移动端事件/">移动端布局_中</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###移动端事件Touch事件</p>
+<ul>
+<li>touchstart：当手指触碰屏幕时候触发。</li>
+<li>绑定事件的方法：</li>
+<li>‘dom.addEventListener(‘touchstart’,function(e){});’</li>
+<li>事件返回的e对象包含那些移动端特有的属性：</li>
+<li>targetTouches 目标元素的所有当前触摸 </li>
+<li>changedTouches 页面上最新更改的所有触摸 </li>
+<li><p>touches 页面上的所有触摸</p>
+</li>
+<li><p>touchmove：当手指在屏幕上滑动时连续触发。</p>
+</li>
+<li>绑定事件的方法：</li>
+<li>‘dom.addEventListener(‘touchmove’,function(e){});’</li>
+<li>事件返回的e对象包含那些移动端特有的属性：</li>
+<li>originalEvent  是jquery 封装的事件。</li>
+<li>targetTouches 目标元素的所有当前触摸 </li>
+<li>changedTouches 页面上最新更改的所有触摸 </li>
+<li>touches 页面上的所有触摸</li>
+</ul>
+<ul>
+<li>touchend：当手指离开屏幕时触发。</li>
+<li>绑定事件的方法：</li>
+<li>‘dom.addEventListener(‘touchend’,function(e){});’</li>
+<li>事件返回的e对象包含那些移动端特有的属性：</li>
+<li>changedTouches 页面上最新更改的所有触摸 </li>
+</ul>
+<ul>
+<li>touchcancel：系统停止跟踪触摸时候会触发。</li>
+</ul>
+<h3 id="在touchend事件的时候event只会记录changedtouches"><a href="#在touchend事件的时候event只会记录changedtouches" class="headerlink" title="在touchend事件的时候event只会记录changedtouches"></a>在touchend事件的时候event只会记录changedtouches</h3><ul>
+<li>clientX:触摸目标在视口中的X坐标。</li>
+<li>clientY:触摸目标在视口中的Y坐标。</li>
+<li>pageX：触摸目标在页面中的x坐标。</li>
+<li>pageY：触摸目标在页面中的y坐标。</li>
+<li>screenX:触摸目标在屏幕中的x坐标。</li>
+<li>screenY:触摸目标在屏幕中的y坐标</li>
+</ul>
+<h3 id="过渡和动画结束事件"><a href="#过渡和动画结束事件" class="headerlink" title="过渡和动画结束事件"></a>过渡和动画结束事件</h3><ul>
+<li><p>transitionEnd   过渡结束后触发。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dom.addEventListener(&apos;webkitTransitionEnd&apos;,function(e)&#123; &#125;);</div><div class="line">dom.addEventListener(&apos;transitionEnd&apos;,function(e)&#123; &#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>animationEnd   动画结束后触发。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dom.addEventListener(&apos;webkitAnimationEnd&apos;,function(e)&#123; &#125;);</div><div class="line">dom.addEventListener(&apos;animationEnd&apos;,function(e)&#123; &#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Gesture-事件"><a href="#Gesture-事件" class="headerlink" title="Gesture 事件"></a>Gesture 事件</h4><ul>
+<li>gesturestart<br>当一个手指触摸屏幕之后，第二个手指再触摸屏幕时触发。</li>
+<li>gesturechange<br>当上面的事件触发后立即触发。</li>
+<li><p>gestureend<br>第二根手指离开屏幕时触发，之后将不会再次触发gesturechange。</p>
+</li>
+<li><p>在event当中会返回另外两个参数<br>scale 根据两个手指的滑动距离计算的缩放比例 初始1<br>rotation根据两个手指的滑动距离计算的旋转角度 初始 0</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/09/12/移动端事件/" data-id="ciz0xs60m0001swifye19j5km" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-移动端进阶" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/05/移动端进阶/" class="article-date">
+  <time datetime="2015-09-05T12:12:11.000Z" itemprop="datePublished">2015-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/05/移动端进阶/">移动端之事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="移动端的滑动效果"><a href="#移动端的滑动效果" class="headerlink" title="移动端的滑动效果"></a>移动端的滑动效果</h3><ul>
+<li>touchstart：当手指触碰屏幕时候触发。</li>
+<li>绑定事件的方法：</li>
+<li>‘dom.addEventListener(‘touchstart’,function(e){});’</li>
+<li>事件返回的e对象包含那些移动端特有的属性：</li>
+<li>targetTouches 目标元素的所有当前触摸 </li>
+<li>changedTouches 页面上最新更改的所有触摸 </li>
+<li><p>touches 页面上的所有触摸</p>
+</li>
+<li><p>touchmove：当手指在屏幕上滑动时连续触发。</p>
+</li>
+<li>绑定事件的方法：</li>
+<li>‘dom.addEventListener(‘touchmove’,function(e){});’</li>
+<li>事件返回的e对象包含那些移动端特有的属性：</li>
+<li>originalEvent  是jquery 封装的事件。</li>
+<li>targetTouches 目标元素的所有当前触摸 </li>
+<li>changedTouches 页面上最新更改的所有触摸 </li>
+<li>touches 页面上的所有触摸</li>
+</ul>
+<ul>
+<li>touchend：当手指离开屏幕时触发。</li>
+<li>绑定事件的方法：</li>
+<li>‘dom.addEventListener(‘touchend’,function(e){});’</li>
+<li>事件返回的e对象包含那些移动端特有的属性：</li>
+<li>changedTouches 页面上最新更改的所有触摸 </li>
+</ul>
+<ul>
+<li>touchcancel：系统停止跟踪触摸时候会触发。</li>
+<li>需要注意的是：在移动端是利用transform来做定位。<br>滑动的时候改变距离的方向问题。</li>
+</ul>
+<h4 id="过渡结束事件"><a href="#过渡结束事件" class="headerlink" title="过渡结束事件"></a>过渡结束事件</h4><p>‘dom.addEventListener(‘webkitTransitionEnd’,function(e){ });’<br>‘dom.addEventListener(‘transitionEnd’,function(e){ });’<br>在这里要注意的是：为了兼容浏览器在绑定事件的时候需要同时绑定一个带webkit前缀的事件和不带的这样达到兼容主流浏览器。<br>还有：给目标元素绑定事件后，每一次过渡结束都会触发transitionEnd事件。</p>
+<h4 id="使用过渡和改变注意问题"><a href="#使用过渡和改变注意问题" class="headerlink" title="使用过渡和改变注意问题"></a>使用过渡和改变注意问题</h4><p>在移动端为了兼容老版本的一些webkit浏览时在css中或者js中一定要做兼容处理。<br>Css中的处理方法是加上-webkit-前缀和一个不加的。<br>Js中处理方法是style设置的时候需要设置一个webkit前缀的属性和一个不加的。</p>
+<h3 id="两栏其中一栏宽度自适应"><a href="#两栏其中一栏宽度自适应" class="headerlink" title="两栏其中一栏宽度自适应"></a>两栏其中一栏宽度自适应</h3><ul>
+<li>那么当文本在另一个容器当中，容器是overflow：hidden的时候。那么这个时候这个盒子就变成了一个绝缘的盒子，不去影响任何外部的元素并且内容使用剩余的宽度。<br>这样也可是做一个自适应的两栏布局方式。</li>
+<li>如下图所示</li>
+<li></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/09/05/移动端进阶/" data-id="ciz0xs60q0002swifxyny61z8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-移动端布局基础1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/01/移动端布局基础1/" class="article-date">
+  <time datetime="2015-09-01T14:12:11.000Z" itemprop="datePublished">2015-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/01/移动端布局基础1/">移动端之布局</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="移动端适配"><a href="#移动端适配" class="headerlink" title="移动端适配"></a>移动端适配</h2><ul>
+<li>流式布局 + viewport</li>
+</ul>
+<h3 id="视口-viewport"><a href="#视口-viewport" class="headerlink" title="视口 viewport"></a>视口 viewport</h3><ul>
+<li>在移动端用来承载网页的这个区域，就是我们的视觉窗口，也叫viewport（视口）, 这个区域可是设置高度宽度，可是按比例放大缩小，而且能设置是否允许用户自行缩放。</li>
+</ul>
+<h3 id="viewport参数"><a href="#viewport参数" class="headerlink" title="viewport参数"></a>viewport参数</h3><ul>
+<li>width:宽度设置的是viewport宽度，可以设置device-width特殊值</li>
+<li>initial-scale：初始缩放比，大于0的数字</li>
+<li>maximum-scale: 最大缩放比，大于0的数字</li>
+<li>minimum-scale: 最小缩放比，大于0的数字</li>
+<li>user-scalable: 是否用户缩放，yes或no（1或0）</li>
+</ul>
+<h3 id="一个标准的移动Web开发页面"><a href="#一个标准的移动Web开发页面" class="headerlink" title="一个标准的移动Web开发页面"></a>一个标准的移动Web开发页面</h3><ul>
+<li>用meta标签把viewport的宽度设为device-width，同时initial-scale=1，user-scalable = 0就构建了一个标准的移动web页面</li>
+<li>‘<meta name="viewport" content="width = device-width,user-scalable = 0,initial-scale = 1.0">‘</li>
+</ul>
+<h4 id="一、常用布局之百分比布局（也叫流式布局"><a href="#一、常用布局之百分比布局（也叫流式布局" class="headerlink" title="一、常用布局之百分比布局（也叫流式布局)"></a>一、常用布局之百分比布局（也叫流式布局)</h4><ul>
+<li>流式布局就是百分比布局，通过盒子的宽度设置成百分比(100%)来根据屏幕的宽度来进行伸缩，特点：不受固定像素的限制，内容向两侧填充。<br>  流式布局是移动web开发使用的常用布局方式</li>
+</ul>
+<h4 id="二、清除高亮"><a href="#二、清除高亮" class="headerlink" title="二、清除高亮"></a>二、清除高亮</h4><ul>
+<li>‘-webkit-tap-highlight-color : transparent;/<em>清除点击高亮效果</em>/‘</li>
+</ul>
+<h4 id="三、盒模型的计算方式"><a href="#三、盒模型的计算方式" class="headerlink" title="三、盒模型的计算方式"></a>三、盒模型的计算方式</h4><ul>
+<li>在移动端通常使用的是百分比布局，那么这样的布局如果使用border或者padding或使容器的宽度超出屏幕的宽度产生滚动条。可以通过css3属性 box-sizing设置所有的盒子重边框开始计算宽度。</li>
+<li>‘-webkit-box-sizing: border-box;/<em>设置宽度以边框开始计算</em>/‘</li>
+<li>‘box-sizing: border-box;’</li>
+</ul>
+<h4 id="四、清除Input的默认的样式"><a href="#四、清除Input的默认的样式" class="headerlink" title="四、清除Input的默认的样式"></a>四、清除Input的默认的样式</h4><ul>
+<li>在移动设备的浏览器当中表单一般会有默认的属性  通过border：none<br>outline：none是无法完全清楚的，还是会有一些浏览器默认的属性，比如：<br>内阴影，立体感、、、对于这些浏览器默认加上的样式我们有一个属性  -webkit-appearance 这个属性指的是设置成 none</li>
+<li>‘-webkit-appearance: none;’</li>
+</ul>
+<h4 id="最小宽度和最大宽度的限制"><a href="#最小宽度和最大宽度的限制" class="headerlink" title="最小宽度和最大宽度的限制"></a>最小宽度和最大宽度的限制</h4><ul>
+<li>适用：图片比较多的首页，门户，电商 等。</li>
+<li>作用:保证页面在尺寸比较大的设备当中保证页面的效果也就是清新度<pre><code>保证页面在小尺寸的设备当中有较好的布局效果。
+</code></pre></li>
+</ul>
+<h4 id="Img的下间隙问题"><a href="#Img的下间隙问题" class="headerlink" title="Img的下间隙问题"></a>Img的下间隙问题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">同一行的文字 </div><div class="line">&lt;img src=&quot;../images/nv-fy.jpg&quot; alt=&quot;&quot;/&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>文字基线默认的 baseline 是以X的下边开始的<br>Img是行内块级元素  它也会有默认的基线对齐。那么和文字一样也会距离底部有一定的间隙。</li>
+<li>可以将图片设置成块级元素让图片挨着底部</li>
+</ul>
+<h4 id="手机上图片模糊的原因以及解决方法"><a href="#手机上图片模糊的原因以及解决方法" class="headerlink" title="手机上图片模糊的原因以及解决方法"></a>手机上图片模糊的原因以及解决方法</h4><ul>
+<li>1：1的显示在移动设备当中图标会失真原因是什么？<br>在高清屏当中会用两个或多个物理像素来显示实际的1px图片内容那么其实就是相当于把1px的图片放大显示了，所以有毛边的图片一般都会失真，也就是显示模糊。</li>
+<li>解决方案，采用压缩图标尺寸的方式来解决。<br>如果是Img使用直接设置宽高的方式来压缩。<br>如果是背景使用的是设置background-size的方式来压缩</li>
+</ul>
+<h4 id="H5新标签搜索按钮调用"><a href="#H5新标签搜索按钮调用" class="headerlink" title="H5新标签搜索按钮调用"></a>H5新标签搜索按钮调用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;form action=&quot;#&quot;&gt;</div><div class="line">    &lt;input type=&quot;search&quot; placeholder=&quot;提示&quot;/&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<h4 id="全屏单页面布局"><a href="#全屏单页面布局" class="headerlink" title="全屏单页面布局"></a>全屏单页面布局</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">html,body&#123;</div><div class="line">    height: 100%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="伸缩布局"><a href="#伸缩布局" class="headerlink" title="伸缩布局"></a>伸缩布局</h3><h4 id="三个重要概念"><a href="#三个重要概念" class="headerlink" title="三个重要概念"></a>三个重要概念</h4><ul>
+<li>主轴：Flex容器的主轴主要用来配置Flex项目，默认是水平方向</li>
+<li>侧轴：与主轴垂直的轴称作侧轴，默认是垂直方向的</li>
+<li>方向：默认主轴从左向右，侧轴默认从上到下</li>
+<li>主轴和侧轴并不是固定不变的，通过flex-direction可以互换。<br><img src="./flex_buju.png" alt="伸缩布局"></li>
+</ul>
+<h4 id="伸缩布局基本语法"><a href="#伸缩布局基本语法" class="headerlink" title="伸缩布局基本语法"></a>伸缩布局基本语法</h4><ul>
+<li>a、指定一个盒子为伸缩盒子 display: flex;(以前使用display:-webkit-box-);</li>
+<li>b、设置属性来调整此盒的子元素的布局方式 例如 flex-direction</li>
+<li>c、明确主侧轴及方向</li>
+<li>d、可互换主侧轴，也可改变方向</li>
+<li>e、伸缩盒子的子容器如果想进行比例分配可设置flex:1<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### 参数说明</div><div class="line">* a、flex-direction调整主轴方向（默认为水平方向）</div><div class="line">* b、justify-content调整主轴对齐</div><div class="line">* c、align-items调整侧轴对齐</div><div class="line">* d、flex-wrap控制是否换行</div><div class="line">* e、align-content堆栈（由flex-wrap产生的独立行）对齐</div><div class="line">* f、flex-flow是flex-direction、flex-wrap的简写形式</div><div class="line">* g、flex子项目在主轴的缩放比例，不指定flex属性，则不参与伸缩分配</div><div class="line">* h、order控制子项目的排列顺序，正序方式排序，从小到大</div><div class="line">此知识点重在理解，要明确找出主轴、侧轴、方向，各属性对应的属性值可参考示例源码</div><div class="line"></div><div class="line">#### 常用布局示例</div><div class="line"></div><div class="line">#### 两栏布局，一栏固定宽，另一行自适应</div><div class="line">```html</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">        *&#123;</div><div class="line">            margin: 0;</div><div class="line">            padding: 0;</div><div class="line">        &#125;</div><div class="line">            .content&#123;</div><div class="line">                display: -webkit-box;</div><div class="line">                width: 750px;</div><div class="line">                margin: 100px auto;</div><div class="line">            &#125;</div><div class="line">            .left&#123;</div><div class="line">                -webkit-box-flex: 1;</div><div class="line">                height: 50px;</div><div class="line">                background-color: blue;</div><div class="line">            &#125;</div><div class="line">            .right&#123;</div><div class="line">                width: 50px;</div><div class="line">                height: 50px;</div><div class="line">                background-color: red;</div><div class="line">            &#125;</div><div class="line">        &lt;/style&gt;    </div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;header class=&quot;content&quot;&gt;</div><div class="line">            &lt;div class=&quot;left&quot;&gt;左边自适应宽度&lt;/div&gt;</div><div class="line">            &lt;div class=&quot;right&quot;&gt;宽50px&lt;/div&gt;</div><div class="line">        &lt;/header&gt;</div><div class="line">    &lt;/body&gt;</div></pre></td></tr></table></figure></li>
+</ul>
+<p><img src="./flex_2.png" alt="两列布局"></p>
+<h4 id="一个三列自适应的伸缩布局"><a href="#一个三列自适应的伸缩布局" class="headerlink" title="一个三列自适应的伸缩布局"></a>一个三列自适应的伸缩布局</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;style type="text/css"&gt;</div><div class="line">        *&#123;</div><div class="line">            margin: 0;</div><div class="line">            padding: 0;</div><div class="line">        &#125;</div><div class="line">            .main&#123;</div><div class="line">                display: flex;</div><div class="line">                width: 750px;</div><div class="line">                padding: 5px;</div><div class="line">                border: 1px solid #F08080;</div><div class="line">                height: 100px;</div><div class="line">                margin: 50px auto;</div><div class="line">            &#125;</div><div class="line">            .left,.middle,.right&#123;</div><div class="line">                margin-right: 5px;</div><div class="line">                flex: 1;</div><div class="line">                height: 100px;</div><div class="line">                border: 1px solid #0000FF;</div><div class="line">            &#125;</div><div class="line">            .main div:nth-child(3)&#123;</div><div class="line">                margin: 0;</div><div class="line">            &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<p><img src="./flex_3.png" alt="三列等宽"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/09/01/移动端布局基础1/" data-id="ciz0xs60d0000swifokmnndxl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面向对象7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/19/面向对象7/" class="article-date">
+  <time datetime="2015-08-19T14:12:11.000Z" itemprop="datePublished">2015-08-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/19/面向对象7/">面向对象(7)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、正则表达式"><a href="#一、正则表达式" class="headerlink" title="一、正则表达式"></a>一、正则表达式</h4><ul>
+<li>regular expression——一个有规则的表达式</li>
+<li>简单的说 他就是一个用于 查找的通配符</li>
+<li>正则表达式就是 一个用于查找的 含有 匹配字符串 或 匹配元字符的 字符串</li>
+<li>正则表达式对象<ul>
+<li>js 正则表达式对象 就是 由 正则表达式创建的对象, 该对象可以进行 匹配, 提取 和 替换.</li>
+<li>创建正则表达式对象<ul>
+<li>构造函数<ul>
+<li>var reg = new RegExp( 正则表达式字符串[, 匹配模式] ); </li>
+<li>字面量</li>
+<li>var regex = /正则表达式/;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>使用正则表达式进行匹配<ul>
+<li>语法:</li>
+<li>正则对象.test( 字符串 ) -&gt; bool  如果参数字符串中含有 复合 正则匹配的 子字符串, 就返回 true, 否则返回 false</li>
+</ul>
+</li>
+</ul>
+<h4 id="二、基本元字符"><a href="#二、基本元字符" class="headerlink" title="二、基本元字符"></a>二、基本元字符</h4><ul>
+<li>.        表示任一个非换行的字符<ul>
+<li>()      表示分组和提高优先级</li>
+<li>[]       表示一个字符, 出现在 [] 中的字符<br>用法: [abc]   出现 [] 中的任意一个字符</li>
+<li>|        或  用法:  正则表达式|正则表达式   </li>
+<li>扩展<ul>
+<li>.        任意的一个字符. 没有任何限制</li>
+<li>[]       是出现在[]中的一个字符. 认为 . 的限制级版本</li>
+<li>|        可以认为是 允许使用多个字符的 匹配</li>
+</ul>
+</li>
+<li>转义字符: \<ul>
+<li>表示点:   .</li>
+<li>表示[]:   [  ]</li>
+<li>表示():      (  )</li>
+<li>表示\ :   \</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="三、限定元字符"><a href="#三、限定元字符" class="headerlink" title="三、限定元字符"></a>三、限定元字符</h4><ul>
+<li>‘*’        紧跟前面的一个字符或一组字符出现 0 次到多次</li>
+<li>‘+’  紧跟在前面的字符出现 1 次到多次</li>
+<li>?        紧跟在前面的字符出现 0 次或 1 次</li>
+<li>{数字}     紧跟在前面的字符出现指定次数</li>
+<li>{数字,}        紧跟在前面的字符至少出现指定次数</li>
+<li>{数字, 数字} 紧跟在前面的字符出现的次数范围</li>
+</ul>
+<h4 id="四、首尾正则表达式"><a href="#四、首尾正则表达式" class="headerlink" title="四、首尾正则表达式"></a>四、首尾正则表达式</h4><ul>
+<li>^      表示必须以 xxx 开头</li>
+<li>$        表示 必须以 xxx 结尾</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/19/面向对象7/" data-id="ciyyhty6v000078ifoise9csy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面向对象6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/18/面向对象6/" class="article-date">
+  <time datetime="2015-08-18T04:12:17.000Z" itemprop="datePublished">2015-08-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/18/面向对象6/">面向对象(6)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、函数的四种调用模式"><a href="#一、函数的四种调用模式" class="headerlink" title="一、函数的四种调用模式"></a>一、函数的四种调用模式</h4><ul>
+<li><p>函数有下列调用模式</p>
+<ul>
+<li>函数调用模式</li>
+<li>方法模式</li>
+<li>构造器模式</li>
+<li>上下文模式</li>
+</ul>
+</li>
+<li><p>函数的定义方式</p>
+<ul>
+<li>声明式</li>
+<li>表达式式</li>
+<li>Function</li>
+</ul>
+</li>
+<li><p>单独独立调用的就是函数</p>
+<ul>
+<li>函数名( 参数 )</li>
+<li>this 表示全局对象</li>
+<li>任何自调用函数都是函数模式</li>
+</ul>
+</li>
+<li><p>方法调用 模式   method</p>
+<ul>
+<li>区分<ul>
+<li>方法本身就是函数, 但是方法不是单独独立的调用, 而是通过一个对象引导调用.</li>
+</ul>
+</li>
+<li>对象.方法( 参数 )<ul>
+<li>this 表示引导方法的对象<ul>
+<li>方法调用一定要有宿主对象，方法一定是某个对象的方法，对象可以是任何对象（非基本数据类型）</li>
+<li>函数也是对象，也可以调用方法</li>
+<li>方法调用, 常常称为静态方法</li>
+</ul>
+</li>
+<li>o.func();</li>
+<li>fn.func();</li>
+<li>arr.func();</li>
+<li>arr[n].func();</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="二、几种调用方式this的指向"><a href="#二、几种调用方式this的指向" class="headerlink" title="二、几种调用方式this的指向"></a>二、几种调用方式this的指向</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var length = 10;</div><div class="line">function fn() &#123;</div><div class="line">    console.log( this.length );</div><div class="line">&#125;</div><div class="line">var obj = &#123;</div><div class="line">    length: 5,</div><div class="line">    method: function ( fn ) &#123;</div><div class="line">        fn();//10 函数调用的this指向window</div><div class="line">        arguments[ 0 ]();//2 方法调用的this指向调用这个方法的对象arguments</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">obj.method( fn, 1 );</div></pre></td></tr></table></figure>
+<h4 id="三、构造器模式-构造函数模式-构造方法模式"><a href="#三、构造器模式-构造函数模式-构造方法模式" class="headerlink" title="三、构造器模式(构造函数模式, 构造方法模式)"></a>三、构造器模式(构造函数模式, 构造方法模式)</h4><ul>
+<li><p>constructor</p>
+<ul>
+<li>区分<ul>
+<li>使用 new 关键字引导</li>
+</ul>
+</li>
+<li><p>执行步骤</p>
+<ul>
+<li>var p = new Person();</li>
+<li><p>new 是一个运算符, 专门用来申请创建对象(本质上就是申请一段内存), 创建出来的对象传递给构造函数的 this,利用构造函数对其初始化<br>new以后就创建了对象类似于{}，但是原型结构不同，其类型由构造函数决定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function Person () &#123;</div><div class="line">    this.name = &apos;jim&apos;;</div><div class="line">    this.age = 19;</div><div class="line">    this.gender = &apos;male&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>理解:当new了一个新对象之后,this就等于这个新创建的对象,this.age等成员就相当于给新创建的对象加成员，完成赋值，依赖的原理是对象动态添加成员的特性(new 的过程会去创建一个空的对象，将这个新创建的空对象赋值给Person函数中的this，此时我们就可以通过this来访问这个新对象了，开始执行Person函数内部的代码；this现在是新创建的对象，所以我们给新创建的对象添加name属性为jack，age属性为20；如果Person函数中没有写return语句，那么默认返回新创建的对象this）<br>交给构造函数初始化</p>
+</li>
+</ul>
+</li>
+<li><p>var one={}；和构造器的原型不能</p>
+</li>
+<li><p>返回值</p>
+<ul>
+<li>如果不写 return 语句, 那么 构造函数 默认返回 this</li>
+<li>如果在构造函数中写上 return 语句, 并紧跟基本类型( return num, return 1223 ). 则忽略返回类型. </li>
+<li><p>如果在构造函数中写上 return 语句, 并且紧跟引用类型, 那么构造函数返回该引用类型数据, 而忽略 this</p>
+</li>
+<li><p>如果调用构造函数的时候, 构造函数没有参数, 圆括号是可以省略的<br>function Person(){return;this.age=18}</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="四、关于构造函数结合性的一个小结"><a href="#四、关于构造函数结合性的一个小结" class="headerlink" title="四、关于构造函数结合性的一个小结"></a>四、关于构造函数结合性的一个小结</h4><ul>
+<li>如果构造函数没有参数, 可以省略 圆括号<ul>
+<li>var p = new Person;</li>
+</ul>
+</li>
+<li>如果希望创建对象并直接调用其方法<ul>
+<li>( new Person () ).sayHello()</li>
+<li>可以省略调整结合性的圆括号</li>
+<li>new Person().sayHello()</li>
+<li>如果想要省略构造函数的圆括号, 就必须添加结合性的圆括号</li>
+<li>(new Person).sayHello()</li>
+</ul>
+</li>
+</ul>
+<h4 id="五、上下文调用模式"><a href="#五、上下文调用模式" class="headerlink" title="五、上下文调用模式"></a>五、上下文调用模式</h4><ul>
+<li><p>就是 环境调用模式 =&gt; 在不同环境下的不同调用模式<br>*简单说就是统一一种格式, 可以实现 函数模式与方法模式</p>
+</li>
+<li><p>语法(区分)</p>
+<ul>
+<li>call 形式<ul>
+<li>函数名.call( … )</li>
+</ul>
+</li>
+<li>apply 形式<ul>
+<li>函数名.apply( … )</li>
+</ul>
+</li>
+<li>这两种形式功能完全一样, 唯一不同的是参数的形式. 首先学习 apply, 再来看  call形式</li>
+</ul>
+</li>
+<li><p>用法</p>
+<ul>
+<li><p>存在上下文调用的目的就是为了实现借用方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function foo () &#123;</div><div class="line">    console.log( this );</div><div class="line">&#125;</div><div class="line">var o = &#123; name: &apos;jim&apos; &#125;;</div><div class="line">foo();</div><div class="line">o.func = foo;</div><div class="line">o.func();</div><div class="line">// 如果需要让函数以函数的形式调用, 可以使用</div><div class="line">foo.apply( null ) 或 foo.apply()</div><div class="line">// 如果希望他是方法调用模式, 注意需要提供一个宿主对象</div><div class="line">foo.apply( o )该方式调用，不会污染宿主对象，不必要宿主对象，必须包含该方法</div></pre></td></tr></table></figure>
+</li>
+<li><p>带有参数的函数如何实现上下文调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">        function foo ( num1, num2 ) &#123;</div><div class="line">            console.log( this );</div><div class="line">            return num1 + num2;</div><div class="line">        &#125; </div><div class="line">        // 函数调用模式</div><div class="line">        var res1 = foo( 123, 567 );</div><div class="line">        // 方法调用</div><div class="line">        var o = &#123; name: &apos;jim&apos; &#125;;</div><div class="line">        o.func = foo;</div><div class="line">        var res2 = o.func( 123, 567 );</div><div class="line">```   </div><div class="line">     * 使用 apply 进行调用, 如果函数是带有参数的. apply 的第一个参数要么是 null 要么是对象</div><div class="line">     * 如果是 null 就是函数调用, 如果是 对象就是 方法对象, 该对象就是宿主对象, 后面紧跟一个</div><div class="line">     * 数组参数, 将函数的参数依次放在数组中. </div><div class="line"></div><div class="line">        * 例如: 函数模式        foo( 123, 567 );</div><div class="line">              * apply         foo.apply( null, [ 123, 567 ] )</div><div class="line"></div><div class="line">     * 如果有一个函数调用: func( &apos;张三&apos;, 19, &apos;男&apos; ), 将其修改成 apply 模式</div><div class="line">        * func.apply( null, [ &apos;张三&apos;, 19, &apos;男&apos;] )</div><div class="line"></div><div class="line">        * 方法模式:           o.func( 123, 567 )</div><div class="line">        * apply               foo.apply( o, [ 123, 567 ] )</div><div class="line"></div><div class="line">     * 函数中的this到底是什么</div><div class="line">     * 函数中this是由调用函数的模式来决定的</div><div class="line"></div><div class="line">函数调用模式=》this：window</div><div class="line">方法调用模式=》this：调用方法的对象</div><div class="line">构造器调用模式=》this：new出来的那个对象</div><div class="line">上下文调用模式 this：apply或call方法的第一个参数，如果是null，this就是window，如果第一个参数是对象，this就是这个对象</div><div class="line"></div><div class="line">#### 六、call 调用</div><div class="line"> * 在使用 apply 调用的时候, 函数参数, 必须以数组的形式存在. 但是有些时候数组封装比较复杂</div><div class="line"> * 所以引入 call 调用, call 调用与 apply 完全相同, 唯一不同是是参数不需要使用数组</div><div class="line">赋值赋的是函数体，不包含宿主对象</div><div class="line"></div><div class="line">    foo( 123, 567 );</div><div class="line">    foo.apply( null, [ 123, 567 ] );</div><div class="line">    foo.call( null, 123, 567 );</div><div class="line"></div><div class="line">#### 七、借用构造方法实现继承</div></pre></td></tr></table></figure>
+<p>function Person ( name, age, gender ) {<br> this.name = name;<br> this.age = age;<br> this.gender = gender;<br>}<br>function Student ( name, age, gender, course ) {<br> Person.call( this, name, age, gender );<br> this.course = course;<br>}<br>var p = new Student ( ‘jim’, 19, ‘male’, ‘前端’ );</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">10. 函数的 bind 方法</div><div class="line"> * bind 就是 绑定</div><div class="line">     * 就是让函数绑定对象的一种用法</div><div class="line">     * 函数本身就是可以调用, 但是其如果想要作为方法调用, 就必须传入宿主对象, 并且使用 call 或 apply 形式</div><div class="line">     *  但是 bind 使得我的函数可以与某一个对象绑定起来, 那么在调用函数的时候, 就好像是该对象在调用方法</div><div class="line"></div><div class="line"> * 语法</div><div class="line">     * 函数.bind( 对象 )   </div><div class="line">     * 返回一个函数 foo</div><div class="line">     * 那么调用 返回的函数 foo, 就好像 对象在调用 该方法一样</div><div class="line"></div><div class="line">11. Object.prototype 的成员</div><div class="line">    1) constructor</div><div class="line">    2) hasOwnProperty 判断该属性是否为自己提供</div><div class="line">    3) propertyIsEnumerable 判断属性是否可以枚举</div><div class="line">    4) isPrototypeOf    判断是否为原型对象</div><div class="line">    5) toString, toLocaleString, valueOf</div><div class="line"></div><div class="line">12. 包装对象</div><div class="line">    字符串 string 是基本类型, 理论上讲不应该包含方法</div><div class="line">    charAt, substr, slice, ...</div><div class="line"></div><div class="line">    在 js 中为了更好的使用数据, 为三个基本类型提供了对应的对象类型</div><div class="line"></div><div class="line">    Number</div><div class="line">    String</div><div class="line">    Boolean</div><div class="line"></div><div class="line">    在 开发中常常会使用基本数据类型, 但是基本数据类型没有方法, 因此 js 引擎会在需要的时候</div><div class="line">    自动的将基本类型转换成对象类型.</div><div class="line"></div><div class="line">    &quot;abc&quot;.charAt( 1 )</div><div class="line"></div><div class="line">    &quot;abc&quot; -&gt; new String( &quot;abc&quot; )</div><div class="line">    s.charAt( 1 ) 返回结果</div><div class="line">    s 就被销毁</div><div class="line"></div><div class="line">    当   基本类型.方法 的时候. 解释器首先将基本类型转换成对应的对象类型, 然后调用方法. </div><div class="line">    方法执行结束后, 这个对象就被立刻回收</div><div class="line"></div><div class="line">    在 apply 和 call 调用的时候, 也会有转换发生. 上下文调用的第一个参数必须是对象. 如果传递的是数字</div><div class="line">    就会自动转换成对应的包装类型</div><div class="line"></div><div class="line">13. getter 与 setter 的语法糖</div><div class="line"></div><div class="line">    语法糖: 为了方便开发而给出的语法结构</div></pre></td></tr></table></figure>
+<p>var o = (function () {<br> var num = 123;<br> return {</p>
+<pre><code>get_num: function () {
+    return num;
+},
+set_num: function ( v ) {
+    num = v;
+}
+</code></pre><p> };<br>})();</p>
+<p>// 获得数据<br>o.get_num();            =&gt; o.num 形式</p>
+<p>// 设置<br>o.set_num( 456 );       =&gt; o.num = 456 形式</p>
+<p>var o = (function () {<br> var num = 123;<br> return {</p>
+<pre><code>// get 名字 () { 逻辑体 }
+get num () {
+    return num;
+}
+
+// set 名字 ( v ) { 逻辑体 }
+set num ( v ) {
+    num = v;
+}
+</code></pre><p> };<br>})();<br>```</p>
+<ol>
+<li>ES5 中引入的部分数组方法<br>1&gt; forEach<br>2&gt; map<br>3&gt; filter<br>4&gt; some<br>5&gt; every<br>6&gt; indexOf<br>7&gt; lastIndexOf</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/18/面向对象6/" data-id="ciyyhty7f000178ifolfp910d" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面向对象5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/16/面向对象5/" class="article-date">
+  <time datetime="2015-08-16T04:12:17.000Z" itemprop="datePublished">2015-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/16/面向对象5/">面向对象(5)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、闭包"><a href="#一、闭包" class="headerlink" title="一、闭包"></a>一、闭包</h4><ul>
+<li>闭包的概念<ul>
+<li>闭包就是封闭，包裹的意思，在js中就是指函数</li>
+<li>函数内的空间就是一个封闭的包裹的范围</li>
+<li>因此闭包就是函数所构成的一个外部无法直接访问的区域</li>
+</ul>
+</li>
+<li>在js中，什么是闭包<ul>
+<li>函数内有个内存空间，函数运行要分配内存空间</li>
+<li>在js中函数是一个具有变量作用域隔离特性的一个内存结构，即为一个闭包。正确的说法，定义一个函数，可以构成一个闭包</li>
+</ul>
+</li>
+<li>闭包的本质<ul>
+<li>利用作用域访问规则的不可逆性，构成一个单向的空间</li>
+</ul>
+</li>
+<li>要解决的问题<ul>
+<li>在js中闭包要解决的问题就是间接的访问到这个被隔离的数据（不能直接访问，就间接访问）</li>
+<li>函数运行内存模型</li>
+</ul>
+</li>
+</ul>
+<h4 id="二、在外部访问num中的数据"><a href="#二、在外部访问num中的数据" class="headerlink" title="二、在外部访问num中的数据"></a>二、在外部访问num中的数据</h4><ul>
+<li><p>函数是基本的对象类型，在js中与普通对的对象具有一样的意义</p>
+<ul>
+<li>函数可以作为变量一样赋值</li>
+<li>作为参数一样传递</li>
+<li>作为返回值使用<ul>
+<li>闭包的间接访问</li>
+</ul>
+</li>
+<li>使用return数据不能直接访问原来的数据，那么可以考虑利用函数的返回访问原始数据</li>
+<li>foo只调用一次，就可以创建一个原始数据，但是返回的函数可以重复调用，每调用一次就是在获取闭包中的数据的值<ul>
+<li>闭包代码的基本结构<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function foo()&#123;</div><div class="line">   var num=123;</div><div class="line">   return function()&#123;</div><div class="line">       return num;</div><div class="line">    &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>如何返回闭包中的数据</p>
+<ul>
+<li>返回单个数据：只要返回一个函数（这个函数返回我们需要的那个数据），就可以了</li>
+<li>返回多个数据：需要返回一个对象（这个对象拥有多个方法，每一个方法返回一个需要的数据）来返回多个数据</li>
+</ul>
+</li>
+</ul>
+<h4 id="三、利用闭包——实现私有数据"><a href="#三、利用闭包——实现私有数据" class="headerlink" title="三、利用闭包——实现私有数据"></a>三、利用闭包——实现私有数据</h4><ul>
+<li>函数允许返回一个对象，那么该对象可以提供数据访问方法，但是数据存储在闭包中，达到私有的目的</li>
+</ul>
+<h4 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h4><ul>
+<li>构造函数里面的return 有什么用<ul>
+<li>构造函数一般是不用写return的，不写return默认返回new出来的哪一个新对象</li>
+<li>现在就是在构造函数里写了return，就不会返回new出来的那一个新对象了，而是返回return后面的对象（不包含基本类型的内容，如果return后面的内容是基本类型的数据，无视该return，直接返回new出来的那一个对象）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">function Person(name,age,gender)&#123;</div><div class="line">            var newObj=this;</div><div class="line">            newObj.name=name;</div><div class="line">            newObj.age=age;</div><div class="line">            newObj.gender=gender;</div><div class="line">            return&#123;</div><div class="line">                get_name:function()&#123;</div><div class="line">                    console.log(this);</div><div class="line">                    return this.name;</div><div class="line"></div><div class="line">                &#125;,</div><div class="line">                set_name:function(val)&#123;</div><div class="line">                    if(typeof val===&apos;string&apos; &amp;&amp; val.length&lt;=5)&#123;</div><div class="line">                        newObj.name=val;</div><div class="line">                    &#125;</div><div class="line">                &#125;,</div><div class="line">                get_age:function()&#123;</div><div class="line">                    return newObj.age;</div><div class="line">                &#125;,</div><div class="line">                set_age:function(val)&#123;</div><div class="line">                    if(typeof val===&apos;number&apos; &amp;&amp; val&gt;=0)&#123;</div><div class="line">                        newObj.age=val;</div><div class="line">                    &#125;</div><div class="line">                &#125;,</div><div class="line">                get_gender:function()&#123;</div><div class="line">                    return newObj.gender;</div><div class="line">                &#125;,</div><div class="line">                set_gender:function(val)&#123;</div><div class="line">                    if(val===&apos;男&apos;||val===&apos;女&apos;)&#123;</div><div class="line">                        newObj.gender=val;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125; &#125;</div></pre></td></tr></table></figure>
+<h4 id="四、闭包的核心"><a href="#四、闭包的核心" class="headerlink" title="四、闭包的核心"></a>四、闭包的核心</h4><ul>
+<li><p>闭包实现各种特性，其根本的核心内容只有两个</p>
+<ul>
+<li>带有私有数据的函数</li>
+</ul>
+<p>function foo（）{</p>
+<pre><code> var num=123；
+ return function（）{
+    //可以访问num
+}
+</code></pre><p>}<br>var func=foo();<br>//称func是一个带有私有数据的函数<br>//称func带有缓存</p>
+</li>
+</ul>
+<pre><code>* 带有私有数据的对象
+</code></pre><h4 id="五、闭包的应用"><a href="#五、闭包的应用" class="headerlink" title="五、闭包的应用"></a>五、闭包的应用</h4><ul>
+<li>沙箱模式<ul>
+<li>沙箱就是一个隔离的执行环境<ul>
+<li>在js中什么情况需要使用沙箱</li>
+<li>function Person（）{}</li>
+<li>定义变量越多，出现冲突的可能性越大</li>
+</ul>
+</li>
+<li>就是一个自调用的函数，将数据放到自调用的函数中，此时就不会发生全局作用域的污染了，而且我们还会在自调用的函数中返回一个接口</li>
+</ul>
+</li>
+<li><p>事件追加——模拟onload事件的追加与移除<br>  *使用闭包可以将匿名函数的参数保护起来，这样给li标签绑定事件I的值就是索引了 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">    &lt;ul id=&quot;test&quot;&gt;</div><div class="line">        &lt;li&gt;这是第一条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是第二条&lt;/li&gt;</div><div class="line">        &lt;li&gt;这是第三条&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var ul = document.getElementById(&apos;test&apos;);</div><div class="line">    var aLi = ul.getElementsByTagName(&apos;li&apos;);</div><div class="line">    for(var i = 0; i &lt; aLi.length; i++) &#123;</div><div class="line">        aLi[i].onclick = (function(i) &#123;</div><div class="line">            return function() &#123;</div><div class="line">                alert(i);</div><div class="line">            &#125;</div><div class="line">        &#125;)(i);</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>利用闭包实现私有数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">// 函数允许返回一个对象, 那么该对象可以提供数据访问方法</div><div class="line">    // 但是数据存储在闭包中, 达到私有的目的</div><div class="line">    function createPerson ( name, age, gender ) &#123;</div><div class="line">        var hasChangeGender = false;</div><div class="line">        return &#123;</div><div class="line">            get_Name: function () &#123;</div><div class="line">                return name;</div><div class="line">            &#125;, </div><div class="line">            set_Name: function ( value ) &#123;</div><div class="line">                name = value;</div><div class="line">            &#125;, </div><div class="line">            get_Age: function () &#123;</div><div class="line">                return age;</div><div class="line">            &#125;,</div><div class="line">            get_Gender: function () &#123;</div><div class="line">                return gender;</div><div class="line">            &#125;, </div><div class="line">            set_Gender: function ( value ) &#123;</div><div class="line">                if ( hasChangeGender == false ) &#123;</div><div class="line">                    gender = value;</div><div class="line">                    hasChangeGender = true;</div><div class="line">                &#125; else &#123;</div><div class="line">                    throw new Error( &apos;已经改变过一次性别了, 不能再修改了&apos; );</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var p1 = createPerson( &apos;张三&apos;, 19, &apos;男&apos; );</div><div class="line"></div><div class="line">    console.log( &apos;p1.name = &apos; + p1.get_Name() );</div><div class="line">    console.log( &apos;p1.age = &apos; + p1.get_Age() );</div><div class="line">    console.log( &apos;p1.gender = &apos; + p1.get_Gender() );</div><div class="line"></div><div class="line">    p1.set_Name( &apos;王二&apos; );</div><div class="line">    p1.set_Gender( &apos;女&apos; );</div><div class="line"></div><div class="line">    console.log( &apos;p1.name = &apos; + p1.get_Name() );</div><div class="line">    console.log( &apos;p1.age = &apos; + p1.get_Age() );</div><div class="line">    console.log( &apos;p1.gender = &apos; + p1.get_Gender() );</div><div class="line"></div><div class="line">    p1.set_Name( &apos;王三&apos; );</div><div class="line">    p1.set_Gender( &apos;男&apos; );</div></pre></td></tr></table></figure>
+</li>
+<li><p>cache缓存对象——搭建基本结构</p>
+<ul>
+<li>闭包的缺点：数据会一直占据内存</li>
+<li>cache对象，可以使用cache[key]=value存储数据，cache[key]获得数据，当cache里面的数据达到1024条，将最早放进去的数据溢出</li>
+<li>cache={}可以存取数据，但是不能限定数据的长度<br>如果需要限定数据，就是在加入数据的时候判断，是否已超过尺寸，如果是，则移除，如果不是，则什么也不做</li>
+<li>将cache做成函数，添加数据使用 cache(key,value)，而且函数本身也是对象</li>
+<li>由于需要记录键的数量，并且需要记录添加数据的先后顺序，所以首先考虑有序的数组，因此需要让cache函数带有缓存功能（这个数组就是）<pre><code>function cache(key,value){
+//可以在这里加上限定长度的代码
+cache[key]=value;
+}
+</code></pre></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/16/面向对象5/" data-id="ciyygtr590005csifbaikbuka" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面向对象4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/14/面向对象4/" class="article-date">
+  <time datetime="2015-08-14T12:12:17.000Z" itemprop="datePublished">2015-08-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/14/面向对象4/">面向对象(4)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####一、函数声明与变量声明在一起的时候的注意点</p>
+<blockquote>
+<ul>
+<li>函数的声明实际上包含两部分<ul>
+<li>第一部分 告诉解释器 这个名字已经可以使用 （函数名，标识符）</li>
+<li>第二部分 告诉解释器，这个名字代表着一个函数（变量里存储着函数的引用）</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<pre><code>function func(){}
+console.log(&apos;func&apos; in window)//当前执行环境中已经存在了func标识符
+console.log(type func)//function
+func=123;
+console.log(func)//123
+console.log(typeof func)
+//获得对象的类型
+console.log(Object.prototype.toString.call(func))
+</code></pre><blockquote>
+<ul>
+<li><p>当函数声明与变量声明冲突的时候，只看谁先有数据<br>函数的声明比变量的声明意义多一层，声明变量，是告诉解释器当前环境可以使用该名字，而声明函数，是告诉解释器，除了可以使用该名字，该名字还表示一个函数体</p>
+<ul>
+<li>先var num;后function num…<ul>
+<li>首先告知解释器有名字 num了</li>
+<li>后面是函数声明，由于已经有num名字可以使用了，所以就不再告诉解释器可以使用num，而是直接将num与函数结合在一起</li>
+</ul>
+</li>
+<li>先function num 后var num<ul>
+<li>一开始已经有num了，而且是函数，其实就是告诉解释器有个num可以用了，所以后面的num；属于重复声明，直接无效</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>一个在新版本的浏览器中的特性</p>
+</li>
+</ul>
+</blockquote>
+<pre><code> if(true){
+      function foo(){
+          console.log(true);}
+}else{
+     function foo(){
+          console.log(false);}
+}
+foo();
+</code></pre><p>在早期的浏览器中（2015年）所有的浏览器（除了火狐）都是将其解释为声明，打印的是false，现在的浏览器最后的运行结果是true，表示if起到了作用</p>
+<pre><code> if(true){
+      function foo1(){
+          console.log(true);}
+}else{
+     function foo2(){
+          console.log(false);}
+}
+
+foo2();//error:foo2 is not function 已定义，但是函数未被指向
+//虽然这两个函数不是声明，但是也不能解释成函数表达式
+//如果是函数表达式foo1与foo2只能在函数内部使用
+//因此不推荐把函数声明写在代码块中（if语句，循环，{}里面）
+//有可能出现这样的问题：声明成功了一半（会在当前作用域中添加这个名字，代表可以使用。但是不会给他添加一层函数的含义）
+</code></pre><p>####二、作用域</p>
+<blockquote>
+<ul>
+<li>词法作用域</li>
+<li>作用域：就是变量可以使用到不能使用的范围</li>
+<li>块级作用域：<ul>
+<li>块：代码块，即{}</li>
+<li>变量的使用从定义开始，到其所在的块级作用域结束</li>
+<li>代表语言：C，C++，C#，Java</li>
+</ul>
+</li>
+<li>js词法作用域<ul>
+<li>词法：就是定义，书写代码的规则</li>
+<li>所以，所谓的词法作用域，就是在书写代码的时候，根据书写代码的结构就可以确定数据的访问范围的作用域</li>
+<li>js不受块的影响，即使在块中定义声明变量，在块的外面依旧可以使用</li>
+<li>所谓的js的词法作用域，就是根据预解析规则定义变量的使用范围，全部代码中只有函数可以限定范围，其它均不能限定访问范围。在函数内部是一个独立的作用范围结构</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>####三、JS词法作用域的细节</p>
+<blockquote>
+<ul>
+<li>在没有函数的情况下，所有的变量的访问规则依据预解析规则</li>
+<li>只有函数可以限定作用域，其它的不行</li>
+<li>在函数内部是一个独立的完整的作用域结构</li>
+<li>在函数内部，允许再定义函数，同时两个层次的函数都是作用域的独立体</li>
+<li>允许在函数内，访问函数外的变量，前提是函数内没有该变量的声明<ul>
+<li>优先访问当前作用域的数据</li>
+</ul>
+</li>
+<li>结论<ul>
+<li>词法作用域就是描述变量的访问范围：<ul>
+<li>在代码中只有函数可以限定作用范围，允许函数访问外部的变量，反之不允许</li>
+<li>在函数内优先访问内部声明的变量，如果没有才会访问外部的</li>
+<li>所有变量的访问规则，按照预解析规则来访问</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>####四、函数的参数</p>
+<pre><code>(function ( a ) {
+    console.log( a );
+    var a = 10;
+    console.log( a );
+})( 100 );
+</code></pre><blockquote>
+<ul>
+<li>函数定义参数，实际上就是在函数最开始的时候，有一个变量的声明 function（a）{}其含义就是，在已进入函数体，在所有操作开始之前（预解析之前）就有了该变量的声明</li>
+</ul>
+</blockquote>
+<pre><code>(function ( a ) {
+    console.log( a );
+    var a = 10;
+    console.log( a );
+    function a () {
+        console.log( a );
+    }
+    // a();
+})( 100 );
+</code></pre><ul>
+<li>注意：先调用函数，函数内部才会开始预解析，相当于函数最开始的时候就有一个var a=100;</li>
+</ul>
+<p>###五、作用域链规则</p>
+<blockquote>
+<ul>
+<li>什么是作用域链<br>就是在当前作用域链中如果要寻找一个内容，会先在当前作用域中寻找，如果没有找到就会渠道上一层作用域中继续寻找。。。一直找到全局作用域都没有的话，那么就找不到，报错。由于这种一环套一环的访问规则，这样的作用域构成一个链式结构，所以直接称其为作用域链<br>作用域链是用来做变量查找的，因此变量可以存储什么东西，链中就应该有什么东西，换句话说就是，链里面存储的是各种对象，可以将其想想成对象的序列（数组）</li>
+<li>绘制作用域链的规则<ul>
+<li>将所有的script标签作为一个链结构，标记为0级别的链</li>
+<li>将全局范围内，所有的声明变量名和声明函数名按照代码的顺序标注在0级链中</li>
+<li>由于每一个函数都 可以构成一个新的作用域链，所以每一个0级链上的函数都延展出1级链</li>
+<li>分别在每一个函数中进行上述操作将函数中的每一个名字都标注在1级链中</li>
+<li>每一条1级链中如果有函数，可以再次的延展出2级链，以此类推</li>
+</ul>
+</li>
+<li>分析代码的执行<br> 当作用域链绘制完成后，代码的分析也需要一步一步的完成<ul>
+<li>根据代码的执行顺序（从上往下，从左至右）在图中标记每一步的变量数据的变化</li>
+<li>如果需要访问某个变量，直接在当前n级链上查找变量，查找无序</li>
+<li>如果找到变量，直接使用，如果没有找到变量，在上一级，n-1级中查找</li>
+<li>一直找下去，知道0级链，如果0级链还没有就报错，XXX is not defined；</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/14/面向对象4/" data-id="ciyygtr5b0006csifdpzqnfrp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面向对象3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/11/面向对象3/" class="article-date">
+  <time datetime="2015-08-11T12:32:17.000Z" itemprop="datePublished">2015-08-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/11/面向对象3/">面向对象(3)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、总结下上次的东西"><a href="#一、总结下上次的东西" class="headerlink" title="一、总结下上次的东西"></a>一、总结下上次的东西</h4><ol>
+<li>混入——可以将一个对象的成员 混入 到另一个对象当中</li>
+<li>混合式继承<ul>
+<li>给原型对象添加一个混入的方法</li>
+<li>使用混入的方法为原型对象添加成员</li>
+<li>此时通过构造函数创建的对象就会继承原型当中的成员</li>
+</ul>
+</li>
+<li>Object.create:以一个对象作为原型创建一个新的对象。优点——可以快速的创建一个相类似的对象</li>
+<li>原型链结构：<ul>
+<li>实例对象–》构造函数.原型–》Object.prototype–》null</li>
+<li>内置对象–》内置对象构造函数.原型–》Object.prototype–》null</li>
+<li>Object对象–》Object.prototype–》null</li>
+</ul>
+</li>
+<li>动态函数：Function<ul>
+<li>函数是一个对象，它应该也是由构造函数创建的，也应该有原型对象。Function就是函数（实例对象）的构造函数</li>
+</ul>
+</li>
+<li>arguments对象<ul>
+<li>对象中包含了传入的所有参数，他的length属性可以显示参数的个数</li>
+</ul>
+</li>
+<li>函数.length——函数定义的时候参数的个数<br>函数.name——函数名</li>
+<li>callee和caller<ul>
+<li>callee：代表被调用的函数的引用</li>
+<li>caller：代表调用函数的函数（调用者）</li>
+</ul>
+</li>
+</ol>
+<h4 id="二、eval函数"><a href="#二、eval函数" class="headerlink" title="二、eval函数"></a>二、eval函数</h4><ol>
+<li>eval函数与Function功能类似，eval可以直接将字符串作为代码来执行<ul>
+<li>语法：eval（语句字符串）</li>
+<li>注意：它好像与当前代码处于同一个作用域</li>
+<li>可以直接调用eval函数，来实现字符串代码</li>
+</ul>
+</li>
+<li>eval函数和Function的比较<ul>
+<li>A 语法特点<ul>
+<li>eval简洁，直接调用即执行</li>
+<li>Function是用来生成函数中的，所以如果要执行，需要调用</li>
+<li>立即执行函数（自调用函数）</li>
+</ul>
+</li>
+<li>B 作用域<ul>
+<li>eval就在执行函数的当前作用域  </li>
+<li>在eval函数中，使用字符串声明的变量，在eval函数外面可以立即使用，即eval函数的执行作用域与当前环境作用域一致</li>
+<li>Function是创建了一个新的函数，那么所有的东西，都只在函数内部起作用，除非：<ul>
+<li>变量没有声明，直接使用</li>
+<li>return</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>eval函数转json格式的字符串为对象</p>
+<ul>
+<li>json格式（更加严格的，国际通用数据表示协议）</li>
+<li>在js中使用的json对象，相对较松散</li>
+<li>json格式有两种结构<ul>
+<li>{}对象的结构</li>
+<li>[]数组的结构</li>
+<li>注意：json格式中，键名也必须使用双引号括起来，在js中就没有这个要求了，较松散</li>
+</ul>
+</li>
+<li>将字符串变成对象，有三种做法<ul>
+<li>eval做法 </li>
+<li>Function做法</li>
+<li>使用ES5中引入的标准处理JSON的语法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//eval做法</div><div class="line">var o1=eval(data)   //注意一个习惯，就是数据两端加上圆括号为好</div><div class="line">//Function做法</div><div class="line">var o2 =(new Function(&apos;return&apos;+data))();</div><div class="line">//ES5</div><div class="line">处理JSON的做法</div><div class="line">JSON.parse() //注意：字符串必须是严格的json格式，双引号</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>为何转换json格式字符串需要圆括号</p>
+<ul>
+<li>eval函数本质是执行js代码的</li>
+<li>eval是用来执行字符串表示的js代码的，所以隐含的数据里面{}实际上是代码块的含义<br>标签语法，即使将字符串写成json格式的形式也不行</li>
+</ul>
+</li>
+</ol>
+<h4 id="三、函数是Function的实例"><a href="#三、函数是Function的实例" class="headerlink" title="三、函数是Function的实例"></a>三、函数是Function的实例</h4><ul>
+<li>function（对象角度）是Function（构造函数）的实例</li>
+<li>在该角度去看，函数就是对象，Function就是构造函数</li>
+<li>函数对象（构造函数，系统函数，自定义函数）都是由Function创建出来的实例对象，即所有函数都是Function构造出来的实例</li>
+<li>Function也是一个函数对象，它是由自己构造出来的，即Function是由Function构造出来的实例</li>
+</ul>
+<h4 id="四、instanceof-运算符"><a href="#四、instanceof-运算符" class="headerlink" title="四、instanceof 运算符"></a>四、instanceof 运算符</h4><ul>
+<li>语法——返回的是boolean值 </li>
+<li>对象 instanceof 构造函数</li>
+<li>判断构造函数的原型属性，是否在对象的原型链上</li>
+<li>A instanceof B——判断B的原型是否在A对象的原型链上</li>
+</ul>
+<h4 id="五、不要过多依赖原型链"><a href="#五、不要过多依赖原型链" class="headerlink" title="五、不要过多依赖原型链"></a>五、不要过多依赖原型链</h4><ul>
+<li>js的继承：就是利用对象的动态特性添加成员，或直接替换对象的方式修改原型链结构，使得当前对象的原型链上的对象具有某些成员，那么我的当前对象就可以使用这些成员了</li>
+<li>过多的依赖原型链继承，会损耗性能</li>
+<li>如果必须使用原型链继承，最好提供一些快速访问的方法</li>
+</ul>
+<h4 id="六、代码预解析"><a href="#六、代码预解析" class="headerlink" title="六、代码预解析"></a>六、代码预解析</h4><ul>
+<li>编译性语言：C，C++，C#，Java 就是需要一个‘翻译’程序，将源代码翻译成计算机可以读懂的二进制数据（指令）。然后存储成可执行文件。<br>提前翻译好，运行时直接执行的结果<ul>
+<li>解释型（脚本型）：javascript，SQL，……<br>代码在执行的时候，有一个翻译程序，读一句代码执行一句代码，再读一句代码，再执行一句代码</li>
+<li>代码在执行之前，需要快速的‘预览’一遍，那么可以尽可能提高执行效率</li>
+<li>在js中预解析的特点<ul>
+<li>代码是如何执行的：读取js文件，预解析，一句一句执行</li>
+<li>js在预解析的过程中完成了声明部分的标记与变量作用域的设定</li>
+</ul>
+</li>
+<li>什么是js中的声明<ul>
+<li>简单的说就是让js执行引擎知道有什么东西（标识符）</li>
+<li>即代码在执行之前的预解析，首先让js的执行引擎在当前运行环境中，有什么东西（名字、标识符）是可以被使用的</li>
+<li>console.log（num）</li>
+</ul>
+</li>
+<li>在js中有哪些声明<br>标识符的声明（变量的声明）<br>函数的声明</li>
+<li>变量的声明<ul>
+<li>语法 ： var 变量名</li>
+<li>目的：告诉解释器，有一个名字是一个变量，在当前环境中可以被使用</li>
+</ul>
+</li>
+<li>语句：就是可以执行的东西，在代码执行的时候才会区运行<ul>
+<li>var a = 123;凡是要去执行的东西都是一个语句，在使用var 声明变量，同时完成赋值的时候，实际上，预解析将其做了一定处理：</li>
+<li>凡是读取到var的时候，就检查var紧跟的名字是否已经标记了</li>
+<li>如果没有标记，就表明这个名字是一个标识符，需要被标记</li>
+<li>如果已经被标记了，那么这个var被忽略</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>结论：<br>  var a;<br>  var a=10;<br>等价于  var a; a=10;</p>
+<h4 id="七、预解析的特点——变量名提升"><a href="#七、预解析的特点——变量名提升" class="headerlink" title="七、预解析的特点——变量名提升"></a>七、预解析的特点——变量名提升</h4><ul>
+<li>注意：‘字符串’ in 对象——该字符串描述的名字，是否在对象中存在一个属性，与之同名<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if( &apos;a&apos; in window )&#123;</div><div class="line">  var a=123;</div><div class="line">&#125;</div><div class="line">console.log(a); //123;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="八、函数的声明"><a href="#八、函数的声明" class="headerlink" title="八、函数的声明"></a>八、函数的声明</h4><ul>
+<li>函数的各种定义形式<ul>
+<li>声明式：function func(){}</li>
+<li>表达式式（匿名函数，字面量函数，lambda函数）<br>var func=function(){};<ul>
+<li>特点：</li>
+</ul>
+</li>
+<li>函数的声明是独立于语句的，不需要加分号结束，也不能嵌入到代码表达式中</li>
+<li>表达式式，本质上是使用函数表达式（字面量）给变量赋值，因此它是语句<ul>
+<li>表达式：</li>
+</ul>
+</li>
+<li>将运算符与操作数连接起来的式子</li>
+<li>就是一个有结果的代码单元</li>
+<li>字面量，有值，是表达式，是常量表达式</li>
+</ul>
+</li>
+</ul>
+<h4 id="九、函数各种定义形式的异同"><a href="#九、函数各种定义形式的异同" class="headerlink" title="九、函数各种定义形式的异同"></a>九、函数各种定义形式的异同</h4><ul>
+<li>声明式（重点是语法）<ul>
+<li>function func（）{}</li>
+<li>函数声明是独立于代码执行的，代码在执行的时候，声明部分已在预解析阶段处理完毕，因此在代码调试阶段，无法给函数声明添加断点，而且由于预解析在执行之前完成，可以先调用，后声明函数，有时在开发的时候，将函数全部声明在后面，前面为了保证代码的紧凑，而直接调用。</li>
+</ul>
+</li>
+</ul>
+<h4 id="十、预解析的特点——各种函数定义形式的异同"><a href="#十、预解析的特点——各种函数定义形式的异同" class="headerlink" title="十、预解析的特点——各种函数定义形式的异同"></a>十、预解析的特点——各种函数定义形式的异同</h4><ul>
+<li>函数表达式<ul>
+<li>使用这个方式定义函数，实际上是利用函数是js中的 一个数据类型的特点</li>
+<li>利用赋值，使用变量存储函数的引用，此时没有函数的声明，但是有变量的声明</li>
+<li>读取代码，发现 var func，存储func这个名字</li>
+<li>开始执行代码，第一句是赋值语句，将函数赋值给func<br>执行</li>
+<li>如果将调用放到赋值之前，就会报错<ul>
+<li>函数表达式的名字问题</li>
+</ul>
+</li>
+<li>函数.name可以用来获取函数的名字，表达式没有名字<br>我们的函数表达式也是可以带有函数名</li>
+<li>var 函数名1=function 函数名2（）{}</li>
+<li>当函数声明语法嵌入表达式环境中，会自动进行转换，将转换成函数表达式</li>
+<li>引用函数的规则还是使用变量赋值，所以外部可以使用该名字调用函数</li>
+<li>函数表达式带有名，该名字只允许在函数内部使用，属于局部作用域</li>
+<li>带有名字的函数表达式，函数的name属性即为该名字</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/11/面向对象3/" data-id="ciyygtr560004csifs7qeedua" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面向对象2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/10/面向对象2/" class="article-date">
+  <time datetime="2015-08-10T10:32:17.000Z" itemprop="datePublished">2015-08-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/10/面向对象2/">面向对象(2)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、总结"><a href="#一、总结" class="headerlink" title="一、总结"></a>一、总结</h3><ol>
+<li>异常：程序运行的时候出现的错误，出现来了错误以后我们就要进行错误处理 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">try&#123;</div><div class="line">   //需要抛出异常的代码块</div><div class="line"> &#125;catch(e)&#123;</div><div class="line">   //捕获到异常后执行的</div><div class="line"> &#125;finally&#123;</div><div class="line">   //最后都会执行的代码</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2.原型：原型是一个对象<br>     A.原型是构造函数的原型属性<br>     B.原型是实例对象的原型对象</p>
+<p>3.如何通过原型来添加成员?<br>    A.通过动态特性为原型添加成员<br>    B.替换原型</p>
+<p>4.如何访问原型<br>   A.构造函数通过原型属性访问原型 构造函数.prototype<br>   B.实例对象通过<strong>proto</strong>访问原型 例：实例对象.<strong>proto</strong>  或者 实例对象.constructor.prototype</p>
+<h4 id="二、如果修改原型对象中的属性值"><a href="#二、如果修改原型对象中的属性值" class="headerlink" title="二、如果修改原型对象中的属性值"></a>二、如果修改原型对象中的属性值</h4><p> 给当前对象的原型提供的属性赋值，实际上是给当前对象添加了该属性的新成员，并不会修改原型对象中的成员</p>
+<h4 id="三、混入"><a href="#三、混入" class="headerlink" title="三、混入"></a>三、混入</h4><p>利用这个简单的赋值，就可以将一个对象的成员加到另一个对象上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var o1=&#123;&apos;name&apos;:&apos;andy&apos;&#125;;</div><div class="line">var o2=&#123;&apos;age&apos;:19&#125;;</div><div class="line">o2.name=o1.name;</div><div class="line">//混入使得o2具有了age和o1中的name，即将o1混入到o2中</div><div class="line">//混入也是一种继承方式</div></pre></td></tr></table></figure></p>
+<h4 id="四、如何使用代码实现混入"><a href="#四、如何使用代码实现混入" class="headerlink" title="四、如何使用代码实现混入"></a>四、如何使用代码实现混入</h4><p>考虑要执行，写函数即可<br>由于将一个对象混入到另一个对象，所以有两个参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function _mix_(obj,obj1)&#123;</div><div class="line">    for(var k in obj1)&#123;</div><div class="line">        obj[k]=obj1[k];</div><div class="line">    &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p>在函数中，有一个默认的对象存在，即arguments。它里面存储着所有的传入的参数，arguments是函数中的一个对象，它包含了所有的参数，length属性表示参数的个数</p>
+<h4 id="五、原型式继承"><a href="#五、原型式继承" class="headerlink" title="五、原型式继承"></a>五、原型式继承</h4><p>写一个构造函数，如果需要将其继承自某个特定的对象o，那么只需要设置该构造函数的prototype属性为o即可</p>
+<h4 id="六、混合式继承"><a href="#六、混合式继承" class="headerlink" title="六、混合式继承"></a>六、混合式继承</h4><p>混合就是将多个对象的各个功能混合在一起，加到构造函数的原型对象上，那么该构造函数创建的实例，就继承多个对象了</p>
+<ul>
+<li>给原型对象添加混入方法（extend方法）</li>
+<li>通过原型对象的混入方法给原型对象添加成员</li>
+<li>只要是通过构造函数创建的实例</li>
+</ul>
+<h4 id="七、使用Object-create创建对象"><a href="#七、使用Object-create创建对象" class="headerlink" title="七、使用Object.create创建对象"></a>七、使用Object.create创建对象</h4><p>ES5提供的方法<br>1.基本的语法</p>
+<ul>
+<li>Object.create(对象) 使用一个对象作为原型创建一个新的对象，并返回</li>
+<li>返回的是对象 </li>
+<li>返回的对象满足：原型对象 就是 参数中的对象</li>
+<li>新对象继承自参数<br>实现继承的快速方法<br>使用情况——假设我们不知道构造函数在哪里是什么，就不能new了，那就通过实例对象来创建一个类似的对象，然后就可以使用它了</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Object.create=function(o)&#123;</div><div class="line">  function f()&#123;&#125;;</div><div class="line">  F.prototype=o;</div><div class="line">  return new F();</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h4 id="八、实现Object-create兼容"><a href="#八、实现Object-create兼容" class="headerlink" title="八、实现Object.create兼容"></a>八、实现Object.create兼容</h4><p>先判断有没有，如果没有再加上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> if ( !Object.create ) &#123;</div><div class="line">        Object.create =function ( o ) &#123;</div><div class="line">        function F() &#123;&#125;</div><div class="line">        F.prototype = o;</div><div class="line">        return new F();</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>直接在内置对象上添加成员，优点：和原生对象无缝对接，哪些方法是原生，哪些是个人的无法分清<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 在书写兼容代码的时候. 一般是写一个通用的函数或方法. 在函数或方法判断</div><div class="line">// 是否具有原生的方法, 如果有直接使用系统自带的. 如果没有, 我们再自己实现</div><div class="line">function createWithObject ( obj ) &#123;</div><div class="line">    if ( Object.create ) &#123;</div><div class="line">        return Object.create( obj );</div><div class="line">    &#125; else &#123;</div><div class="line">        function F() &#123;&#125;</div><div class="line">        F.prototype = obj;</div><div class="line">        return new F();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="九、对象的原型链"><a href="#九、对象的原型链" class="headerlink" title="九、对象的原型链"></a>九、对象的原型链</h4><ol>
+<li>凡是对象都有原型<ul>
+<li>构造函数Person创建的对象p有原型Person.prototype</li>
+<li>Person.prototype是对象，它也是有原型的</li>
+<li>Person.prototype.<strong>proto</strong>里的constructor是Object，所以Person.prototype.<strong>proto</strong>就是Object.prototype</li>
+<li>Object.prototype.<strong>proto</strong>是null，因此表明Object.prototype是顶级</li>
+</ul>
+</li>
+<li>系统内置的原型链<ul>
+<li>[]–》Array.prototype–》Object.prototype–》null</li>
+</ul>
+</li>
+</ol>
+<h4 id="十、动态函数——Function"><a href="#十、动态函数——Function" class="headerlink" title="十、动态函数——Function"></a>十、动态函数——Function</h4><p>在程序运行的时候，将一段字符串当做代码来执行，由于字符串可以随意的拼接，因此得到动态的执行</p>
+<ul>
+<li>eval</li>
+<li>Function</li>
+<li>定义动态函数，并执行<ul>
+<li>使用Function构造函数，创建函数 Function是一个构造函数，new Function得到一个函数</li>
+<li>语法<br>new Function（arg0，arg1,……，argN,body）  Function 的所有的参数，除了最后一个以外，都是生成的函数的参数，最后一个参数是函数体</li>
+</ul>
+</li>
+</ul>
+<h4 id="十一、arguments对象"><a href="#十一、arguments对象" class="headerlink" title="十一、arguments对象"></a>十一、arguments对象</h4><ul>
+<li>arguments 凡是函数调用，都会默认含有一个arguments对象，可以将其看做为数组，里面存储着调用时传入的所有参数，可以使用数组的索引访问这些参数</li>
+<li>函数名.length即函数名length属性，得到的是函数定义的时候的形参的个数</li>
+</ul>
+<h4 id="十二、callee与caller"><a href="#十二、callee与caller" class="headerlink" title="十二、callee与caller"></a>十二、callee与caller</h4><ul>
+<li>js中的函数也是一个对象<ul>
+<li>callee在函数的内部，它表示 当前函数 的引用</li>
+<li>一般在函数内部，实现函数递归的时候，我们一般使用callee表示函数的引用</li>
+<li>caller表示调用函数<br>在函数f1中调用函数f2<br>f1就是成为调用者，调用的发起人<br>f2就是被调用者<br>caller就是在被调用函数中，获得调用函数的引用</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/10/面向对象2/" data-id="ciyyka78d0000r0ifusyx9oz2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-响应式开发上" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/01/响应式开发上/" class="article-date">
+  <time datetime="2015-08-01T14:12:11.000Z" itemprop="datePublished">2015-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/01/响应式开发上/">响应式开发(上)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="响应式页面的原理"><a href="#响应式页面的原理" class="headerlink" title="响应式页面的原理"></a>响应式页面的原理</h3><h3 id="CSS3中的Media-Query（媒介查询）"><a href="#CSS3中的Media-Query（媒介查询）" class="headerlink" title="CSS3中的Media Query（媒介查询）"></a>CSS3中的Media Query（媒介查询）</h3><p>通过查询screen的宽度来指定某个宽度区间的网页布局。</p>
+<ul>
+<li>超小屏幕（移动设备）    768px以下 </li>
+<li>小屏设备    768px-992px</li>
+<li>中等屏幕    992px-1200px</li>
+<li>宽屏设备    1200px以上 </li>
+<li>媒体查询可以指定查询的属性screen也可以不指定默认回去查询屏幕。<br>可以使用css覆盖的原理，也可以定义区间范围，可以多条件查询。</li>
+</ul>
+<h4 id="定义最小宽度阈值，超过这个宽度就用这套样式"><a href="#定义最小宽度阈值，超过这个宽度就用这套样式" class="headerlink" title="定义最小宽度阈值，超过这个宽度就用这套样式"></a>定义最小宽度阈值，超过这个宽度就用这套样式</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">768px</span>)&#123;&#125;</div><div class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">992px</span>)&#123;&#125;</div><div class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">1200px</span>)&#123;&#125;</div></pre></td></tr></table></figure>
+<h4 id="也可以直接指明区间"><a href="#也可以直接指明区间" class="headerlink" title="也可以直接指明区间"></a>也可以直接指明区间</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> (max-width: <span class="number">767px</span>)&#123;&#125;</div><div class="line">@<span class="keyword">media</span> (min-width: <span class="number">768px</span>) and (max-width: <span class="number">991px</span>)&#123;&#125;</div><div class="line">@<span class="keyword">media</span> (min-width: <span class="number">992px</span>) and (max-width: <span class="number">1199px</span>)&#123;&#125;</div><div class="line">@<span class="keyword">media</span> (min-width: <span class="number">1200px</span>)&#123;&#125;</div></pre></td></tr></table></figure>
+<h3 id="响应式框架Bootstrap"><a href="#响应式框架Bootstrap" class="headerlink" title="响应式框架Bootstrap"></a>响应式框架Bootstrap</h3><h4 id="container类"><a href="#container类" class="headerlink" title="container类"></a>container类</h4><p>用于定义一个固定宽度且居中的版心 </p>
+<h4 id="row类"><a href="#row类" class="headerlink" title="row类"></a>row类</h4><p>因为每一个列默认有一个15px的左右外边距，row类的一个作用就是通过左右-15px屏蔽掉这个边距 </p>
+<p>col-<em>*-</em>类<br>col-xs-[列数]：在超小屏幕下展示几份<br>col-sm-[列数]：在小屏幕下展示几份<br>col-md-[列数]：在中等屏幕下展示几份<br>col-lg-[列数]：在大屏幕下展示几份<br>xs : 超小屏幕 手机 (&lt;768px)<br>sm : 小屏幕 平板 (≥768px)<br>md : 中等屏幕 桌面显示器 (≥992px)<br>lg : 大屏幕 大桌面显示器 (≥1200px) </p>
+<h4 id="hidden-类"><a href="#hidden-类" class="headerlink" title="hidden 类"></a>hidden 类</h4><p>hidden-xs,hidden-sm,hidden-md,hidden-lg在不同的屏幕下隐藏。</p>
+<h4 id="text-类"><a href="#text-类" class="headerlink" title="text-* 类"></a>text-* 类</h4><pre><code>text-center 文本居中
+text-left 文本左对齐
+text-right 文本右对齐
+</code></pre><h4 id="pull-类"><a href="#pull-类" class="headerlink" title="pull-*类"></a>pull-*类</h4><pre><code>pull-left 左浮动类
+pull-right 右浮动类
+</code></pre><h4 id="center-block-类"><a href="#center-block-类" class="headerlink" title="center-block 类"></a>center-block 类</h4><p>让一个固定宽度的元素居中。</p>
+<h4 id="Bootstrap的标签属性"><a href="#Bootstrap的标签属性" class="headerlink" title="Bootstrap的标签属性"></a>Bootstrap的标签属性</h4><p>data-toggle 指定插件类型<br>data-target 被控制的目标元素</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/01/响应式开发上/" data-id="ciz538hby0002d8ifvw1pkmms" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/12/模块化开发/">模块化开发</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/15/css3高级/">css3动画与3D转换</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/12/css3进阶/">css3下</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/css3基础/">css3上</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/15/H5下/">h5下</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

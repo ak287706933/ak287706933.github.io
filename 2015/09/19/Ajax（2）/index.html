@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ajax(2) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="表单处理（get 方式）
+举例（如图，建立一个表单页面）
+
+
+
+提取输入的账号和密码
+
+
+
+从服务器打开是这样的
+
+
+
+提交后的结果是这样的
+
+
+
+默认method是GET的方法
+
+表单处理（post 方式）
+  method = ‘post’; 
+
+
+$_POST是一个数组并且包含了表单提交上来的数据,是PHP内置好的专门用来接数据的一个全局数组
+
+
+区别（get和post）
+
+
+get会暴露在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax(2)">
+<meta property="og:url" content="http://yoursite.com/2015/09/19/Ajax（2）/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="表单处理（get 方式）
+举例（如图，建立一个表单页面）
+
+
+
+提取输入的账号和密码
+
+
+
+从服务器打开是这样的
+
+
+
+提交后的结果是这样的
+
+
+
+默认method是GET的方法
+
+表单处理（post 方式）
+  method = ‘post’; 
+
+
+$_POST是一个数组并且包含了表单提交上来的数据,是PHP内置好的专门用来接数据的一个全局数组
+
+
+区别（get和post）
+
+
+get会暴露在">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3617300-81fcb39215183446.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3617300-7f8ea84e39b53d8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3617300-ec12d0abbb9394ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3617300-4af5bfc796475347.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3617300-590501cbf82336ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3617300-ca36bf9abf7dfe4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3617300-64d32b30a98cc609.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3617300-5056e494903fcb2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3617300-8c72d92ee9b371e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-02-14T06:58:07.012Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ajax(2)">
+<meta name="twitter:description" content="表单处理（get 方式）
+举例（如图，建立一个表单页面）
+
+
+
+提取输入的账号和密码
+
+
+
+从服务器打开是这样的
+
+
+
+提交后的结果是这样的
+
+
+
+默认method是GET的方法
+
+表单处理（post 方式）
+  method = ‘post’; 
+
+
+$_POST是一个数组并且包含了表单提交上来的数据,是PHP内置好的专门用来接数据的一个全局数组
+
+
+区别（get和post）
+
+
+get会暴露在">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3617300-81fcb39215183446.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Ajax（2）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/19/Ajax（2）/" class="article-date">
+  <time datetime="2015-09-19T01:00:35.000Z" itemprop="datePublished">2015-09-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ajax(2)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="表单处理（get-方式）"><a href="#表单处理（get-方式）" class="headerlink" title="表单处理（get 方式）"></a>表单处理（get 方式）</h3><ul>
+<li>举例（如图，建立一个表单页面）</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-81fcb39215183446.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"></p>
+<ul>
+<li>提取输入的账号和密码</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-7f8ea84e39b53d8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png"></p>
+<ul>
+<li>从服务器打开是这样的</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-ec12d0abbb9394ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.png"></p>
+<ul>
+<li>提交后的结果是这样的</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-4af5bfc796475347.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4.png"></p>
+<ul>
+<li>默认method是GET的方法</li>
+</ul>
+<h3 id="表单处理（post-方式）"><a href="#表单处理（post-方式）" class="headerlink" title="表单处理（post 方式）"></a>表单处理（post 方式）</h3><blockquote>
+<p><form action="8.php" method="post" ;=""><br>  method = ‘post’; </form></p>
+</blockquote>
+<ul>
+<li>$_POST是一个数组并且包含了表单提交上来的数据,是PHP内置好的专门用来接数据的一个全局数组</li>
+</ul>
+<ul>
+<li><p>区别（get和post）</p>
+<ul>
+<li><ol>
+<li>get会暴露在地址栏上<br>post不会暴露在地址栏上</li>
+</ol>
+</li>
+<li><p>2.get的的理论提交数据1024个字节<br>post没有理论上没有限制</p>
+</li>
+<li><p>3.get是从服务器上获取数据<br>post是向服务器传送数据</p>
+</li>
+<li><p>4.get安全性非常低<br>post安全性较高</p>
+</li>
+<li><p>5.get提交参数会在URL上显示，不安全<br>post不会，更安全</p>
+</li>
+<li><p>6.get数据使用$_GET<br>post的数据使用$_POST</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="上传文件（files）"><a href="#上传文件（files）" class="headerlink" title="上传文件（files）"></a>上传文件（files）</h3><ul>
+<li>必须三个条件<blockquote>
+<ol>
+<li>method = ‘post’;<br>2.input type = ‘files’ name = ‘img’<br>3.<enctype =="" 'multipart="" form-data'=""></enctype></li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>files是PHP内置提供好专门用来接收上传文件的一个全局变量</li>
+<li>当文件上传是需要 <enctype =="" 'multipart="" form-data'=""></enctype></li>
+<li>文件默认放在临时目录下，然后转移指定目录</li>
+<li><p>如果不转移走文件，文件自动删除<br>move_uploaded_file(filename,destination);<br>参数1要移动的文件，参数2移动的目标路径</p>
+</li>
+<li><p>举例</p>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-590501cbf82336ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="5.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-ca36bf9abf7dfe4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="6.png"></p>
+<ul>
+<li>结果（上传成功）</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-64d32b30a98cc609.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="7.png"></p>
+<h3 id="登陆验证"><a href="#登陆验证" class="headerlink" title="登陆验证"></a>登陆验证</h3><ul>
+<li>举例</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-5056e494903fcb2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="8.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3617300-8c72d92ee9b371e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="9.png"></p>
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><ul>
+<li>include和require的区别</li>
+<li><p>文件后缀大部分时间没有任何作用，index.php和index.pel 是一样的</p>
+</li>
+<li><p>在PHP变成中，include()与require()的功能相同，include（include_once） 与 require（require_once）都是把把包含的文件代码读入到指定位置来，但是二者再用法上有区别：（include()是有条件包含函数，而require()则是无条件包含函数）</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/09/19/Ajax（2）/" data-id="ciz56n0xq0002h4ifuyzdohxi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/20/Ajax（3）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Ajax（3）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/18/Ajax(1)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Ajax(1)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/12/模块化开发/">模块化开发</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/15/css3高级/">css3动画与3D转换</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/12/css3进阶/">css3下</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/css3基础/">css3上</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/15/H5下/">h5下</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

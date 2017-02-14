@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>响应式开发(上) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="响应式页面的原理CSS3中的Media Query（媒介查询）通过查询screen的宽度来指定某个宽度区间的网页布局。
+
+超小屏幕（移动设备）    768px以下 
+小屏设备    768px-992px
+中等屏幕    992px-1200px
+宽屏设备    1200px以上 
+媒体查询可以指定查询的属性screen也可以不指定默认回去查询屏幕。可以使用css覆盖的原理，也可以定义区间范围，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应式开发(上)">
+<meta property="og:url" content="http://yoursite.com/2015/08/01/响应式开发上/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="响应式页面的原理CSS3中的Media Query（媒介查询）通过查询screen的宽度来指定某个宽度区间的网页布局。
+
+超小屏幕（移动设备）    768px以下 
+小屏设备    768px-992px
+中等屏幕    992px-1200px
+宽屏设备    1200px以上 
+媒体查询可以指定查询的属性screen也可以不指定默认回去查询屏幕。可以使用css覆盖的原理，也可以定义区间范围，">
+<meta property="og:updated_time" content="2017-02-14T07:01:42.909Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="响应式开发(上)">
+<meta name="twitter:description" content="响应式页面的原理CSS3中的Media Query（媒介查询）通过查询screen的宽度来指定某个宽度区间的网页布局。
+
+超小屏幕（移动设备）    768px以下 
+小屏设备    768px-992px
+中等屏幕    992px-1200px
+宽屏设备    1200px以上 
+媒体查询可以指定查询的属性screen也可以不指定默认回去查询屏幕。可以使用css覆盖的原理，也可以定义区间范围，">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-响应式开发上" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/01/响应式开发上/" class="article-date">
+  <time datetime="2015-08-01T14:12:11.000Z" itemprop="datePublished">2015-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      响应式开发(上)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="响应式页面的原理"><a href="#响应式页面的原理" class="headerlink" title="响应式页面的原理"></a>响应式页面的原理</h3><h3 id="CSS3中的Media-Query（媒介查询）"><a href="#CSS3中的Media-Query（媒介查询）" class="headerlink" title="CSS3中的Media Query（媒介查询）"></a>CSS3中的Media Query（媒介查询）</h3><p>通过查询screen的宽度来指定某个宽度区间的网页布局。</p>
+<ul>
+<li>超小屏幕（移动设备）    768px以下 </li>
+<li>小屏设备    768px-992px</li>
+<li>中等屏幕    992px-1200px</li>
+<li>宽屏设备    1200px以上 </li>
+<li>媒体查询可以指定查询的属性screen也可以不指定默认回去查询屏幕。<br>可以使用css覆盖的原理，也可以定义区间范围，可以多条件查询。</li>
+</ul>
+<h4 id="定义最小宽度阈值，超过这个宽度就用这套样式"><a href="#定义最小宽度阈值，超过这个宽度就用这套样式" class="headerlink" title="定义最小宽度阈值，超过这个宽度就用这套样式"></a>定义最小宽度阈值，超过这个宽度就用这套样式</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">768px</span>)&#123;&#125;</div><div class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">992px</span>)&#123;&#125;</div><div class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">1200px</span>)&#123;&#125;</div></pre></td></tr></table></figure>
+<h4 id="也可以直接指明区间"><a href="#也可以直接指明区间" class="headerlink" title="也可以直接指明区间"></a>也可以直接指明区间</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> (max-width: <span class="number">767px</span>)&#123;&#125;</div><div class="line">@<span class="keyword">media</span> (min-width: <span class="number">768px</span>) and (max-width: <span class="number">991px</span>)&#123;&#125;</div><div class="line">@<span class="keyword">media</span> (min-width: <span class="number">992px</span>) and (max-width: <span class="number">1199px</span>)&#123;&#125;</div><div class="line">@<span class="keyword">media</span> (min-width: <span class="number">1200px</span>)&#123;&#125;</div></pre></td></tr></table></figure>
+<h3 id="响应式框架Bootstrap"><a href="#响应式框架Bootstrap" class="headerlink" title="响应式框架Bootstrap"></a>响应式框架Bootstrap</h3><h4 id="container类"><a href="#container类" class="headerlink" title="container类"></a>container类</h4><p>用于定义一个固定宽度且居中的版心 </p>
+<h4 id="row类"><a href="#row类" class="headerlink" title="row类"></a>row类</h4><p>因为每一个列默认有一个15px的左右外边距，row类的一个作用就是通过左右-15px屏蔽掉这个边距 </p>
+<p>col-<em>*-</em>类<br>col-xs-[列数]：在超小屏幕下展示几份<br>col-sm-[列数]：在小屏幕下展示几份<br>col-md-[列数]：在中等屏幕下展示几份<br>col-lg-[列数]：在大屏幕下展示几份<br>xs : 超小屏幕 手机 (&lt;768px)<br>sm : 小屏幕 平板 (≥768px)<br>md : 中等屏幕 桌面显示器 (≥992px)<br>lg : 大屏幕 大桌面显示器 (≥1200px) </p>
+<h4 id="hidden-类"><a href="#hidden-类" class="headerlink" title="hidden 类"></a>hidden 类</h4><p>hidden-xs,hidden-sm,hidden-md,hidden-lg在不同的屏幕下隐藏。</p>
+<h4 id="text-类"><a href="#text-类" class="headerlink" title="text-* 类"></a>text-* 类</h4><pre><code>text-center 文本居中
+text-left 文本左对齐
+text-right 文本右对齐
+</code></pre><h4 id="pull-类"><a href="#pull-类" class="headerlink" title="pull-*类"></a>pull-*类</h4><pre><code>pull-left 左浮动类
+pull-right 右浮动类
+</code></pre><h4 id="center-block-类"><a href="#center-block-类" class="headerlink" title="center-block 类"></a>center-block 类</h4><p>让一个固定宽度的元素居中。</p>
+<h4 id="Bootstrap的标签属性"><a href="#Bootstrap的标签属性" class="headerlink" title="Bootstrap的标签属性"></a>Bootstrap的标签属性</h4><p>data-toggle 指定插件类型<br>data-target 被控制的目标元素</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/01/响应式开发上/" data-id="ciz538hby0002d8ifvw1pkmms" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/10/面向对象2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          面向对象(2)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/21/Sass的基本用法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Sass的基本用法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/12/模块化开发/">模块化开发</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/15/css3高级/">css3动画与3D转换</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/12/css3进阶/">css3下</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/css3基础/">css3上</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/15/H5下/">h5下</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

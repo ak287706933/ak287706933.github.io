@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>面向对象(7) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、正则表达式
+regular expression——一个有规则的表达式
+简单的说 他就是一个用于 查找的通配符
+正则表达式就是 一个用于查找的 含有 匹配字符串 或 匹配元字符的 字符串
+正则表达式对象
+js 正则表达式对象 就是 由 正则表达式创建的对象, 该对象可以进行 匹配, 提取 和 替换.
+创建正则表达式对象
+构造函数
+var reg = new RegExp( 正则表达式字符串[,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象(7)">
+<meta property="og:url" content="http://yoursite.com/2015/08/19/面向对象7/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、正则表达式
+regular expression——一个有规则的表达式
+简单的说 他就是一个用于 查找的通配符
+正则表达式就是 一个用于查找的 含有 匹配字符串 或 匹配元字符的 字符串
+正则表达式对象
+js 正则表达式对象 就是 由 正则表达式创建的对象, 该对象可以进行 匹配, 提取 和 替换.
+创建正则表达式对象
+构造函数
+var reg = new RegExp( 正则表达式字符串[,">
+<meta property="og:updated_time" content="2017-02-14T07:00:47.868Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象(7)">
+<meta name="twitter:description" content="一、正则表达式
+regular expression——一个有规则的表达式
+简单的说 他就是一个用于 查找的通配符
+正则表达式就是 一个用于查找的 含有 匹配字符串 或 匹配元字符的 字符串
+正则表达式对象
+js 正则表达式对象 就是 由 正则表达式创建的对象, 该对象可以进行 匹配, 提取 和 替换.
+创建正则表达式对象
+构造函数
+var reg = new RegExp( 正则表达式字符串[,">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-面向对象7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/19/面向对象7/" class="article-date">
+  <time datetime="2015-08-19T14:12:11.000Z" itemprop="datePublished">2015-08-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面向对象(7)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、正则表达式"><a href="#一、正则表达式" class="headerlink" title="一、正则表达式"></a>一、正则表达式</h4><ul>
+<li>regular expression——一个有规则的表达式</li>
+<li>简单的说 他就是一个用于 查找的通配符</li>
+<li>正则表达式就是 一个用于查找的 含有 匹配字符串 或 匹配元字符的 字符串</li>
+<li>正则表达式对象<ul>
+<li>js 正则表达式对象 就是 由 正则表达式创建的对象, 该对象可以进行 匹配, 提取 和 替换.</li>
+<li>创建正则表达式对象<ul>
+<li>构造函数<ul>
+<li>var reg = new RegExp( 正则表达式字符串[, 匹配模式] ); </li>
+<li>字面量</li>
+<li>var regex = /正则表达式/;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>使用正则表达式进行匹配<ul>
+<li>语法:</li>
+<li>正则对象.test( 字符串 ) -&gt; bool  如果参数字符串中含有 复合 正则匹配的 子字符串, 就返回 true, 否则返回 false</li>
+</ul>
+</li>
+</ul>
+<h4 id="二、基本元字符"><a href="#二、基本元字符" class="headerlink" title="二、基本元字符"></a>二、基本元字符</h4><ul>
+<li>.        表示任一个非换行的字符<ul>
+<li>()      表示分组和提高优先级</li>
+<li>[]       表示一个字符, 出现在 [] 中的字符<br>用法: [abc]   出现 [] 中的任意一个字符</li>
+<li>|        或  用法:  正则表达式|正则表达式   </li>
+<li>扩展<ul>
+<li>.        任意的一个字符. 没有任何限制</li>
+<li>[]       是出现在[]中的一个字符. 认为 . 的限制级版本</li>
+<li>|        可以认为是 允许使用多个字符的 匹配</li>
+</ul>
+</li>
+<li>转义字符: \<ul>
+<li>表示点:   .</li>
+<li>表示[]:   [  ]</li>
+<li>表示():      (  )</li>
+<li>表示\ :   \</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="三、限定元字符"><a href="#三、限定元字符" class="headerlink" title="三、限定元字符"></a>三、限定元字符</h4><ul>
+<li>‘*’        紧跟前面的一个字符或一组字符出现 0 次到多次</li>
+<li>‘+’  紧跟在前面的字符出现 1 次到多次</li>
+<li>?        紧跟在前面的字符出现 0 次或 1 次</li>
+<li>{数字}     紧跟在前面的字符出现指定次数</li>
+<li>{数字,}        紧跟在前面的字符至少出现指定次数</li>
+<li>{数字, 数字} 紧跟在前面的字符出现的次数范围</li>
+</ul>
+<h4 id="四、首尾正则表达式"><a href="#四、首尾正则表达式" class="headerlink" title="四、首尾正则表达式"></a>四、首尾正则表达式</h4><ul>
+<li>^      表示必须以 xxx 开头</li>
+<li>$        表示 必须以 xxx 结尾</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/19/面向对象7/" data-id="ciyyhty6v000078ifoise9csy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/01/移动端布局基础1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          移动端之布局
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/18/面向对象6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">面向对象(6)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/12/模块化开发/">模块化开发</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/15/css3高级/">css3动画与3D转换</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/12/css3进阶/">css3下</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/css3基础/">css3上</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/15/H5下/">h5下</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
