@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,162 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-面向对象2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/10/面向对象2/" class="article-date">
+  <time datetime="2015-08-10T10:32:17.000Z" itemprop="datePublished">2015-08-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/10/面向对象2/">面向对象(2)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、总结"><a href="#一、总结" class="headerlink" title="一、总结"></a>一、总结</h3><ol>
+<li>异常：程序运行的时候出现的错误，出现来了错误以后我们就要进行错误处理 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">try&#123;</div><div class="line">   //需要抛出异常的代码块</div><div class="line"> &#125;catch(e)&#123;</div><div class="line">   //捕获到异常后执行的</div><div class="line"> &#125;finally&#123;</div><div class="line">   //最后都会执行的代码</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2.原型：原型是一个对象<br>     A.原型是构造函数的原型属性<br>     B.原型是实例对象的原型对象</p>
+<p>3.如何通过原型来添加成员?<br>    A.通过动态特性为原型添加成员<br>    B.替换原型</p>
+<p>4.如何访问原型<br>   A.构造函数通过原型属性访问原型 构造函数.prototype<br>   B.实例对象通过<strong>proto</strong>访问原型 例：实例对象.<strong>proto</strong>  或者 实例对象.constructor.prototype</p>
+<h4 id="二、如果修改原型对象中的属性值"><a href="#二、如果修改原型对象中的属性值" class="headerlink" title="二、如果修改原型对象中的属性值"></a>二、如果修改原型对象中的属性值</h4><p> 给当前对象的原型提供的属性赋值，实际上是给当前对象添加了该属性的新成员，并不会修改原型对象中的成员</p>
+<h4 id="三、混入"><a href="#三、混入" class="headerlink" title="三、混入"></a>三、混入</h4><p>利用这个简单的赋值，就可以将一个对象的成员加到另一个对象上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var o1=&#123;&apos;name&apos;:&apos;andy&apos;&#125;;</div><div class="line">var o2=&#123;&apos;age&apos;:19&#125;;</div><div class="line">o2.name=o1.name;</div><div class="line">//混入使得o2具有了age和o1中的name，即将o1混入到o2中</div><div class="line">//混入也是一种继承方式</div></pre></td></tr></table></figure></p>
+<h4 id="四、如何使用代码实现混入"><a href="#四、如何使用代码实现混入" class="headerlink" title="四、如何使用代码实现混入"></a>四、如何使用代码实现混入</h4><p>考虑要执行，写函数即可<br>由于将一个对象混入到另一个对象，所以有两个参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function _mix_(obj,obj1)&#123;</div><div class="line">    for(var k in obj1)&#123;</div><div class="line">        obj[k]=obj1[k];</div><div class="line">    &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p>在函数中，有一个默认的对象存在，即arguments。它里面存储着所有的传入的参数，arguments是函数中的一个对象，它包含了所有的参数，length属性表示参数的个数</p>
+<h4 id="五、原型式继承"><a href="#五、原型式继承" class="headerlink" title="五、原型式继承"></a>五、原型式继承</h4><p>写一个构造函数，如果需要将其继承自某个特定的对象o，那么只需要设置该构造函数的prototype属性为o即可</p>
+<h4 id="六、混合式继承"><a href="#六、混合式继承" class="headerlink" title="六、混合式继承"></a>六、混合式继承</h4><p>混合就是将多个对象的各个功能混合在一起，加到构造函数的原型对象上，那么该构造函数创建的实例，就继承多个对象了</p>
+<ul>
+<li>给原型对象添加混入方法（extend方法）</li>
+<li>通过原型对象的混入方法给原型对象添加成员</li>
+<li>只要是通过构造函数创建的实例</li>
+</ul>
+<h4 id="七、使用Object-create创建对象"><a href="#七、使用Object-create创建对象" class="headerlink" title="七、使用Object.create创建对象"></a>七、使用Object.create创建对象</h4><p>ES5提供的方法<br>1.基本的语法</p>
+<ul>
+<li>Object.create(对象) 使用一个对象作为原型创建一个新的对象，并返回</li>
+<li>返回的是对象 </li>
+<li>返回的对象满足：原型对象 就是 参数中的对象</li>
+<li>新对象继承自参数<br>实现继承的快速方法<br>使用情况——假设我们不知道构造函数在哪里是什么，就不能new了，那就通过实例对象来创建一个类似的对象，然后就可以使用它了</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Object.create=function(o)&#123;</div><div class="line">  function f()&#123;&#125;;</div><div class="line">  F.prototype=o;</div><div class="line">  return new F();</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h4 id="八、实现Object-create兼容"><a href="#八、实现Object-create兼容" class="headerlink" title="八、实现Object.create兼容"></a>八、实现Object.create兼容</h4><p>先判断有没有，如果没有再加上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> if ( !Object.create ) &#123;</div><div class="line">        Object.create =function ( o ) &#123;</div><div class="line">        function F() &#123;&#125;</div><div class="line">        F.prototype = o;</div><div class="line">        return new F();</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>直接在内置对象上添加成员，优点：和原生对象无缝对接，哪些方法是原生，哪些是个人的无法分清<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 在书写兼容代码的时候. 一般是写一个通用的函数或方法. 在函数或方法判断</div><div class="line">// 是否具有原生的方法, 如果有直接使用系统自带的. 如果没有, 我们再自己实现</div><div class="line">function createWithObject ( obj ) &#123;</div><div class="line">    if ( Object.create ) &#123;</div><div class="line">        return Object.create( obj );</div><div class="line">    &#125; else &#123;</div><div class="line">        function F() &#123;&#125;</div><div class="line">        F.prototype = obj;</div><div class="line">        return new F();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="九、对象的原型链"><a href="#九、对象的原型链" class="headerlink" title="九、对象的原型链"></a>九、对象的原型链</h4><ol>
+<li>凡是对象都有原型<ul>
+<li>构造函数Person创建的对象p有原型Person.prototype</li>
+<li>Person.prototype是对象，它也是有原型的</li>
+<li>Person.prototype.<strong>proto</strong>里的constructor是Object，所以Person.prototype.<strong>proto</strong>就是Object.prototype</li>
+<li>Object.prototype.<strong>proto</strong>是null，因此表明Object.prototype是顶级</li>
+</ul>
+</li>
+<li>系统内置的原型链<ul>
+<li>[]–》Array.prototype–》Object.prototype–》null</li>
+</ul>
+</li>
+</ol>
+<h4 id="十、动态函数——Function"><a href="#十、动态函数——Function" class="headerlink" title="十、动态函数——Function"></a>十、动态函数——Function</h4><p>在程序运行的时候，将一段字符串当做代码来执行，由于字符串可以随意的拼接，因此得到动态的执行</p>
+<ul>
+<li>eval</li>
+<li>Function</li>
+<li>定义动态函数，并执行<ul>
+<li>使用Function构造函数，创建函数 Function是一个构造函数，new Function得到一个函数</li>
+<li>语法<br>new Function（arg0，arg1,……，argN,body）  Function 的所有的参数，除了最后一个以外，都是生成的函数的参数，最后一个参数是函数体</li>
+</ul>
+</li>
+</ul>
+<h4 id="十一、arguments对象"><a href="#十一、arguments对象" class="headerlink" title="十一、arguments对象"></a>十一、arguments对象</h4><ul>
+<li>arguments 凡是函数调用，都会默认含有一个arguments对象，可以将其看做为数组，里面存储着调用时传入的所有参数，可以使用数组的索引访问这些参数</li>
+<li>函数名.length即函数名length属性，得到的是函数定义的时候的形参的个数</li>
+</ul>
+<h4 id="十二、callee与caller"><a href="#十二、callee与caller" class="headerlink" title="十二、callee与caller"></a>十二、callee与caller</h4><ul>
+<li>js中的函数也是一个对象<ul>
+<li>callee在函数的内部，它表示 当前函数 的引用</li>
+<li>一般在函数内部，实现函数递归的时候，我们一般使用callee表示函数的引用</li>
+<li>caller表示调用函数<br>在函数f1中调用函数f2<br>f1就是成为调用者，调用的发起人<br>f2就是被调用者<br>caller就是在被调用函数中，获得调用函数的引用</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/10/面向对象2/" data-id="cizflldfx000hyoifx63lmoo3" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-响应式开发上" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/01/响应式开发上/" class="article-date">
+  <time datetime="2015-08-01T14:12:11.000Z" itemprop="datePublished">2015-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/01/响应式开发上/">响应式开发(上)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="响应式页面的原理"><a href="#响应式页面的原理" class="headerlink" title="响应式页面的原理"></a>响应式页面的原理</h3><h3 id="CSS3中的Media-Query（媒介查询）"><a href="#CSS3中的Media-Query（媒介查询）" class="headerlink" title="CSS3中的Media Query（媒介查询）"></a>CSS3中的Media Query（媒介查询）</h3><p>通过查询screen的宽度来指定某个宽度区间的网页布局。</p>
+<ul>
+<li>超小屏幕（移动设备）    768px以下 </li>
+<li>小屏设备    768px-992px</li>
+<li>中等屏幕    992px-1200px</li>
+<li>宽屏设备    1200px以上 </li>
+<li>媒体查询可以指定查询的属性screen也可以不指定默认回去查询屏幕。<br>可以使用css覆盖的原理，也可以定义区间范围，可以多条件查询。</li>
+</ul>
+<h4 id="定义最小宽度阈值，超过这个宽度就用这套样式"><a href="#定义最小宽度阈值，超过这个宽度就用这套样式" class="headerlink" title="定义最小宽度阈值，超过这个宽度就用这套样式"></a>定义最小宽度阈值，超过这个宽度就用这套样式</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">768px</span>)&#123;&#125;</div><div class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">992px</span>)&#123;&#125;</div><div class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">1200px</span>)&#123;&#125;</div></pre></td></tr></table></figure>
+<h4 id="也可以直接指明区间"><a href="#也可以直接指明区间" class="headerlink" title="也可以直接指明区间"></a>也可以直接指明区间</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> (max-width: <span class="number">767px</span>)&#123;&#125;</div><div class="line">@<span class="keyword">media</span> (min-width: <span class="number">768px</span>) and (max-width: <span class="number">991px</span>)&#123;&#125;</div><div class="line">@<span class="keyword">media</span> (min-width: <span class="number">992px</span>) and (max-width: <span class="number">1199px</span>)&#123;&#125;</div><div class="line">@<span class="keyword">media</span> (min-width: <span class="number">1200px</span>)&#123;&#125;</div></pre></td></tr></table></figure>
+<h3 id="响应式框架Bootstrap"><a href="#响应式框架Bootstrap" class="headerlink" title="响应式框架Bootstrap"></a>响应式框架Bootstrap</h3><h4 id="container类"><a href="#container类" class="headerlink" title="container类"></a>container类</h4><p>用于定义一个固定宽度且居中的版心 </p>
+<h4 id="row类"><a href="#row类" class="headerlink" title="row类"></a>row类</h4><p>因为每一个列默认有一个15px的左右外边距，row类的一个作用就是通过左右-15px屏蔽掉这个边距 </p>
+<p>col-<em>*-</em>类<br>col-xs-[列数]：在超小屏幕下展示几份<br>col-sm-[列数]：在小屏幕下展示几份<br>col-md-[列数]：在中等屏幕下展示几份<br>col-lg-[列数]：在大屏幕下展示几份<br>xs : 超小屏幕 手机 (&lt;768px)<br>sm : 小屏幕 平板 (≥768px)<br>md : 中等屏幕 桌面显示器 (≥992px)<br>lg : 大屏幕 大桌面显示器 (≥1200px) </p>
+<h4 id="hidden-类"><a href="#hidden-类" class="headerlink" title="hidden 类"></a>hidden 类</h4><p>hidden-xs,hidden-sm,hidden-md,hidden-lg在不同的屏幕下隐藏。</p>
+<h4 id="text-类"><a href="#text-类" class="headerlink" title="text-* 类"></a>text-* 类</h4><pre><code>text-center 文本居中
+text-left 文本左对齐
+text-right 文本右对齐
+</code></pre><h4 id="pull-类"><a href="#pull-类" class="headerlink" title="pull-*类"></a>pull-*类</h4><pre><code>pull-left 左浮动类
+pull-right 右浮动类
+</code></pre><h4 id="center-block-类"><a href="#center-block-类" class="headerlink" title="center-block 类"></a>center-block 类</h4><p>让一个固定宽度的元素居中。</p>
+<h4 id="Bootstrap的标签属性"><a href="#Bootstrap的标签属性" class="headerlink" title="Bootstrap的标签属性"></a>Bootstrap的标签属性</h4><p>data-toggle 指定插件类型<br>data-target 被控制的目标元素</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/01/响应式开发上/" data-id="cizflldfy000iyoifsztk5aa7" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-Sass的基本用法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -218,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/21/Sass的基本用法/" data-id="ciz56n0xs0003h4if55xke5s8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/21/Sass的基本用法/" data-id="cizflldf10008yoif6uypzncy" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -249,7 +405,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
     </div>
   </div>
 
@@ -257,7 +413,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -294,7 +450,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
